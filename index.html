@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storsjögymnasiet — Studentportaler</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --card-hover: #334155;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-glow: rgba(56, 189, 248, 0.15);
+            --border: #334155;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1rem;
+        }
+
+        header {
+            text-align: center;
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+        }
+
+        header h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        .search-box {
+            width: 100%;
+            max-width: 500px;
+            margin-bottom: 2rem;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.85rem 1.25rem;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: var(--text-main);
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+
+        .search-box input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-glow);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            background-color: var(--card-hover);
+            border-color: var(--accent);
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .card-path {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-family: monospace;
+        }
+
+        .card-arrow {
+            margin-top: 1.25rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .card:hover .card-arrow {
+            color: var(--accent);
+        }
+
+        footer {
+            margin-top: auto;
+            padding-top: 4rem;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            text-align: center;
+        }
+
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-muted);
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Storsjögymnasiet Portal</h1>
+        <p>Översikt över alla publicerade elev- och projektsidor.</p>
+    </header>
+
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Sök efter projekt..." onkeyup="filterSites()">
+    </div>
+
+    <main class="container" id="siteGrid">
+        <div class="no-results" id="noResults">Laddar sidor...</div>
+    </main>
+
+    <footer>
+        <p>&copy; Storsjögymnasiet — Automatisk portal via GitHub Actions</p>
+    </footer>
+
+    <script>
+        async function loadSites() {
+            const grid = document.getElementById('siteGrid');
+            const noResults = document.getElementById('noResults');
+
+            try {
+                // Hämtar innehållet i repot via GitHub REST API
+                const response = await fetch('https://api.github.com/repos/Storsjogymnasiet/Student-Sidor/contents');
+                
+                if (!response.ok) {
+                    throw new Error('Kunde inte hämta innehåll');
+                }
+
+                const items = await response.json();
+
+                // Filtrera ut mappar (exkludera dolda filer som börjar med '.')
+                const folders = items.filter(item => 
+                    item.type === 'dir' && !item.name.startsWith('.')
+                );
+
+                if (folders.length === 0) {
+                    noResults.style.display = 'block';
+                    noResults.textContent = 'Inga publicerade sidor hittades ännu.';
+                    return;
+                }
+
+                grid.innerHTML = ''; // Rensa laddningsmeddelandet
+
+                folders.forEach(folder => {
+                    const card = document.createElement('a');
+                    card.className = 'card';
+                    card.href = `./${folder.name}/`;
+                    
+                    // Snygga till namnet (ersätter bindestreck med mellanslag och gör första bokstaven stor)
+                    const formattedName = folder.name
+                        .replace(/[-_]/g, ' ')
+                        .replace(/\b\w/g, char => char.toUpperCase());
+
+                    card.innerHTML = `
+                        <div>
+                            <div class="card-title">${formattedName}</div>
+                            <div class="card-path">/${folder.name}/</div>
+                        </div>
+                        <div class="card-arrow">
+                            Besök sida &rarr;
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                });
+
+            } catch (error) {
+                console.error(error);
+                noResults.style.display = 'block';
+                noResults.textContent = 'Ett fel uppstod när sidorna skulle laddas.';
+            }
+        }
+
+        function filterSites() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.card');
+            let hasMatch = false;
+
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (text.includes(input)) {
+                    card.style.display = 'flex';
+                    hasMatch = true;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            document.getElementById('noResults').style.display = hasMatch ? 'none' : 'block';
+        }
+
+        loadSites();
+    </script>
+</body>
+</html>
