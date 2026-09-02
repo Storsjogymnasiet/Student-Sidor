@@ -1,0 +1,104 @@
+body {
+    background-color: rgb(237, 237, 230);
+    color: rgb(3, 65, 20);
+    font-family: "Comic Sans MS", cursive;
+    
+}
+
+header {
+    background-color: rgb(2, 70, 3);
+    color: rgb(252, 251, 251);
+    text-align: center;
+    padding: 10px;
+}
+
+header h1 {
+    font-size: 20px;
+}
+
+nav {
+    background-color: rgb(8, 56, 2);
+    text-align: center;
+
+}
+
+nav a {
+    color: rgb(252, 255, 252);
+    margin: 30px;
+}
+
+main {
+    width: 50%;
+    margin: 50px auto;
+}
+
+.hero {
+    background-color: rgb(250, 250, 250);
+    text-align: center;
+    border-radius: 10px;
+}
+
+.hero img {
+    width: 400px;
+    border: 15px solid rgb(251, 251, 253);
+}
+
+.hero h2 {
+    color: rgb(9, 81, 41);}
+
+.hero p {
+    font-size: 15px;
+}
+
+.activities {
+    background-color: rgb(237, 237, 230);
+    padding: 5px;
+    margin-top: 30px;
+}
+
+.activities h2 {
+    color: rgb(5, 103, 25);
+    text-align: center;
+}
+
+.activity {
+    background-color: rgb(250, 250, 250);
+    border: 5px; border: solid; color: rgb(61, 195, 75);
+    padding: 5px;
+    margin: 15px;
+    border-radius: 10px;
+}
+
+.activity h3 {
+    color: rgb(4, 100, 42);
+}
+
+.activity p {
+    color: rgb(4, 94, 9);
+}
+
+.contact {
+    background-color: rgb(188, 219, 188);
+    color: rgb(2, 92, 10);
+    padding: 5px;
+    margin-top: 40px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+button {
+    background-color: rgb(235, 146, 4);
+    color: rgb(254, 250, 251);
+    border: 10px solid rgb(235, 146, 4);
+    padding: 2px;
+    font-size: 8px;
+    border-radius: 20px;
+}
+
+footer {
+    background-color: rgb(3, 92, 4);
+    color: rgb(254, 252, 252);
+    text-align: center;
+    padding: 2px;
+    margin-top: 50px;
+}
