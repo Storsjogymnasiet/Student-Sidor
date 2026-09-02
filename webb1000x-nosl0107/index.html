@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Min Webbshop — Sälj online</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Min shop</h1>
+    
+      <button id="cart-toggle" class="cart-button">Kundvagn (<span id="cart-count">0</span>)</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2>Sälj det du älskar — börja tjäna pengar idag</h2>
+      <p>Här är en enkel webbplats där besökare kan lägga varor i kundvagnen och betala. Byt ut betallänkarna mot dina egna (PayPal.me, Stripe Checkout eller annan tjänst).</p>
+    </section>
+
+    <section class="products" id="products">
+      <!-- Produkter renderas här -->
+      <article class="product" data-id="1">
+        <img src="https://via.placeholder.com/400x250?text=Produkt+1" alt="Produkt 1" />
+        <h3>Produkt 1</h3>
+        <p class="price">99 kr</p>
+        <p>En populär vara av hög kvalitet.</p>
+        <div class="actions">
+          <button class="add-to-cart" data-id="1">Lägg i kundvagn</button>
+            <!-- PayPal.me -->
+            <a class="buy-paypal" href="https://www.paypal.me/NourSlibi/99" target="_blank" rel="noopener">Köp via PayPal</a>
+            <!-- Revolut (användarnamn: n_slibi) -->
+            <a class="buy-revolut" href="https://revolut.me/n_slibi/99" target="_blank" rel="noopener">Köp via Revolut</a>
+          </div>
+      </article>
+
+      <article class="product" data-id="2">
+        <img src="https://via.placeholder.com/400x250?text=Produkt+2" alt="Produkt 2" />
+        <h3>Produkt 2</h3>
+        <p class="price">149 kr</p>
+        <p>Perfekt som present eller till dig själv.</p>
+        <div class="actions">
+          <button class="add-to-cart" data-id="2">Lägg i kundvagn</button>
+          <!-- PayPal.me -->
+          <a class="buy-paypal" href="https://www.paypal.me/NourSlibi/149" target="_blank" rel="noopener">Köp via PayPal</a>
+          <!-- Revolut (användarnamn: n_slibi) -->
+          <a class="buy-revolut" href="https://revolut.me/n_slibi/149" target="_blank" rel="noopener">Köp via Revolut</a>
+        </div>
+      </article>
+
+      <article class="product" data-id="3">
+        <img src="https://via.placeholder.com/400x250?text=Produkt+3" alt="Produkt 3" />
+        <h3>Produkt 3 (digital)</h3>
+        <p class="price">49 kr</p>
+        <p>En digital nedladdning — levereras via e-post efter betalning.</p>
+        <div class="actions">
+          <button class="add-to-cart" data-id="3">Lägg i kundvagn</button>
+          <!-- PayPal.me -->
+          <a class="buy-paypal" href="https://www.paypal.me/NourSlibi/49" target="_blank" rel="noopener">Köp via PayPal</a>
+          <!-- Revolut (användarnamn: n_slibi) -->
+          <a class="buy-revolut" href="https://revolut.me/n_slibi/49" target="_blank" rel="noopener">Köp via Revolut</a>
+        </div>
+      </article>
+    </section>
+
+    <aside id="cart" class="cart hidden">
+      <h3>Kundvagn</h3>
+      <ul id="cart-items"></ul>
+      <div class="cart-total">Totalt: <strong id="cart-total">0 kr</strong></div>
+      <div class="cart-actions">
+        <button id="checkout-mail">Skicka beställning via e-post</button>
+        <button id="clear-cart" class="secondary">Rensa</button>
+      </div>
+      <p class="notes">Tips: Byt ut PayPal-länkarna i produktkortet mot dina egna PayPal.me-länkar eller anslut Stripe/annan betallösning för riktig betalning.</p>
+    </aside>
+
+  </main>
+
+  <footer class="site-footer container">
+    <p>Byt ut e-postadressen orders@example.com i koden till din egen för att få beställningar via e-post eller anslut en riktig betalningsgateway.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
