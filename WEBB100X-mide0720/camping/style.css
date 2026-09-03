@@ -9,7 +9,9 @@
     --gray: #6C6F6A;
     --fullwhite: #FFFFFF;
     --border-gray: #D5D0C3;
+
     --border-radius: 7px;
+    --transition-speed: 0.3s;
 }
 
 html, body {
@@ -43,6 +45,10 @@ nav a {
     color: var(--lightgray);
     margin: 0px 10px;
     text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
 }
 
 main {
@@ -110,6 +116,14 @@ main {
     color: var(--green);
 }
 
+.hero, .activity, .contact {
+    transition: box-shadow var(--transition-speed);
+}
+
+.hero:hover, .activity:hover, .contact:hover {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 button {
     background-color: var(--orange);
     color: var(--fg-white);
@@ -117,6 +131,18 @@ button {
     border: none;
     border-radius: var(--border-radius);
     font-size: 15px;
+    transition: filter var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+button:hover {
+    filter: brightness(110%);
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:active {
+    filter: brightness(90%);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 footer {
