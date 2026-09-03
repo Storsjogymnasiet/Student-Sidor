@@ -1,0 +1,103 @@
+body {
+    background-color: #F4F1E8;
+    color: black;
+    font-family: "Comic Sans MS", cursive;
+    margin: 100px;
+}
+
+header {
+    background-color: #2F5D3A;
+    color: #DBE1DD;
+    text-align: left;
+    padding: 5px;
+}
+
+header h1 {
+    font-size: 20px;
+}
+
+nav {
+    background-color: #24492D;
+    text-align: right;
+    padding: 10px;
+}
+
+nav a {
+    color: #DBE1DD;
+    font-size: 10px;
+    margin: 30px;
+}
+
+main {
+    width: 500px;
+    margin: 50px auto;
+}
+
+.hero {
+    background-color: white;
+    padding: 30%;
+    text-align: left;
+}
+
+.hero img {
+    width: 500px;
+    border: 15px solid white;
+}
+
+.hero h2 {
+    color: green;
+    font-size: 14px;
+}
+
+.hero p {
+    font-size: 8px;
+}
+
+.activities {
+    background-color: transparent green;
+    padding: 5px;
+    margin-top: 100px;
+}
+
+.activities h2 {
+    color: green;
+}
+
+.activity {
+    background-color: white;
+    border: 10px dashed white;
+    padding: 3px;
+    margin: 50px;
+}
+
+.activity h3 {
+    color: green;
+}
+
+.activity p {
+    color: black;
+}
+
+.contact {
+    background-color:  #DFE8D8;
+    color: black;
+    padding: 5px;
+    margin-top: 100px;
+    text-align: right;
+}
+
+button {
+    background-color:orange;
+    color: white;
+    border: 10px solid #DFE8D8;
+    padding: 2px;
+    font-size: 20px;
+}
+
+footer {
+    background-color: green;
+    color: white;
+    text-align: left;
+    padding: 2px;
+    margin-top: 100px;
+}
