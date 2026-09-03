@@ -1,0 +1,103 @@
+body {
+    background-color: rgb(245, 232, 245);
+    color: #555514;
+    font-family: "Comic Sans MS", cursive;
+    margin: 0px;
+}
+
+header {
+    background-color: rgb(100, 120, 2);
+    color: rgb(251, 251, 251);
+    text-align: center;
+    padding: 5px;
+}
+
+header h1 {
+    font-size: 20px;
+}
+
+nav {
+    background-color: rgb(29, 90, 12);
+    text-align: center;
+    padding: 30px;
+}
+
+nav a {
+    color: rgb(235, 241, 235);
+    font-size: 10px;
+    margin: 0%;
+}
+
+main {
+    width: 400px;
+    margin: 50px auto;
+}
+
+.hero {
+    background-color: rgb(179, 169, 169);
+    padding: 2px;
+    text-align: center;
+}
+
+.hero img {
+    width: 90%;
+    border: 0px solid rgb(0, 0, 1);
+}
+
+.hero h2 {
+    color: darkgreen;
+    font-size: 10px;
+}
+
+.hero p {
+    font-size: 8px;
+}
+
+.activities {
+    padding: 5px;
+    margin-top: 50px;
+}
+
+.activities h2 {
+    color: darkgreen;
+text-align: center;
+}
+
+.activity {
+    background-color: white;
+text-align: center;
+    padding: 3px;
+    margin: 50px;
+}
+
+.activity h3 {
+    color: darkgreen
+}
+
+.activity p {
+    color: darkgreen
+}
+
+.contact {
+    background-color: lime;
+    color: purple;
+    padding: 5px;
+    margin-top: 100px;
+    text-align: center;
+}
+
+button {
+    background-color: rgb(255, 153, 0);
+    color: darkgreen;
+    border: 10px solid rgb(255, 0, 0);
+    padding: 2px;
+    font-size: 8px;
+}
+
+footer {
+    background-color: darkgreen;
+    color: red;
+    text-align: center;
+    padding: 2px;
+    margin-top: 100px;
+}
