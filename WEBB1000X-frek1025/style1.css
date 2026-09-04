@@ -1,12 +1,13 @@
 body {
-    background-color: #4A412A;
-    color: #2b2619;
+    background-color: n/a;
+    color: n/a;
 
     text-align: center;
 }
 .spin-text {
     display: inline-block; 
     animation: spin 2s linear infinite; 
+    height: 150px;
 }
 
 @keyframes spin {
