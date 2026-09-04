@@ -19,7 +19,7 @@ header h1 {
 nav {
     background-color: rgb(11, 75, 11);
     text-align: center;
-    padding: 100%;
+    padding: 30px;
 }
 
 nav a {
