@@ -1,0 +1,40 @@
+body {
+    background-color: aquamarine;
+    color: chocolate;
+
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    text-shadow:-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000 ;
+
+}
+
+a {
+    color: burlywood;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    
+
+
+}
+
+p {
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-color: blue;
+
+}
+h1 { 
+
+    background-color: greenyellow;
+    padding-bottom: 400px;
+    padding-top: 100px;
+    width: 550px;
+    padding: 16px;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+
+.joke-text {
+    color: pink;
+}
