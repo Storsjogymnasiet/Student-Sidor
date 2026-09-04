@@ -8,9 +8,15 @@ body{
     
 
 }
+h1{
+    color: blue;
+    padding: 10px;
+}
 a {
     color: crimson;
 
 }
 
-
+.vid-text {
+    color: darksalmon;
+}
