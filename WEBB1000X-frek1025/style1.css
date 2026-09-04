@@ -18,3 +18,49 @@ body {
         transform: rotate(360deg); 
     }
 }
+
+
+.bounce-area {
+    position: relative;
+    width: 400px;
+    height: 200px;
+    margin: 50px auto;
+    border: 2px solid #333;
+    overflow: hidden;
+    background: #f2f2f2;
+}
+
+.dvd {
+    position: absolute;
+    animation: bounce 12s linear infinite alternate;
+    font: bold 28px Arial, sans-serif;
+    color: #1677ff;
+    white-space: nowrap;
+}
+
+@keyframes bounce {
+    0% {
+    left: 0;
+    top: 0;
+    }
+
+    25% {
+    left: calc(100% - 130px);
+    top: 0;
+    }
+
+    50% {
+    left: calc(100% - 130px);
+    top: calc(100% - 40px);
+    }
+
+    75% {
+    left: 0;
+    top: calc(100% - 40px);
+    }
+
+    100% {
+    left: 0;
+    top: 0;
+    }
+}
