@@ -1,0 +1,115 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F4F1E8;
+    color: rgb(0, 0, 0);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+}
+
+header {
+    background-color: #2F5D3A;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 5px;
+}
+
+header h1 {
+    font-size: 32px;
+}
+
+nav {
+    background-color: #24492D;
+    text-align: center;
+    padding: 5px;
+}
+
+nav a {
+    color: rgb(255, 255, 255);
+    font-size: 8px;
+    margin: 15px;
+}
+
+main {
+    width: 50%;
+    margin: 50px auto;
+}
+
+.hero {
+    width: 100%;
+    padding: 15px 0;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    border-radius: 10px;
+}
+
+.hero img {
+    width: 90%;
+    border: 15px;
+    border-radius: 5px;
+}
+
+.hero h2 {
+    color: #2F5D3A;
+    font-size: 28px;
+}
+
+.hero p {
+    font-size: 16px;
+}
+
+.activities {
+    background-color: #F4F1E8;
+    padding: 10px;
+    margin-top: 70px;
+}
+
+.activities h2 {
+    color: #2F5D3A;
+    text-align: center;
+}
+
+.activity {
+    background-color: white;
+    padding: 10px;
+    margin: 50px 0;
+    border-radius: 5px;
+    border: 1px solid #D5D0C3;
+    text-align: center;
+}
+
+.activity h3 {
+    color: #2F5D3A;
+}
+
+.activity p {
+    color: #000000;
+}
+
+.contact {
+    background-color: #DFE8D8;
+    color: #2F5D3A;
+    padding: 15px;
+    margin-top: 100px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+button {
+    background-color: #D97732;
+    color: white;
+    border: 10px solid #D97732;
+    padding: 2px;
+    font-size: 12px;
+    border-radius: 10px;
+}
+
+footer {
+    background-color: #2f5d3a;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 2px;
+    margin-top: 100px;
+}
