@@ -1,14 +1,15 @@
 body {
-    background-color: purple;
-    color: yellow;
-    font-family: "Comic Sans MS", cursive;
-    margin: 100px;
+    background-color: 
+#f4f1e8;
+    color: white;
+    font-family: "Arial"
+
 }
 
 header {
-    background-color: black;
-    color: pink;
-    text-align: left;
+    background-color: #2f5d3a;
+    color: #ffffff;
+    text-align: center;
     padding: 5px;
 }
 
@@ -17,35 +18,35 @@ header h1 {
 }
 
 nav {
-    background-color: orange;
-    text-align: right;
+    background-color: #24492d;
+    text-align: center;
     padding: 30px;
 }
 
 nav a {
-    color: lime;
+    color: #ffffff;
     font-size: 10px;
     margin: 30px;
 }
 
 main {
-    width: 300px;
+    width: 50%;
     margin: 50px auto;
 }
 
 .hero {
-    background-color: red;
+    background-color: white;
     padding: 2px;
-    text-align: left;
+    text-align: center;
 }
 
 .hero img {
     width: 200px;
-    border: 15px solid blue;
+    border: 15px solid white;
 }
 
 .hero h2 {
-    color: cyan;
+    color: #2f5d3a;
     font-size: 14px;
 }
 
@@ -54,50 +55,55 @@ main {
 }
 
 .activities {
-    background-color: black;
+    background-color: #f4f1e8;
     padding: 5px;
     margin-top: 100px;
 }
 
 .activities h2 {
-    color: yellow;
+text-align: center;
+color: #2f5d3a;
 }
 
+
+
 .activity {
-    background-color: pink;
-    border: 10px dashed green;
+    background-color: #fefefe;
+    border: 10px;
     padding: 3px;
     margin: 50px;
 }
 
 .activity h3 {
-    color: blue;
+    color: #2f5d3a;
+ text-align: center;
 }
 
 .activity p {
-    color: red;
+    color: black;
+text-align: center;
 }
 
 .contact {
-    background-color: lime;
-    color: purple;
+    background-color: #dee7d7;
+    color: #2f5d3a;
     padding: 5px;
     margin-top: 100px;
-    text-align: right;
+    text-align: center;
 }
 
 button {
-    background-color: yellow;
-    color: pink;
-    border: 10px solid black;
+    background-color: orange;
+    color: white;
+    border: 10px;
     padding: 2px;
     font-size: 8px;
 }
 
 footer {
-    background-color: white;
-    color: red;
-    text-align: left;
+    background-color: #24492d;
+    color: white;
+    text-align: center;
     padding: 2px;
     margin-top: 100px;
 }
