@@ -1,0 +1,17 @@
+.spiral-image {
+    width:30%;
+}
+body{
+    text-align: center;
+    background-color: rgb(100, 36, 36);
+}
+.mainframe{
+    background-color: burlywood;
+    margin: 0 auto;
+    width:max-content;
+    border-radius: 10px;
+}
+
+.linkys{
+    color: darkgoldenrod;
+}
