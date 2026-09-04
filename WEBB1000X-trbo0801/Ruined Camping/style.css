@@ -1,14 +1,14 @@
 body {
-    background-color: purple;
+    background-color: antiquewhite;
     color: yellow;
     font-family: "Comic Sans MS", cursive;
     margin: 100px;
 }
 
 header {
-    background-color: black;
-    color: pink;
-    text-align: left;
+    background-color:rgb(94, 122, 47);
+    color: whitesmoke;
+    text-align: center;
     padding: 5px;
 }
 
@@ -17,13 +17,13 @@ header h1 {
 }
 
 nav {
-    background-color: orange;
-    text-align: right;
-    padding: 30px;
+    background-color: rgb(11, 75, 11);
+    text-align: center;
+    padding: 10px;
 }
 
 nav a {
-    color: lime;
+    color: whitesmoke;
     font-size: 10px;
     margin: 30px;
 }
