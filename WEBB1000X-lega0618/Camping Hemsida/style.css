@@ -1,0 +1,125 @@
+body {
+    background-color: beige;
+    color: rgb(0, 0, 0);
+    font-family: "arial", cursive;
+    margin: 0px;
+}
+
+header {
+    background-color: rgb(39, 93, 18);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 1%;
+    width: 100%;
+
+
+}
+
+header h1 {
+    font-size: 30px;
+}
+
+nav {
+    background-color: rgb(9, 113, 52);
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+}
+
+nav a {
+    color: white;
+    font-size: 10px;
+    margin: 2%;
+}
+
+main {
+    width: 550px;
+    margin: 35px auto;
+}
+
+.hero {
+    background-color: rgb(255, 255, 255);
+    padding: 2px;
+    text-align: left;
+    border-radius: 5px;
+}
+
+.hero img {
+    width: 500px;
+    border: 15px solid rgb(255, 255, 255);
+    border-radius: 20px;
+}
+
+.hero h2 {
+    color: black;
+    font-size: 16px;
+    text-align: center;
+    padding: 1px;
+   
+}
+
+.hero p {
+    font-size: 11px;
+    text-align: center;
+}
+
+.activities {
+    background-color: beige;
+    padding: 5px;
+    margin-top: 25px;
+}
+
+.activities h2 {
+    color: rgb(39, 128, 54);
+    text-align: center;
+
+}
+
+.activity {
+    background-color: white;
+    border: 1px solid green;
+    border-radius: 10px;
+    margin: 10px;
+    width: 100%;
+}
+
+.activity h3 {
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+.activity p {
+    color: black;
+    text-align: center;
+}
+
+.contact {
+    background-color: rgba(43, 108, 43, 0.498);
+    color: rgb(44, 107, 32);
+    padding: 4px;
+    border-radius: 5px;
+    margin-top: 10%;
+    text-align: center;
+}
+
+button {
+    background-color: orange;
+    color: rgb(255, 255, 255);
+    border-radius: 15px  orange;
+
+    border: none;
+    padding: 5px;
+    border-radius: 6px
+    
+    
+;
+}
+
+footer {
+    background-color: rgb(52, 120, 25);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 1%;
+    font-size: 10px;
+}
