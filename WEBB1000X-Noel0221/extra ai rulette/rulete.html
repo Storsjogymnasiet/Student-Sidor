@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Säker Roulette</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .game-container {
+            background-color: #2a2a2a;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            text-align: center;
+            max-width: 450px;
+            width: 100%;
+        }
+
+        .score-board {
+            font-size: 24px;
+            margin: 15px 0;
+            font-weight: bold;
+            background: #333;
+            padding: 10px;
+            border-radius: 8px;
+            color: #ffd700;
+        }
+
+        /* --- Hjul-grafik --- */
+        .wheel-wrapper {
+            position: relative;
+            width: 240px;
+            height: 240px;
+            margin: 20px auto;
+        }
+
+        .pointer {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-top: 25px solid #ffd700;
+            z-index: 10;
+        }
+
+        .wheel {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 6px solid #333;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            background: conic-gradient(
+                #d32f2f 0% 35%,       /* Röd: 35% */
+                #111111 35% 70%,     /* Svart: 35% */
+                #b71c1c 70% 82.5%,   /* Special Röd: 12.5% */
+                #000000 82.5% 95%,   /* Special Svart: 12.5% */
+                #2e7d32 95% 100%     /* Grön: 5% */
+            );
+            transform: rotate(0deg);
+            transition: transform 4s cubic-bezier(0.1, 0.8, 0.1, 1);
+        }
+
+        .wheel-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background: #222;
+            border-radius: 50%;
+            border: 3px solid #ffd700;
+        }
+
+        .result-display {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 15px 0;
+            height: 25px;
+            color: #fff;
+        }
+
+        .error-display {
+            color: #ff4d4d;
+            font-weight: bold;
+            height: 20px;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        /* --- Spelplan --- */
+        .betting-board {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .green-bet {
+            grid-column: span 2;
+        }
+
+        .bet-box {
+            background: #333;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #555;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .bet-box label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 13px;
+        }
+
+        .bet-box input {
+            width: 70px;
+            padding: 5px;
+            border-radius: 4px;
+            border: none;
+            text-align: center;
+            font-size: 15px;
+        }
+
+        .lbl-red { color: #ff4d4d; }
+        .lbl-black { color: #88b5ff; } 
+        .lbl-s-red { color: #ff1a1a; font-style: italic; }
+        .lbl-s-black { color: #4d88ff; font-style: italic; }
+        .lbl-green { color: #2ecc71; }
+
+        .spin-btn {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 15px;
+            width: 100%;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        .spin-btn:disabled {
+            background-color: #555;
+            cursor: not-allowed;
+        }
+
+        .log {
+            margin-top: 15px;
+            max-height: 90px;
+            overflow-y: auto;
+            background: #111;
+            padding: 8px;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 12px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+<div class="game-container">
+    <h2 style="margin:0; color:#4caf50;">Custom Roulette</h2>
+    
+    <div class="score-board">
+        Poäng: <span id="points-display">100</span>
+    </div>
+
+    <div class="wheel-wrapper">
+        <div class="pointer"></div>
+        <div id="roulette-wheel" class="wheel"></div>
+        <div class="wheel-center"></div>
+    </div>
+
+    <div id="result-text" class="result-display">Välj insatser och klicka nedan</div>
+    <div id="error-text" class="error-display"></div>
+
+    <div class="betting-board">
+        <div class="bet-box">
+            <label class="lbl-red">Röd (2x)</label>
+            <input type="number" id="bet-red" min="0" value="0">
+        </div>
+        <div class="bet-box">
+            <label class="lbl-black">Svart (2x)</label>
+            <input type="number" id="bet-black" min="0" value="0">
+        </div>
+        <div class="bet-box">
+            <label class="lbl-s-red">Special Röd (4x)</label>
+            <input type="number" id="bet-special_red" min="0" value="0">
+        </div>
+        <div class="bet-box">
+            <label class="lbl-s-black">Special Svart (4x)</label>
+            <input type="number" id="bet-special_black" min="0" value="0">
+        </div>
+        <div class="bet-box green-bet">
+            <label class="lbl-green">Grön (7x)</label>
+            <input type="number" id="bet-green" min="0" value="0">
+        </div>
+    </div>
+
+    <!-- Hårdkodad onclick för att säkerställa att funktionen körs direkt -->
+    <button id="spin-button" class="spin-btn" onclick="playRoulette()">SNURRA</button>
+
+    <div class="log" id="game-log"></div>
+</div>
+
+<script>
+    let points = 100;
+    let currentRotation = 0;
+
+    function playRoulette() {
+        const spinButton = document.getElementById('spin-button');
+        const wheel = document.getElementById('roulette-wheel');
+        const resultText = document.getElementById('result-text');
+        const errorText = document.getElementById('error-text');
+        const log = document.getElementById('game-log');
+        
+        // Töm gamla felmeddelanden
+        errorText.innerText = "";
+
+        // Hämta värden säkert
+        const bets = {
+            red: Math.max(0, parseInt(document.getElementById('bet-red').value) || 0),
+            black: Math.max(0, parseInt(document.getElementById('bet-black').value) || 0),
+            special_red: Math.max(0, parseInt(document.getElementById('bet-special_red').value) || 0),
+            special_black: Math.max(0, parseInt(document.getElementById('bet-special_black').value) || 0),
+            green: Math.max(0, parseInt(document.getElementById('bet-green').value) || 0)
+        };
+
+        const totalBet = bets.red + bets.black + bets.special_red + bets.special_black + bets.green;
+
+        // Validering utan stängbara fönster
+        if (totalBet <= 0) {
+            errorText.innerText = "Fel: Du måste satsa minst 1 poäng!";
+            return;
+        }
+        if (totalBet > points) {
+            errorText.innerText = "Fel: Du har inte tillräckligt med poäng!";
+            return;
+        }
+
+        // Starta snurret
+        spinButton.disabled = true;
+        points -= totalBet;
+        document.getElementById('points-display').innerText = points;
+        resultText.innerText = "Hjulet snurrar...";
+
+        // Sannolikhetsfördelning (35% Röd, 35% Svart, 25% Special, 5% Grön)
+        const rand = Math.floor(Math.random() * 100);
+        let winningType = '';
+        let winningName = '';
+        let multiplier = 0;
+        let targetAngle = 0; 
+
+        if (rand < 35) { 
+            winningType = 'red';
+            winningName = 'Röd';
+            multiplier = 2;
+            targetAngle = 297; 
+        } else if (rand < 70) { 
+            winningType = 'black';
+            winningName = 'Svart';
+            multiplier = 2;
+            targetAngle = 171; 
+        } else if (rand < 82.5) { 
+            winningType = 'special_red';
+            winningName = 'Special Röd';
+            multiplier = 4;
+            targetAngle = 85;  
+        } else if (rand < 95) { 
+            winningType = 'special_black';
+            winningName = 'Special Svart';
+            multiplier = 4;
+            targetAngle = 40;  
+        } else { 
+            winningType = 'green';
+            winningName = 'Grön';
+            multiplier = 7;
+            targetAngle = 4;   
+        }
+
+        // Snurra minst 5 varv + positionera till rätt färg under pilen
+        const extraRotations = 1800 + (360 - targetAngle);
+        currentRotation += extraRotations;
+        wheel.style.transform = `rotate(${currentRotation}deg)`;
+
+        // Vänta på att animationen (4 sekunder) blir klar
+        setTimeout(() => {
+            let totalWin = 0;
+            if (bets[winningType] > 0) {
+                totalWin = bets[winningType] * multiplier;
+            }
+
+            points += totalWin;
+            document.getElementById('points-display').innerText = points;
+            resultText.innerText = `Resultat: ${winningName}!`;
+
+            // Logga historik
+            const netChange = totalWin - totalBet;
+            const logItem = document.createElement('div');
+            if (netChange > 0) {
