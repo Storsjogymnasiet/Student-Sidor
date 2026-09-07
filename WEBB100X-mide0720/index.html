@@ -1,17 +1,85 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="sv">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="sv" data-theme="dark">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css" />
-        <link rel="icon" href="icon.png" />
+        <link rel="shortcut icon" type="image/png" href="icon.png" />
         <title>WEBB100X-mide0720</title>
+        <style type="text/css">
+            html, body {
+                margin: 0;
+                padding: 20px;
+            }
+            #horse-container {
+                font-family: monospace;
+                white-space: pre;
+                font-size: 14px;
+                line-height: 1.2;
+                width: 46ch; 
+                margin: 0 auto;
+            }
+            .segment {
+                display: block;
+            }
+            #sentinel {
+                height: 1px;
+            }
+            ::-webkit-scrollbar, ::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb {
+              width: 0px;
+              height: 0px;
+              border-radius: 0px;
+              background: transparent;
+            }
+        </style>
     </head>
     <body>
         <div class="center">
             <h1>Välkommen till WEBB100X-mide0720</h1>
-            <p>Hej, Världen!</p>
-            <img src="icon.png" alt="en bild" width="20%">
         </div>
+        <div id="horse-container">
+            <div id="leg-zone"></div>
+            <div id="sentinel"></div>
+        </div>
+        <script type="text/javascript">
+            const legZone=document.getElementById('leg-zone');
+            const sentinel=document.getElementById('sentinel');
+            const body=document.createElement('div');
+            body.className='segment';
+            body.innerHTML=`   ,
+_,,)\\.~,,._
+(()\`  \`\`)\\))),,_
+ |     \\ ''((\)))),,_          ____
+ |6\`   |   ''((\())) "-.____.-"    \`-.-,
+ |    .'\\    ''))))'                    \\)))
+ |   |   \`.     ''                     ((((
+ \\, _)     \\/                          |))))
+  \`'        |                          (((((
+            \\                  |       ))))))
+             \`|    |           ,\\     /((((((
+              |   / \`-.______.&lt;  \\   |  )))))
+              |   |  /         \`. \\  \\  ((((
+              |  / \\ |           \`.\\  | (((
+              \\  | | |             )| |  ))
+               | | | |             || |  `;
+            legZone.appendChild(body);
+            function addLegs(amount=30){
+                const fragment=document.createDocumentFragment();
+                for(let i=0;i<amount;i++){
+                    const div=document.createElement('div');
+                    div.className='segment';
+                    div.textContent="               | | | |             || |  ";
+                    fragment.appendChild(div);
+                }
+                legZone.appendChild(fragment);
+            }
+            addLegs(Math.ceil(window.innerHeight/16.8)+20);
+            const observer=new IntersectionObserver((entries)=>{
+                if(entries[0].isIntersecting){
+                    addLegs(40);
+                }
+            },{rootMargin:'400px'});
+            observer.observe(sentinel);
+        </script>
     </body>
 </html>
