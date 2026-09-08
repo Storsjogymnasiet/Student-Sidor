@@ -11,7 +11,7 @@
                 margin: 0;
                 padding: 20px;
             }
-            #horse-container {
+            #cat-container {
                 font-family: monospace;
                 white-space: pre;
                 font-size: 14px;
@@ -19,10 +19,10 @@
                 width: 46ch; 
                 margin: 0 auto;
             }
-            .segment {
+            .cat-segment {
                 display: block;
             }
-            #sentinel {
+            #cat-sentinel {
                 height: 1px;
             }
             ::-webkit-scrollbar, ::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb {
@@ -37,15 +37,15 @@
         <div class="center">
             <h1>Välkommen till WEBB100X-mide0720</h1>
         </div>
-        <div id="horse-container">
-            <div id="leg-zone"></div>
-            <div id="sentinel"></div>
+        <div id="cat-container">
+            <div id="cat-leg-zone"></div>
+            <div id="cat-sentinel"></div>
         </div>
         <script type="text/javascript">
-            const legZone=document.getElementById('leg-zone');
-            const sentinel=document.getElementById('sentinel');
+            const legZone=document.getElementById('cat-leg-zone');
+            const sentinel=document.getElementById('cat-sentinel');
             const body=document.createElement('div');
-            body.className='segment';
+            body.className='cat-segment';
             body.innerHTML=`                      _
             __       / |
             \\ "-..--'_4|_
@@ -68,7 +68,7 @@
                 const fragment=document.createDocumentFragment();
                 for(let i=0;i<amount;i++){
                     const div=document.createElement('div');
-                    div.className='segment';
+                    div.className='cat-segment';
                     div.textContent="              |    \`\`\`     |";
                     fragment.appendChild(div);
                 }
