@@ -1,0 +1,27 @@
+body {
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+h1 {
+    color: brown;
+    font-size: 30px;
+}
+main {
+    font-size: 12px;
+}
+
+.images img {
+    width: 8%;
+}
+.links a {
+    color: brown;
+    font-size: 13px;
+
+}
+footer img {
+    width: 10%;
+}
+footer a {
+    color: brown
+}
