@@ -1,0 +1,25 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    width: 60%;
+    margin: 0 auto;
+
+    background-color: white;
+}
+
+header img {
+    width: 100%;
+    padding-top: 40px;
+}
+
+footer {
+    font-size: 10px;
+}
+
+h2 {
+    color: red;
+}
+
+a {
+    color: red;
+}
