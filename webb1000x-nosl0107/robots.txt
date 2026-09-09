@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://storsjogymnasiet.github.io/Student-Sidor/webb1000x-nosl0107/sitemap.xml
