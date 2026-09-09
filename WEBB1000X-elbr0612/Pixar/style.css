@@ -1,0 +1,49 @@
+body {
+    background-color: white;
+    margin: 0%;
+}
+
+header img {
+    width: 100%;
+
+}
+
+
+
+
+header h1 {
+    color: red;
+    text-align: center;
+    padding: 10px;
+}
+
+header h4 {
+    color: black;
+    text-align: center;
+
+}
+
+nav {
+    text-align: center;
+    padding: 1px;
+}
+
+a {
+    color: red;
+}
+
+p {
+    text-align: center;
+
+}
+
+main {
+    text-align: center;
+}
+
+footer img{ text-align: center;
+    width: 100%;
+    length: 2%
+
+
+}
