@@ -1,0 +1,16 @@
+body {
+    text-align: center;
+font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+    font-size: 50px;
+    
+}
+p {
+    color: rgb(201, 6, 3);
+  font-size: 24px;
+}
+h4 {
+    font-size: 18px;
+}
+.images img {
+    width: 7%;
+}
