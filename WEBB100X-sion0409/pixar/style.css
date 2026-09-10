@@ -1,42 +1,85 @@
 body {
-    background-color: rgb(255, 255, 255); 
-    color: rgb(0, 0, 0);
-
+    background-color: white;
+    color: black;
+    font-family: "Times New Roman", Times, serif;
     text-align: center;
-    padding: 0px;
+    margin: 0;
 }
 
-downdih h1 {
-
-    color: rgb(171, 16, 16);
+.top {
+    width: 100%;
     text-align: center;
-    padding: 20px;
-    
 }
 
-downdih p {
-
-    color: rgb(0, 0, 0);
-    text-align: center;    
-    font-size: 150%;
+.pixar-logo {
+    width: 430px;
+    height: auto;
+    margin-top: 5px;
 }
 
-downdih p2 {
-
-    color: rgb(0, 0, 0);
-    text-align: center;
-    font-size: 110%;
+hr {
+    width: 98%;
+    border: none;
+    border-top: 1px solid #999;
 }
 
-downdih p3 {
 
-    color: rgb(0, 0, 0);
-    text-align: center;    
-    font-size: 110%;
+.welcome {
+    margin-top: 48px;
 }
 
-CharSelect {
+h1 {
+    color: red;
+    font-size: 30px;
+    margin-bottom: 22px;
+    font-variant: small-caps;
+}
 
-    text-align: center;    
-    margin: auto;
+p {
+    font-size: 15px;
+    margin: 4px;
+}
+
+.first-text {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+
+.characters {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.character {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.character img {
+    width: 75px;
+    height: 115px;
+    object-fit: contain;
+}
+
+.character a {
+    color: red;
+    font-size: 15px;
+}
+
+.bottom {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.bottom hr {
+    margin-bottom: 10px;
+}
+
+.bottom a {
+    color: red;
 }
