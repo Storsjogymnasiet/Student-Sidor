@@ -1,0 +1,105 @@
+body {
+    background-color: rgb(241, 241, 222);
+    color: rgb(247, 247, 246);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0px;
+}
+
+header {
+    background-color: rgba(29, 76, 30, 0.863);
+    color: rgb(247, 246, 246);
+    text-align: center;
+    padding: 5px;
+}
+
+header h1 {
+    font-size: 20px;
+}
+
+nav {
+    background-color: rgba(30, 61, 26, 0.895);
+    text-align: center;
+    padding: 3px;
+}
+
+nav a {
+    color: rgb(247, 248, 247);
+    font-size: 10px;
+    margin: 50px;
+}
+
+main {
+    width: 50%;
+    margin: 15px auto;
+}
+
+.hero {
+    background-color: rgb(247, 246, 244);
+    padding: 10px;
+    text-align: center;
+}
+
+.hero img {
+    width: 325px;
+    border: 0px solid rgb(236, 236, 240);
+}
+
+.hero h2 {
+    color: rgb(56, 107, 76);
+    font-size: 14px;
+}
+
+.hero p {
+    color: black;
+    font-size: 7px;
+    
+}
+
+
+
+.activities h2 {
+    color: rgb(43, 102, 49);
+    text-align: center;
+}
+
+.activity {
+    background-color: rgb(248, 244, 244);
+    border: 1px; color: rgb(170, 170, 170);
+    padding: 7px;
+    margin: 10px;
+    text-align: center;
+
+    
+}
+
+.activity h3 {
+    color: rgba(56, 111, 56, 0.872);
+}
+
+.activity p {
+    color: rgb(0, 0, 0);
+}
+
+.contact {
+    background-color: rgb(214, 239, 214);
+    color: rgba(54, 110, 69, 0.913);
+    padding: 5px;
+    margin-top: 100px;
+    text-align: center;
+}
+
+button {
+    background-color: rgb(254, 144, 0);
+    color: rgb(254, 254, 254);
+    border: 10px solid rgb(254, 144, 0);
+    padding: 2px;
+    font-size: 8px;
+}
+
+footer {
+    background-color: rgba(34, 65, 22, 0.858);
+    color: rgb(247, 244, 244);
+    text-align: left;
+    padding: 2px;
+    margin-top: 100px;
+}
