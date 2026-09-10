@@ -1,0 +1,42 @@
+body {
+    background-color: rgb(255, 255, 255); 
+    color: rgb(0, 0, 0);
+
+    text-align: center;
+    padding: 0px;
+}
+
+downdih h1 {
+
+    color: rgb(171, 16, 16);
+    text-align: center;
+    padding: 20px;
+    
+}
+
+downdih p {
+
+    color: rgb(0, 0, 0);
+    text-align: center;    
+    font-size: 150%;
+}
+
+downdih p2 {
+
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 110%;
+}
+
+downdih p3 {
+
+    color: rgb(0, 0, 0);
+    text-align: center;    
+    font-size: 110%;
+}
+
+CharSelect {
+
+    text-align: center;    
+    margin: auto;
+}
