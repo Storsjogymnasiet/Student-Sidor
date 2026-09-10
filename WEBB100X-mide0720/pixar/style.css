@@ -1,0 +1,84 @@
+:root {
+    --title-font: charlemagne, "times new roman", sans-serif;
+    --font: "times new roman", sans-serif;
+    --link-color: #FF0000;
+}
+@font-face {
+    font-family: charlemagne;
+    src: url('charlemagne.otf');
+}
+html, body{
+    background-color: white;
+    color: black;
+    font-family: var(--font);
+}
+a{
+    color: var(--link-color);
+    text-decoration: underline;
+}
+a:link, a:visited{
+    border-bottom: 1px solid transparent;
+}
+a:hover, a:active{
+    cursor: pointer;
+}
+.center{
+    text-align: center;
+}
+h1{
+    font-size: 7em;
+    font-variant: small-caps;
+}
+h2{
+    font-size: 5em;
+    font-variant: small-caps;
+}
+h3{
+    font-size: 3em;
+    font-variant: small-caps;
+    color: #CC0000;
+}
+h4{
+    font-size: 2em;
+    font-variant: small-caps;
+}
+p{
+    font-size: 1.3em;
+}
+p.hello::first-letter{
+    font-size: 1.35em;
+}
+.title{
+    line-height: 0;
+    font-family: var(--title-font);
+}
+h1.title{
+    letter-spacing: 0.5em;
+    margin: 0;
+    margin-top: 0.5em;
+}
+h4.title{
+    left: 50%;
+    position: absolute;
+    margin: 0;
+    margin-top: 2em;
+}
+hr.title{
+    margin-top:7em;
+}
+.projects{
+    display: inline-block;
+    margin-bottom: 10px;
+    height: fit-content;
+}
+.project{
+    text-align: center;
+    float: left;
+}
+.project img{
+    width: 20em;
+    max-width: 120px;
+}
+.project a{
+    font-size: 1.3em;
+}

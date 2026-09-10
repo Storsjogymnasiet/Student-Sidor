@@ -6,9 +6,25 @@
         <title>Äventyrscampingen</title>
         <link rel="stylesheet" href="style.css">
         <link rel="icon" href="icon.png">
+        <style>
+            .switch {
+                text-align: left;
+                margin: 0;
+                padding: 0;
+                line-height: 0;
+                color: white;
+            }
+            .switch > .disabled {
+                color: darkgray;
+            }
+            .switch > a {
+                color: cornflowerblue;
+            }
+        </style>
     </head>
     <body>
         <header>
+            <p class="switch"><span class="disabled">Före</span> &#8594; <a href="after/">Efter</a></p>
             <h1>Äventyrscampingen</h1>
             <p>Din plats för natur, lugn och äventyr.</p>
         </header>

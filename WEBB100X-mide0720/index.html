@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="sv" data-theme="dark">
+<html xmlns="http://w3.org" lang="sv" data-theme="dark">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,36 +7,55 @@
         <link rel="shortcut icon" type="image/png" href="icon.png" />
         <title>WEBB100X-mide0720</title>
         <style type="text/css">
-            html, body {
+            html,body{
                 margin: 0;
-                padding: 20px;
+                padding: 0;
+                position: relative;
+                min-height: 100vh;
             }
-            #cat-container {
+            main{
+                position: absolute;
+                top: 40px;
+                left: 0;
+                width: 100%;
+                z-index: 10;
+            }
+            #cat-container{
                 font-family: monospace;
                 white-space: pre;
                 font-size: 14px;
                 line-height: 1.2;
                 width: 46ch; 
                 margin: 0 auto;
+                padding-top: 140px;
+                color: #444;
+                position: relative;
+                z-index: 2;
             }
-            .cat-segment {
+            .cat-segment{
                 display: block;
             }
-            #cat-sentinel {
+            #cat-sentinel{
                 height: 1px;
             }
-            ::-webkit-scrollbar, ::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb {
-              width: 0px;
-              height: 0px;
-              border-radius: 0px;
-              background: transparent;
+            ::-webkit-scrollbar, ::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb{
+                width: 0px;
+                height: 0px;
+                background: transparent;
             }
         </style>
     </head>
     <body>
-        <div class="center">
-            <h1>Välkommen till WEBB100X-mide0720</h1>
-        </div>
+        <main>  
+            <h1 class="center">Välkommen till WEBB100X-mide0720</h1>
+            <div class="center-object">
+                <p>Uppgifter:</p>
+                <ul>
+                    <li><a href="camping/">Camping</a></li>
+                    <li><a href="pixar/">Pixar</a></li>
+                </ul>
+            </div>
+        </main>
         <div id="cat-container">
             <div id="cat-leg-zone"></div>
             <div id="cat-sentinel"></div>
