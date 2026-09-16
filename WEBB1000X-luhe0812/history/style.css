@@ -40,3 +40,7 @@ a {
 img {
     border-radius: 20px;
 }
+
+.shadow-effect {
+    box-shadow: 20px 20px 15px rgba(0, 0, 0, 0.3);
+}
