@@ -1,0 +1,42 @@
+body {
+    background-color: rgb(237, 218, 228);
+    font-size: small;
+    text-align: center;
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+main {
+    background-color: rgb(245, 241, 244);
+    border-radius: 20px;
+}
+
+header {
+    color: rgb(39, 0, 139);
+    font-style: oblique;
+    font-size: 27px;
+}
+
+h2 {
+    color: rgb(39, 0, 139);
+    font-style: oblique;
+    text-align: left;
+    padding-left: 5px;
+    font-size: 25px;
+}
+
+p {
+    color: rgb(39, 0, 139);
+    font-style: oblique;
+    font-size: 20px;
+}
+
+a {
+    font-size: 20px;
+    text-align: left;
+    
+}
+
+img {
+    border-radius: 20px;
+}
