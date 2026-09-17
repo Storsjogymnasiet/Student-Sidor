@@ -2,17 +2,30 @@
     --color-bg: light-dark(#f0f0f0,#0f0f0f);
     --color-fg: light-dark(#000,#fff);
     --color-link: #6495ed;
+
     --font: Arial,Helvetica,sans-serif;
+    --font-code: monospace;
+
     --size: max(calc(100vw/1920*5),calc(100vh/1920*10));
     --size-text: 4rem;
 }
 [data-theme="light"]{color-scheme:light;}
 [data-theme="dark"]{color-scheme:dark;}
+
+[data-theme="light"].icon{filter:invert(0);}
+[data-theme="dark"].icon{filter:invert(1);}
+[data-theme="light"].inverted-icon{filter:invert(1);}
+[data-theme="dark"].inverted-icon{filter:invert(0);}
+
 @media(prefers-color-scheme:dark){
     :root:not([data-theme]){color-scheme:dark;}
+    :root:not([data-theme]).icon{filter:invert(1);}
+    :root:not([data-theme]).inverted-icon{filter:invert(0);}
 }
 @media(prefers-color-scheme:light){
     :root:not([data-theme]){color-scheme:light;}
+    :root:not([data-theme]).icon{filter:invert(0);}
+    :root:not([data-theme]).inverted-icon{filter:invert(1);}
 }
 *{
     background: transparent;
