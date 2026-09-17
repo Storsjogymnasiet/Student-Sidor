@@ -1,0 +1,25 @@
+body{
+    background-color:rgb(150, 255, 255);
+    text-align: center;
+    margin: 0%;
+}
+
+Header{
+    Background-color: rgb(239, 135, 135);
+    font-size: 35px;
+    border-radius: 10px;
+}
+
+h1{
+    Margin: 0%;
+}
+
+section{
+    margin-top: 150px;
+    background-color: rgb(55, 73, 74);
+    color:aliceblue;
+    width:60%;
+    text-align:center;
+    margin-left: 20%;
+    border-radius:15px;
+}
