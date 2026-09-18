@@ -1,0 +1,43 @@
+body {
+    text-align: center;
+    border-color: black;
+    border: 2px;
+    background-color: rgb(171, 201, 254);
+    margin: auto 20%;
+}
+
+section {
+    background-color: rgb(255, 255, 143);
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+}
+
+hr {
+    border: none;
+    border-top: 5px dotted;
+    margin: auto 20%;
+}
+
+.sources-h1{
+    text-decoration: underline;
+    
+}
+
+.to-da-left{
+    text-align: left;
+    color:rgb(246, 248, 248);
+}
+
+footer{
+    background-color: brown;
+    border-radius: 12px;
+    padding: 10px;
+    margin-top: 3%;
+}
+
+ul{
+    text-align: center;
+}
