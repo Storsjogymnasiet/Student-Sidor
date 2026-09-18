@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+}
+
+header {
+    text-align: center;
+    background-color: lightslategray;
+}
+
+header h1 {
+    margin-top: 0;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-family: sans-serif;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    background-color: rgb(114, 130, 150);
+}
+
+h2 {
+    margin-top :0;
+    text-align: left;
+    font-size: 40px;
+    margin-left: 2%;
+    font-family: sans-serif;
+
+}
+body {
+    background-color: white;
+
+}
+
+p {
+    text-align: left;
+    font-size: 18px;
+    margin-left: 2%;
+    font-family: sans-serif;
+}
+
+main {
+    background-color: whitesmoke;
+    margin-right: 30%;
+    margin-bottom: 30%;
+}
+
+img {
+    width: 50%;
+    height: auto;
+    right: 2px;
+    margin-right: 0px;
+    margin-bottom: 10px;
+}
+
+
+.side-by-side {
+    display: grid;
+
+    grid-template-columns: 50% 50%;
+}
