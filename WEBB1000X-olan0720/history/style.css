@@ -1,0 +1,51 @@
+body{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: beige;
+.arpanet{
+            width: 300px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px
+    gray;
+}
+.cern{
+      width: 200px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px
+    gray;
+}
+.netscape{
+      width: 300px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px
+    gray;
+}
+.ip{
+     width: 300px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px
+    gray;
+}
+.dns{
+     width: 200px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px
+    gray;
+}
+
+
+
+.lysator{
+      width: 200px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px
+    gray;
+}
+
+    .worldwideweb{
+        width: 300px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px
+    gray;
+    }
+}
