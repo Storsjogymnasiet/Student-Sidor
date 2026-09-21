@@ -1,0 +1,42 @@
+body {
+    background-color: lightslategray;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    color: darkgray;
+}
+
+
+h1 {
+    font-size: large;
+    margin-top: 40px;
+    color: #263238;
+    outline: #c71fe0;
+
+}
+
+img {
+    width: 500px;
+    max-width: 90%;
+    border-radius: 10px;
+
+}
+
+p {
+    font-size: medium;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 15px auto;
+    outline: #263238;
+
+    background-color: white;
+    border-radius: 12px;
+
+}
+
+ul {
+    font-size: small;
+    line-height: 1.8;
+    
+}
