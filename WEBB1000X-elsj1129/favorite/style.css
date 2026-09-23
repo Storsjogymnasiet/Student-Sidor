@@ -1,0 +1,123 @@
+:root {
+    --bg-primary: #121214;
+    /* Sidans bakgrund */
+    --bg-card: #1E1E24;
+    /* Kortets bakgrund */
+    --bg-card-hover: #2A2A35;
+    /* När man för musen över ett kort */
+
+    --text-main: #FFFFFF;
+    /* Viktig text (titlar) */
+    --text-muted: #A0A0AA;
+    /* Mindre viktig text (år, genre) */
+
+    --accent-color: #f5c518;
+    /* Detaljer, betyg, aktiva flikar */
+    --border-subtle: #2E2E38;
+    /* Tunn kantlinje runt korten */
+}
+
+.selected {
+    color: var(--accent-color);
+    text-shadow: 0 0 10px rgba(245, 197, 24, 0.7);
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    margin: 0;
+
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+header {
+    background-color: #09090a;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    padding: 0.5em;
+
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--font);
+    ;
+
+
+    font-size: 2rem;
+}
+
+main {
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    color: var(--font-h);
+}
+
+p {
+    font-size: 1.5rem;
+}
+
+span {
+    color: var(--text-muted);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+
+    gap: 50px;
+
+
+    margin-bottom: 5%;
+}
+
+.grid img {
+    width: 400px;
+    aspect-ratio: 9 / 16;
+    border-radius: 6px;
+
+
+}
+
+.card {
+    background-color: var(--bg-card);
+    padding: 1vh 2vh;
+
+    border-radius: 12px;
+
+    width: 400px;
+    height: 100%;
+
+    border: 1px solid var(--border-subtle);
+}
+
+.card p {
+    margin: 0;
+    word-break: break-word;
+}
+
+.grid-small {
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+
+    gap: 50px;
+
+
+    margin-bottom: 5%;
+}
