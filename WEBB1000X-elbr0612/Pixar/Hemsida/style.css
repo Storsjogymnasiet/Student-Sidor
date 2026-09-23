@@ -1,0 +1,33 @@
+header {
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+h1 {
+    font-size: 70px;
+}
+
+main{
+    padding: 30px;
+    text-align: center;
+    background-color: rgb(223, 208, 187);
+    margin: auto;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+body {
+    text-align: center;
+    background-color: rgb(205, 174, 124);
+    margin: 5%;   
+}
+
+.hero img {
+    width: 25%;
+    length: 30%
+ }
+
+footer{
+    line-height: 70%;
+}
+
+li {
+    text-align: left;
+}
