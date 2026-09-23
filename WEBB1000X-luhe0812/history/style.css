@@ -4,6 +4,7 @@ body {
     text-align: center;
     padding-left: 200px;
     padding-right: 200px;
+    font-family:Georgia, 'Times New Roman', Times, serif ;
 }
 
 main {
@@ -20,21 +21,25 @@ header {
 h2 {
     color: rgb(39, 0, 139);
     font-style: oblique;
-    text-align: left;
+    text-align: center;
     padding-left: 5px;
     font-size: 25px;
+    padding-top: 20px;
+
 }
 
 p {
     color: rgb(39, 0, 139);
     font-style: oblique;
     font-size: 20px;
+    text-align: left;
+
+    margin: 0 16px;
 }
 
 a {
     font-size: 20px;
     text-align: left;
-    
 }
 
 img {
@@ -43,4 +48,14 @@ img {
 
 .shadow-effect {
     box-shadow: 20px 20px 15px rgba(0, 0, 0, 0.3);
+}
+
+.list {
+    text-align: center;
+}
+
+.list ul{
+    display: inline-block;
+    text-align: left;
+    padding-left: 0;
 }
