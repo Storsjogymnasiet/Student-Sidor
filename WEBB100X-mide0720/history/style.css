@@ -1,8 +1,4 @@
 @import url("../style.css");
-html,body{
-    margin: 0px;
-    padding: 0px;
-}
 @keyframes fadeIn{
     to{
         opacity: 1;

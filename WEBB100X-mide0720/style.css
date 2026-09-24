@@ -1,5 +1,6 @@
 :root{
-    --color-bg: light-dark(#f0f0f0,#0f0f0f);
+    --color-bg: light-dark(#fff,#000);
+    --color-paper: light-dark(#f0f0f0,#0f0f0f);
     --color-fg: light-dark(#000,#fff);
     --color-link: #6495ed;
 
@@ -32,15 +33,29 @@
     z-index: 1;
 }
 html{
-    font-size: var(--size)
+    font-size: var(--size);
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: var(--color-bg);
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
 }
 html,body{
-    background-color: var(--color-bg);
     color: var(--color-fg);
     font-family: var(--font);
+    margin: 0px;
+    padding: 0px;
 }
 body{
     font-size: var(--size-text);
+    background-color: var(--color-paper);
+    width: 90%;
+    min-height: 80vh;
+    padding: 12rem;
+    border-radius: 3rem;
 }
 h1,h2,h3,h4,h5,h6{
     margin-top: 0;
