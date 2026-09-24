@@ -1,0 +1,38 @@
+body{
+    background-color: rgb(255, 239, 217);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    text-align: center;
+}
+
+p {
+    background-color: white;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 25px;
+}
+
+h4 {
+    margin-top: 0;
+    font-size: 15px;
+}
+
+.arpanet-undertext {
+    margin-left: 35%;
+}
+
+.linköping_uni {
+    margin-right: 35%;
+}
+
+.perhedbor {
+    margin-left: 35%;
+    transform: translateY(-38px);
+}
+.title {
+
+    font-size: 40px;
+}
