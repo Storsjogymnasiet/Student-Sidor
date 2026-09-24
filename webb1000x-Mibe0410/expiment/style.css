@@ -1,0 +1,49 @@
+h1 {
+
+
+    text-align: center;
+    color: black;
+
+}
+
+h2 {
+    text-align: center;
+    color: black;
+
+}
+
+img {
+    display: block;
+    margin-left: auto;
+
+}
+
+
+
+body {
+
+    background-color: chocolate;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    color: white;
+
+    
+}
+
+a {
+
+    color: rgb(60, 255, 0);
+}
+
+hr {
+    height: 2px;
+    background-color: #000;
+    border: none
+}
+
+p{
+     margin-left: 20%;   /* Adds space on the right side */
+    text-align: left;
+
+}
