@@ -42,8 +42,9 @@ hr {
     border: none
 }
 
-p{
-     margin-left: 20%;   /* Adds space on the right side */
-    text-align: left;
+h2,p,h4,a{
 
+    position: relative;
+    text-align: left;
+    margin-left: 20%;
 }
