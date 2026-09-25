@@ -1,0 +1,28 @@
+body {
+    font-family: cursive;
+}
+
+header{
+    background-color: bisque;   
+    text-align: center;
+}
+main{
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+h3{
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+}
+
+.elias{
+    width: 30%;
+}
+
+body{
+    margin: 0px;
+}
