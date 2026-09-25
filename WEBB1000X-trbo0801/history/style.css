@@ -1,0 +1,33 @@
+body {
+    text-align: center;
+    background-color: blanchedalmond;
+    font-family: cursive;
+}
+.pics{
+    width: 450px;
+    height: 250px;
+}
+
+.txt{
+    background-color: burlywood;
+    border-radius: 10px;
+    
+}
+
+
+section {
+    margin-left: 300px;
+    margin-right: 300px;
+}
+
+
+
+footer{
+    text-align: center;
+    padding: 20px;
+    margin-top: 10px;
+    background-color: orange;
+    border-radius: 10px;
+
+    list-style-position: inside;
+}
