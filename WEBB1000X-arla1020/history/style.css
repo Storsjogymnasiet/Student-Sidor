@@ -1,0 +1,45 @@
+body {
+    color: rgb(0, 0, 0);
+    font-family: "Helvetica", cursive;
+    margin: 0px;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+header {
+    background: linear-gradient(#222222, transparent);
+    color: rgb(13, 0, 3);
+    text-align: center;
+    padding: 10px;
+    font-size: 15px;
+    font-style: italic;
+}
+
+footer {
+    background: linear-gradient(transparent, #222222);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 3px;
+    margin-top: 50px;
+    font-size: 15;
+    font-style: italic;
+}
+
+img {
+    width: 200px;
+}
+
+.top-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    transform: translateX(-30px);
+}
+
+p, h2 {
+    margin-left: 3%;
+    margin-right: 3%;
+}
