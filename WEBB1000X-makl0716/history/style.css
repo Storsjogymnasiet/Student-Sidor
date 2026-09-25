@@ -1,6 +1,28 @@
 body {
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
+    margin-right: 25%;
+    margin-left: 25%;
+    margin-top: auto;
+    text-align: center;
+    font-family: sans-serif;
+}
+.source {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-family: "Arial", cursive;
-    margin: 0px;
+    margin-left: -45px;
+    text-align: center;
+    list-style-position: inside;
+}
+img {
+        width: 469px;
+    border: 15px solid rgb(94, 93, 93);
+    border-radius: 20px;
+}
+p {
+    text-align: left;
+}
+.center {
+    text-align: center;
 }
