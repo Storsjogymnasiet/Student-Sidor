@@ -1,0 +1,35 @@
+body{
+    margin-left: 15%;
+    margin-right: 15%;
+
+    font-family: cursive;
+
+    background-color: black;
+    color: yellow;
+}
+
+h1{
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+}
+
+p{
+margin-bottom: 40px;
+
+}
+
+img {
+    margin: 0 auto;
+    display: block;
+}
+
+ul {
+    color: #4A412A;
+}
+
+ul a {
+    color: #4A412A;
+}
