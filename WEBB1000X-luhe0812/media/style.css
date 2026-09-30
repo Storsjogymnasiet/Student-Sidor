@@ -1,0 +1,29 @@
+nav {
+    background-color: rgb(7, 125, 133);
+    display: flex;
+
+    align-items:center ;
+    justify-content: space-around;
+    height: 50px;
+    padding-bottom: 5px;
+}
+
+body {
+    margin: 0;
+    background-color: rgb(182, 225, 245);
+}
+
+a {
+    color: white;
+    
+}
+
+.slimead{
+    text-align: center;
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+.jon{
+   padding-left: 400px;
+}

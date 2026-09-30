@@ -1,0 +1,25 @@
+nav {
+    background-color: forestgreen;
+    display: flex;
+
+    align-items:center ;
+    justify-content: space-around;
+}
+   
+nav a {
+    color: white;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.Jon{
+    width: 300px;
+    border-radius: 10px;
+    
+}
+
