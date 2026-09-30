@@ -52,7 +52,7 @@ const GROUPS = [
             "WEBB1000X-ella1002",
             "WEBB1000X-frek1025",
             "WEBB1000X-jafa1104",
-            // Jesper
+            "WEBB1000X-jeny0619",
             "WEBB1000X-lega0618",
             "WEBB1000X-live1225",
             "WEBB1000x.-luan0313",
@@ -72,6 +72,7 @@ const GROUPS = [
 ];
 
 function normalizeFolderName(folderName) {
+    if (!folderName) return '';
     return String(folderName)
         .replace(/^.*\//, '')
         .replace(/\/$/, '')
@@ -79,11 +80,12 @@ function normalizeFolderName(folderName) {
 }
 
 function getGroupForFolder(folderName) {
-    const normalizedFolderName = normalizeFolderName(folderName);
+    const targetFolder = normalizeFolderName(folderName).toLowerCase();
 
     for (const group of GROUPS) {
-        const normalizedFolders = group.folders.map(normalizeFolderName);
-        if (normalizedFolders.includes(normalizedFolderName)) {
+        const groupFoldersLower = group.folders.map(f => normalizeFolderName(f).toLowerCase());
+        
+        if (groupFoldersLower.includes(targetFolder)) {
             return group.name;
         }
     }
