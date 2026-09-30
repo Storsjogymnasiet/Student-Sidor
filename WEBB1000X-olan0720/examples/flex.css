@@ -1,0 +1,22 @@
+nav{
+    background-color: black;
+    display: flex;
+
+    align-items: center;
+    justify-content: space-around;
+}
+
+nav a{
+    color: white;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+}
+
+.eminem{
+      width: 300px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px gray;
+}

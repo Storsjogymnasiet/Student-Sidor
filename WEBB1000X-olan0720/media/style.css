@@ -1,0 +1,121 @@
+body{
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: aliceblue;
+}
+
+p{
+    padding-left: 300px;
+    padding-right: 300px;
+}
+
+.left{
+    text-align: left;
+}
+
+.slimshady{
+     width: 300px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px gray;
+}
+
+.eminem{
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px gray;
+}
+
+.eminemshow{
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px gray;
+}
+
+.mmlp{
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px gray;
+}
+
+.relapse{
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px gray;
+}
+
+.list {
+    text-align: center;
+}
+
+.list ul{
+display: inline-block; 
+  text-align: left;      
+  padding-left: 0;
+}
+
+a{
+    margin-left: 10px;
+    margin-right: 10px;
+    color: aliceblue;
+}
+
+.movies{
+      text-align: center;
+}
+
+.movies ul{
+    display: inline-block; 
+  text-align: left;      
+  padding-left: 0;
+}
+
+.medio{
+    padding-top: 520px;
+}
+
+.war{
+     width: 300px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px gray;
+}
+
+.wolf{
+     width: 300px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px gray;
+}
+
+.sheldon{
+     width: 300px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px gray;
+}
+.breaking{
+     width: 300px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px gray;
+}
+.dahmer{
+     width: 300px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px gray;
+}
+.chucky{
+     width: 300px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px gray;
+}
+
+header{
+     background-color: gray;
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+}
+
+main{
+      display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center; 
+}
