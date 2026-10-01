@@ -1,0 +1,21 @@
+body{
+    background-image: url(images/image.png);
+    background-size: cover;
+    text-align: center; color: aliceblue;
+margin: 0%;
+
+}
+
+header{
+    background-color: black;
+    padding: 10px;
+}
+
+nav{
+    background-color: black;
+    display: flex;
+
+
+    align-items: center;
+    justify-content: space-around;
+}
