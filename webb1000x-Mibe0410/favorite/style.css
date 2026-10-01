@@ -1,0 +1,40 @@
+
+h1{
+    color: red;
+    text-align: center;
+}
+
+body{
+    background-color: black;
+    height: 100%;
+}
+
+a{
+
+ width: 50px;
+color: red;
+
+display: flex;
+flex-direction: column;
+justify-content: left;
+
+margin: 5% ;
+
+}
+
+.content {
+    display: flex;
+    height: 100%;
+}
+
+aside{
+    border-style: solid;
+    border-color: orange;
+    border-width: 1px;
+    width: 30%;
+}
+
+main {
+    width: 70%;
+    
+}
