@@ -11,14 +11,20 @@ body{
 
 a{
 
- width: 50px;
-color: red;
+ 
+    width: 50%;
 
-display: flex;
-flex-direction: column;
-justify-content: left;
+    color: red;
 
-margin: 5% ;
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: left;
+
+    margin: 10%;
+
+    text-align: right 50%;
 
 }
 
@@ -31,10 +37,10 @@ aside{
     border-style: solid;
     border-color: orange;
     border-width: 1px;
-    width: 30%;
+    width: 20%;
 }
 
 main {
-    width: 70%;
+    width: 80%;
     
 }
