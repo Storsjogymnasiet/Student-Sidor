@@ -1,0 +1,15 @@
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: black;
+    
+}
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+}
+body {
+    background-color: grey;
+}
