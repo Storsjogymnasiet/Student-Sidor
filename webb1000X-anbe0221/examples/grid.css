@@ -1,0 +1,7 @@
+main{
+    display: grid;
+
+    grid-template-columns: lfr lfr lfr;
+
+    justify-items: center;
+}
