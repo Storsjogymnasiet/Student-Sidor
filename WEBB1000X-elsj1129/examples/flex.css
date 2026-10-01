@@ -1,18 +1,13 @@
 nav {
-    background-color: black;
     display: flex;
 
     align-items: center;
     justify-content: space-around;
 }
 
-nav a {
-    color: white;
-}
-
 main {
+    background-color: red;
     display: flex;
     flex-direction: column;
-
     align-items: center;
 }

@@ -71,7 +71,7 @@ span {
 
 .grid {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
 
     align-items: center;
     justify-content: center;
@@ -106,15 +106,16 @@ span {
     word-break: break-word;
 }
 
-.grid-small {
-    display: grid;
-    grid-template-columns: auto auto auto;
+@media (max-width: 767px) {
+    main {
+        margin: 0 5vw;
+    }
 
-    align-items: center;
-    justify-content: center;
-    justify-items: center;
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
 
-    gap: 50px;
-
-    margin-bottom: 5%;
+    .card p {
+        font-size: 1.5rem;
+    }
 }

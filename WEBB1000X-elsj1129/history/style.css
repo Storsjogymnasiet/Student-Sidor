@@ -8,12 +8,13 @@ body {
     color: #2D3748;
 }
 
-h1{
+h1 {
     text-align: center;
     font-size: 3rem;
 }
 
-main, footer {
+main,
+footer {
     background-color: rgb(254, 253, 253);
     padding: 2%;
 
@@ -36,4 +37,10 @@ section img {
 img {
     border-radius: 8px;
     box-shadow: 2px 2px 2px black;
+}
+
+@media (max-width: 767px) {
+    body {
+        margin: 0 5vw;
+    }
 }
