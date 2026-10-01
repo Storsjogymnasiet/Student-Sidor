@@ -1,4 +1,4 @@
-@import url("../style.css");
+@import url("../files/style.css");
 @keyframes fadeIn{
     to{
         opacity: 1;
