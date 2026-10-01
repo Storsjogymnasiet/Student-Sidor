@@ -1,0 +1,121 @@
+header{
+    background-color: orange;
+}
+
+header h1{
+    text-align: center;
+}
+
+header p{
+    text-align: center;
+}
+
+body{
+    background-color: black;
+    color: white;
+}
+
+.arpanet h2{
+    text-align: center;
+}
+
+.arpanet p{
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.arpanet img{
+    width: 475px;
+    margin-left: 30%;
+    
+}
+
+.www h2{
+    text-align: center;
+}
+
+.www p{
+     margin-left: 30%;
+    margin-right: 30%;
+}
+
+.www img{
+    width: 475px;
+     margin-left: 30%;
+    margin-right: 30%;
+}
+
+.förstawebben h2{
+    text-align: center;
+}
+
+.förstawebben p{
+     margin-left: 30%;
+    margin-right: 30%;
+}
+
+.förstawebben img{
+    width: 475px;
+     margin-left: 30%;
+    margin-right: 30%;
+
+}
+
+.webbläsaren h2{
+    text-align: center;
+}
+
+.webbläsaren p{
+     margin-left: 30%;
+    margin-right: 30%;
+}
+
+.webbläsaren img{
+    width: 475px;
+     margin-left: 30%;
+    margin-right: 30%;
+}
+
+.ipdns h2{
+    text-align: center;
+}
+
+.ipdns p{
+     margin-left: 30%;
+    margin-right: 30%;
+}
+
+.ipdns img{
+    width: 475px;
+     margin-left: 30%;
+    margin-right: 30%;
+}
+
+.sverige h2{
+    text-align: center;
+}
+
+.sverige p{
+     margin-left: 30%;
+    margin-right: 30%;
+}
+
+.sverige img{
+     margin-left: 30%;
+    margin-right: 30%;
+}
+
+.sverige a{
+     margin-left: 30%;
+    margin-right: 30%;
+}
+    
+.källor{
+     margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 200px;
+    background-color: orange;
+    text-align: center;
+
+}
+
