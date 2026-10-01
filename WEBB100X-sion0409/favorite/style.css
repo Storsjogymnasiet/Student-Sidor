@@ -1,0 +1,40 @@
+body {
+    background-image: url(image/fjkr8z1rp7p31.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #ffffff;
+    margin: 0;
+}
+
+nav {
+    
+    background-color: #ab1919;
+    color: white;
+    text-align: center;
+    padding: 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-around;
+}
+
+a {
+    color: rgb(255, 255, 255);
+    font-size: 200%;
+}
+
+main {
+    text-align: center;
+}
+
+main h1 {
+    text-align: center;
+    font-size: 70px;
+}
+
+main p {
+    text-align: center;
+    font-size: 25px;
+}
