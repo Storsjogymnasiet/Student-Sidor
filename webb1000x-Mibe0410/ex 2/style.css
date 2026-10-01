@@ -1,3 +1,4 @@
+
 h1{
     color: red;
     text-align: center;
@@ -41,17 +42,5 @@ aside{
 
 main {
     width: 80%;
-    
- display: grid;
- grid-template-columns: 1fr 1fr 1fr;
-
-
-
-}
-
-image{
-
-    width: 40%;
-
     
 }
