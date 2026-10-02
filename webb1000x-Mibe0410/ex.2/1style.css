@@ -1,0 +1,72 @@
+
+h1{
+    color: red;
+    text-align: center;
+}
+
+body{
+    background-color: black;
+    height: 100%;
+}
+
+a{
+
+ 
+    width: 50%;
+
+    color: red;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: left;
+
+    margin: 10%;
+
+    text-align: right 50%;
+
+}
+
+.content {
+    display: flex;
+    height: 100%;
+}
+
+aside{
+    border-style: solid;
+    border-color: orange;
+    border-width: 1px;
+    width: 20%;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    margin-left: 10px;
+    margin-top: 10px;
+
+
+   
+
+
+ 
+    width: 80%;
+    
+}
+
+img{
+
+    width: 70%;
+}
+
+h3{
+ 
+    color: red;
+
+    text-align: center;
+    margin-right: 30%;
+
+
+}
+
