@@ -2,10 +2,12 @@
 h1{
     color: red;
     text-align: center;
+
 }
 
 body{
     background-color: black;
+
     height: 100%;
 }
 
@@ -28,6 +30,9 @@ a{
 
 }
 
+
+
+
 .content {
     display: flex;
     height: 100%;
@@ -36,11 +41,54 @@ a{
 aside{
     border-style: solid;
     border-color: orange;
-    border-width: 1px;
+    border-width: 3px;
+
+    border-top: 0;
+    border-left: 0;
     width: 20%;
 }
 
 main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr  ;
+
+    margin-left: 10px;
+    margin-top: 20px;
+
     width: 80%;
     
 }
+
+img{
+
+    width: 70%;
+}
+
+h3{
+ 
+    color:limegreen;
+
+    text-align: center;
+    margin-left: 6px;
+
+
+}
+
+div{
+
+    border-color: orange;
+    border-style: solid;
+    border-width: 3px;
+    border-bottom:0;
+    border-right: 0;
+}
+
+nav{
+
+    text-align: center;
+}
+
+
+
+
+
