@@ -1,0 +1,31 @@
+
+header{
+    text-align: center;
+    width: 100%;
+    height: 100px;
+}
+nav{
+    background-color: rgb(40, 126, 135);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    grid-template-columns: 20% 20% 20%;
+    height: 40px;
+}
+body{
+   background-color: rgb(27, 87, 110);
+   margin: 0;
+}
+main{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    gap: 100px;
+}
+
+img{
+    height: 400px;
+    margin-top: 40px;
+    width: 100%;
+    border-radius: 99px;
+}
