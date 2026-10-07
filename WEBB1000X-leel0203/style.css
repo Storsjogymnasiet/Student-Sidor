@@ -1,0 +1,26 @@
+body{
+    text-align: center;
+    background-color: blue;
+    color: white;
+    margin: 0;
+}
+
+h1{
+    color:aqua;
+    background-color: red;
+
+    padding-top: 12px;
+    padding-bottom: 12px;
+
+    margin: 0 auto;
+
+    width: 30%;
+
+}
+
+img {
+    background-color: red;
+
+    padding: 50px;
+    border: 3px solid pink;
+}
