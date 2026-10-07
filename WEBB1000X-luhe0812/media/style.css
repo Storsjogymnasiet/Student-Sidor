@@ -13,8 +13,12 @@ body {
     background-color: rgb(182, 225, 245);
 }
 
+h1 {
+    color: white;
+}
+
 a {
-    color: black;
+    color: white;
 }
 
 .bob {
@@ -91,47 +95,51 @@ p {
 }
 
 .billy {
-    width: 300px;
+    width: 400px;
     height: 450px;
     border-radius: 10px;
     box-shadow: 5px 5px 15px black;
 }
 
 .marko {
-    width: 300px;
+    width: 400px;
     height: 450px;
     border-radius: 10px;
     box-shadow: 5px 5px 15px black;
 }
 
 .rbj {
-    width: 300px;
+    width: 400px;
     height: 450px;
     border-radius: 10px;
     box-shadow: 5px 5px 15px black;
 }
 
 .zorro {
-    width: 300px;
+    width: 400px;
     height: 450px;
     border-radius: 10px;
     box-shadow: 5px 5px 15px black;
 }
 
 .elis{
-    width: 300px;
+    width: 400px;
     height: 450px;
     border-radius: 10px;
     box-shadow: 5px 5px 15px black;
 }
 
 .mike {
-    width: 300px;
+    width: 400px;
     height: 450px;
     border-radius: 10px;
-    box-shadow: 5px 5px 15px black;
+    box-shadow: 5px 5px 15px black
 }
 
-.rakt {
-    color: rgb(225, 6, 6);
+.noob{
+color: black;
+}
+
+h3{
+    text-align: center;
 }
