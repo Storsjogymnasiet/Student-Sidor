@@ -1,0 +1,16 @@
+body {
+    background-color: black;
+    color: #f4ebeb;
+
+}
+
+p {
+    color: #f4ebeb;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around   ;
+    color: #f4ecec;
+}
