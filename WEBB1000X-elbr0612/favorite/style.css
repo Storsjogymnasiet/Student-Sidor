@@ -1,18 +1,48 @@
-
 header {
     text-align: center;
-    width: 100%;
+    margin: 0%;
 }
- nav { 
-  background-color: black;
+
+nav {
+    background-color: rgba(47, 88, 53, 0.525);
     display: flex;
     align-items: center;
     justify-content: space-around;
     grid-template-columns: 20% 20% 20%;
-   
-
- }
+    height: 80px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size:40px ;
+}
 
 body {
-    background-color: gray;
+    background-color: rgba(87, 144, 90, 0.678);
+    margin: 0%; 
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    gap: 100px;
+}
+
+img {
+    height: 400px;
+    margin-top: 80px;
+    margin: 30px;
+    border-radius: 15px;   
+    width: 100%;
+}
+
+.songs {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+p {
+    text-align: center;
+    font-family:fantasy;
+}
+footer{
+    margin-bottom: 0%;
 }
