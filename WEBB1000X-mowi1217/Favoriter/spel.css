@@ -1,0 +1,57 @@
+header h1{
+  text-align: center;
+    background-color: rgb(52, 6, 75);
+    color: rgb(153, 227, 244);
+
+  font-size: 300%;
+  margin: 0%;
+}
+
+body { 
+    background-color: rgb(17, 0, 26);
+}
+
+nav a {
+    color: rgb(153, 227, 244);
+    font-size: 140%;
+}
+
+nav {
+    background-color: rgb(43, 16, 68);
+display: flex;
+align-items: center;
+justify-content: space-around;
+}
+
+
+main div p {
+    color: rgb(153, 227, 244);
+  margin-right: 10%;
+  margin-left: 10%;
+
+}
+
+main div h3 {
+    color: rgb(153, 227, 244);
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    justify-items: center;
+    margin-top: 3%;
+ 
+}
+
+ .card { 
+ color: rgb(18, 125, 111);
+ text-align: center;
+ 
+ }
+
+.container { 
+    padding-bottom: 5%;
+    color: aqua;
+}
+
+
