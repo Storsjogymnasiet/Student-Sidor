@@ -71,6 +71,9 @@ main div {
 
 main img {
     height: 80%;
+
+    display: block;
+    margin: 0 auto;
 }
 
 img {
