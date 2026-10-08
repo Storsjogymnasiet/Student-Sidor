@@ -40,7 +40,7 @@ h6 {
 }
 
 .f1cw {
-     text-align: center;
+    text-align: center;
     margin-top: 100px;
 }
 
@@ -49,31 +49,31 @@ h6 {
 }
 
 .southpark {
-    width: 300px;
+    width: 400px;
     height: 450px;
     border-radius: 10px;
-    box-shadow: 5px 5px 15px black;
+    box-shadow: 5px 5px 15px black
 }
 
 .topgear {
-    width: 300px;
+    width: 400px;
     height: 450px;
     border-radius: 10px;
-    box-shadow: 5px 5px 15px black;
+    box-shadow: 5px 5px 15px black
 }
 
 .clarkson {
-    width: 300px;
+    width: 400px;
     height: 450px;
     border-radius: 10px;
-    box-shadow: 5px 5px 15px black;
+    box-shadow: 5px 5px 15px black
 }
 
 .chris {
-    width: 300px;
+    width: 400px;
     height: 450px;
     border-radius: 10px;
-    box-shadow: 5px 5px 15px black;
+    box-shadow: 5px 5px 15px black
 }
 
 main {
@@ -90,8 +90,8 @@ main img {
 }
 
 p {
-   text-align: center; 
-   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
 .billy {
@@ -122,7 +122,7 @@ p {
     box-shadow: 5px 5px 15px black;
 }
 
-.elis{
+.elis {
     width: 400px;
     height: 450px;
     border-radius: 10px;
@@ -136,10 +136,66 @@ p {
     box-shadow: 5px 5px 15px black
 }
 
-.noob{
-color: black;
+.noob {
+    color: red;
 }
 
-h3{
+h3 {
     text-align: center;
+}
+
+.goated {
+    width: 400px;
+    height: 450px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px black
+}
+
+.bb {
+    width: 400px;
+    height: 450px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px black
+}
+
+.r6 {
+    width: 400px;
+    height: 450px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px black
+}
+
+.gta {
+    width: 400px;
+    height: 450px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px black
+}
+
+.cs {
+    width: 400px;
+    height: 450px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px black
+}
+
+.rl {
+    width: 400px;
+    height: 450px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px black
+}
+
+.forre {
+    width: 400px;
+    height: 450px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px black
+}
+
+.mc {
+    width: 400px;
+    height: 450px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px black
 }
