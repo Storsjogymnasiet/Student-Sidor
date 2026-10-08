@@ -1,5 +1,5 @@
 body {
-    background-image: url(image/fjkr8z1rp7p31.png);
+    background-image: url(image/Arai.png);
     background-repeat: no-repeat;
     background-size: cover;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -23,18 +23,76 @@ nav {
 a {
     color: rgb(255, 255, 255);
     font-size: 200%;
+
 }
 
 main {
     text-align: center;
+
 }
 
 main h1 {
     text-align: center;
     font-size: 70px;
+
 }
 
 main p {
     text-align: center;
     font-size: 25px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.category {
+    margin-bottom: 40px;
+}
+
+.category h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.movie-row {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    max-width: 1860px;
+
+    padding-bottom: 10px;
+    padding: 50px;
+
+    scrollbar-width: none;    
+}
+
+.movie-card {
+    flex: 0 0 400px;
+
+    background-color: #222;
+    border-radius: 25px;
+    border-style: inset;
+    overflow: hidden;
+    transition: transform 0.2s;
+    text-align: center;
+}
+
+.movie-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+
+}
+
+.movie-card a {
+    font-size: 75%;
+    
+}
+
+.movie-title {
+    padding: 10px;
+    text-align: center;
 }
