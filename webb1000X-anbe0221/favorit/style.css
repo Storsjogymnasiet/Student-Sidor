@@ -1,0 +1,29 @@
+body{ 
+    background-color: darkgreen;
+    margin: 0;
+}
+
+nav {
+    background-color: #22B14C;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+main img {
+    display: block;
+    margin: 0 auto;
+
+    height: 80%;
+}
+    
+    
+
+
