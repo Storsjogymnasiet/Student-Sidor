@@ -1,0 +1,53 @@
+header h1{
+text-align: center;    
+}
+
+header a{
+font-size: 25px;
+color: black;
+}
+
+
+header p{
+    text-align: center;
+    font-size: 25px;
+}
+
+header{
+    padding-top: 25px;
+    background-color: midnightblue;
+}
+
+body{
+    background-color: rgb(38, 38, 78);
+}
+
+
+
+main{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 15px;
+    
+}
+
+
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 25px
+}
+
+nav a{
+    color: black;
+}
+
+nav p{
+    
+    width: 400px;
+}
+
+
+
