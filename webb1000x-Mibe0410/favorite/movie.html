@@ -8,6 +8,8 @@
 
 </head>
 
+<body>
+    
 
 <header>
 
@@ -42,7 +44,7 @@
         </nav>
     </aside>
 
-    <main>
+    <main id="shuffleThis">
 
         <div>
             <img src="images/Interstellar.png" alt="Interstellar">
@@ -129,7 +131,27 @@
     </main>
 </div>
 
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const container = document.getElementById("shuffleThis");
+      // Convert HTMLCollection to an Array
+      const elements = Array.from(container.children);
 
+      // Fisher-Yates Shuffle Algorithm
+      for (let i = elements.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [elements[i], elements[j]] = [elements[j], elements[i]];
+      }
+
+      // Re-append elements in the new randomized order
+      elements.forEach(element => container.appendChild(element));
+    });
+  </script>
+
+
+
+    
+</body>
 
 
 
