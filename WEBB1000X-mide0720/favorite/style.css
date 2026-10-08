@@ -1,0 +1,19 @@
+@import url("../files/style.css");
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--color-bg);
+    border-radius: var(--border-radius);
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+}
+nav > a.selected{
+    filter: invert(1);
+    text-decoration: underline dotted;
+}

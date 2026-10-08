@@ -1,0 +1,153 @@
+:root {
+    --green: #2F5D3A;
+    --darkgreen: #24492D;
+    --lightgray: #D8E1DA;
+    --dark-bg: #F4F1E8;
+    --orange: #D97732;
+    --lightgreen: #DFE8D8;
+    --fg-white: #FFFFFF;
+    --gray: #6C6F6A;
+    --fullwhite: #FFFFFF;
+    --border-gray: #D5D0C3;
+
+    --border-radius: 7px;
+    --transition-speed: 0.3s;
+}
+
+html, body {
+    background-color: var(--dark-bg);
+    color: var(--gray);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+header {
+    background-color: var(--green);
+    color: var(--lightgray);
+    text-align: center;
+    margin: 0px;
+    padding: 10px;
+    font-size: 15px;
+}
+
+header h1 {
+    color: var(--fg-white);
+}
+
+nav {
+    background-color: var(--darkgreen);
+    text-align: center;
+    padding: 10px;
+}
+
+nav a {
+    color: var(--lightgray);
+    margin: 0px 10px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    width: 60%;
+    margin: 50px auto;
+}
+
+.hero {
+    background-color: var(--fullwhite);
+    padding: 20px;
+    text-align: center;
+    border-radius: var(--border-radius);
+}
+
+.hero img {
+    width: 100%;
+    border-radius: var(--border-radius);
+}
+
+.hero h2 {
+    color: var(--green);
+}
+
+.hero p {
+    color: var(--gray);
+}
+
+.activities {
+    background-color: var(--dark-bg);
+    padding: 0px;
+    margin-top: 50px;
+}
+
+.activities h2 {
+    color: var(--green);
+    text-align: center;
+}
+
+.activity {
+    background-color: var(--fullwhite);
+    border: 2px solid var(--border-gray);
+    padding: 3px;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: var(--border-radius);
+}
+
+.activity h3 {
+    color: var(--green);
+}
+
+.activity p {
+    color: var(--gray);
+}
+
+.contact {
+    background-color: var(--lightgreen);
+    color: var(--gray);
+    padding: 10px 0px 20px 0px;
+    text-align: center;
+    border-radius: var(--border-radius);
+}
+
+.contact h2 {
+    color: var(--green);
+}
+
+.hero, .activity, .contact {
+    transition: box-shadow var(--transition-speed);
+}
+
+.hero:hover, .activity:hover, .contact:hover {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    background-color: var(--orange);
+    color: var(--fg-white);
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 15px;
+    transition: filter var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+button:hover {
+    filter: brightness(110%);
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:active {
+    filter: brightness(90%);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: var(--darkgreen);
+    color: var(--lightgray);
+    text-align: center;
+    padding: 20px 2px;
+}
