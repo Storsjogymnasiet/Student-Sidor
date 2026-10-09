@@ -1,0 +1,12 @@
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    background-color: azure;
+}
+main {
+    background-color: blueviolet;
+    display: flex;
+    flex-direction: column;
+}
