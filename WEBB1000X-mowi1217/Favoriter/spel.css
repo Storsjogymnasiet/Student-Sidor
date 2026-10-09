@@ -47,10 +47,12 @@ main {
  .card { 
 
  text-align: center;
- background-color: rgb(6, 7, 87);
+ background-color: rgb(29, 3, 52);
  margin-top: 7%;
  margin-left: 22%;
  margin-right: 22%;
+  box-shadow: -2px 0px 62px -6px rgb(3, 12, 77);
+border-radius: 0px;
  }
 .card h3 {
    text-shadow: 1cm;
