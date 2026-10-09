@@ -1,0 +1,63 @@
+nav {
+
+display: flex;
+
+align-items: center;
+justify-content: space-around;
+background: black;
+
+}
+
+a
+{
+    color: orange;
+    font-size: 30px;
+}
+
+main {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+
+    justify-items: center; 
+    text-align: center;
+    column-gap: 30px;
+    background: rgb(6, 6, 6);
+    padding-top: 30px;
+}
+
+body {
+
+margin: 0;
+}
+
+p {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    font-size: 20px;
+}
+
+img {
+    border-radius: 10px;
+}
+
+.card img {
+ 
+  width: 250px; 
+  height: 350px; 
+
+ 
+  object-fit: cover; 
+  object-position: center; 
+
+  border-radius: 8px; 
+}
+
+header {
+
+    text-align: center;
+    font-size: 40px;
+    font-family: fantasy;
+    color: white;
+    background-color: black;
+}
