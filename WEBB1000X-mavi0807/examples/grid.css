@@ -1,0 +1,14 @@
+main {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+
+    justify-items: center;
+
+    text-align: center;
+}
+
+.card {
+    box-shadow: black 1px 1px 30px;
+    background-color: chartreuse;
+}
