@@ -14,6 +14,7 @@ body {
 nav a {
     color: rgb(153, 227, 244);
     font-size: 140%;
+    shape-outside: linear-gradient();
 }
 
 nav {
@@ -39,19 +40,32 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr ;
     justify-items: center;
-    margin-top: 3%;
+   
  
 }
 
  .card { 
- color: rgb(18, 125, 111);
- text-align: center;
- 
- }
 
+ text-align: center;
+ background-color: rgb(6, 7, 87);
+ margin-top: 7%;
+ margin-left: 22%;
+ margin-right: 22%;
+ }
+.card h3 {
+   text-shadow: 1cm;
+   margin-left: 10%;
+   margin-right: 10%;
+   margin-bottom: 5%;
+   
+}
+.card p {
+    margin-right: 15%;
+    margin-left: 15%;
+    
+}
 .container { 
-    padding-bottom: 5%;
-    color: aqua;
+    padding-inline: inherit;
 }
 
 
