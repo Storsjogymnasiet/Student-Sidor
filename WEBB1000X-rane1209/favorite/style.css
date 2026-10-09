@@ -1,0 +1,53 @@
+body{
+    margin:auto;
+    background-color: darkmagenta;
+}
+
+main{
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+    
+    justify-items: center;
+    text-align: center;
+
+    background-color: cadetblue;
+}
+
+header{
+    padding: 10px;
+    text-align: center;
+    background-color: aquamarine;
+}
+
+nav{
+    display: flex;
+
+    align-items: center;
+    justify-content: space-around;
+
+    background-color: burlywood;
+
+    padding: 15px;
+}
+
+h2{
+    text-align: center;
+
+
+    background-color: dimgrey;
+
+    padding: 10px;
+    margin: auto;
+}
+
+.card{
+    background-color: greenyellow;
+    padding: 10px;
+    border-radius: 12px;
+    margin: 10px;
+
+}
+.img{
+    width: 300px;
+}
