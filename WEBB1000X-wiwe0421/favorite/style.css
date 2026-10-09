@@ -1,0 +1,53 @@
+nav {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-around;
+
+    background-color: aquamarine;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+    
+}
+
+body {
+    margin: 0;
+}
+
+main {
+    background-color: rgb(58, 58, 58);
+    color: white;
+    display: grid;
+    flex-direction: column;
+    align-items: center;   
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-top: 30px;
+
+}
+
+a {
+
+    color: darkgreen
+}
+
+img {
+    border-radius: 5px;
+}
+
+div {
+
+    text-align: center;
+}
+
+.card img {
+
+    width: 250px;
+    height: 350px;
+
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px;
+}

@@ -1,0 +1,19 @@
+nav {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-around;
+
+    background-color: aquamarine;
+
+    
+}
+
+
+main {
+    background-color: chartreuse;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+}
