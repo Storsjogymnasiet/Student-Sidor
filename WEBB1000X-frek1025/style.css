@@ -1,0 +1,76 @@
+body {
+    background-color: white;
+    color: #CC0000;
+    text-align: center;
+}
+
+.hero img {
+    width: 80%;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 48px;
+    margin-top: 85px;
+    text-align: center;
+}
+
+p {
+    font-size: 24px;
+    color: black;
+    max-width: 900px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.hero2 img {
+    width: 50%;
+    margin-top: 20px;
+}
+
+a:link {
+    color: red;
+    font-size: 18px;
+}
+
+.hero2 nav {
+    margin-bottom: 20px;
+    gap: 24px;
+    align-items: center;
+    display: flex;
+    margin-left: 33%;
+}
+
+.site-footer {
+  background-color: #1a1a1a;
+  color: #cccccc;
+  text-align: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-line {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+  align-items: baseline;
+}
+
+.footer-line p,
+.footer-line span,
+.footer-line a {
+  margin: 0;
+  color: black;
+  font-size: 16px;
+}
+
+.footer-line a {
+  color: red;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.footer-line a:hover {
+  text-decoration: underline;
+}
