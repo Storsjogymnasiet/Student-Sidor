@@ -202,10 +202,15 @@ h3 {
 
 footer {
     background-color: rgb(7, 125, 133);
-    padding-bottom: 20px;
+    padding-bottom: 10px;
+    padding-top: 20px;
 }
 
 .nav2 {
     justify-content: space-around;
     flex-direction: row;
+}
+
+.copy {
+    color: white;
 }
