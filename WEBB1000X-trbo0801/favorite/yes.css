@@ -1,0 +1,18 @@
+nav{
+    display: flex;
+
+    align-items: center;
+    justify-content: space-around;
+    font-size: 25px;
+    background-color: black;
+    padding: 25px;
+}   
+
+body{
+    margin: auto;
+    background-color: rgb(65, 12, 12);
+}
+
+.yes{
+    margin: auto;
+}

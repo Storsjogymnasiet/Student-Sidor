@@ -1,0 +1,14 @@
+main {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+
+    justify-items: center;
+
+}
+
+
+.card{
+    box-shadow: 1px 1px 30px;
+    background-color: blue;
+}
