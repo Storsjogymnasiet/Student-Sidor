@@ -3,15 +3,17 @@ nav {
 display: flex;
 align-items: center;
 justify-content: space-around;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-header h1{
-  text-align: center;
+header a{
+display: grid;
     background-color: rgb(52, 6, 75);
     color: rgb(153, 227, 244);
-
-  font-size: 300%;
+justify-items: center;
+  font-size: 350%;
   margin: 0%;
+ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 nav a {

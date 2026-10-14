@@ -8,15 +8,19 @@ justify-content: space-around;
 nav a {
     color: rgb(153, 227, 244);
     font-size: 140%;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
 }
 
-header h1{
-  text-align: center;
+header a{
+display: grid;
     background-color: rgb(52, 6, 75);
     color: rgb(153, 227, 244);
-
-  font-size: 300%;
+justify-items: center;
+  font-size: 350%;
   margin: 0%;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
 }
 
 
@@ -38,7 +42,26 @@ div h3 {
 
 .card {
     background-color: rgb(29, 3, 52);
-    margin-top: 5%;
+    
+     margin-top: 7%;
+ margin-left: 22%;
+ margin-right: 22%;
  box-shadow: -2px 0px 62px -6px rgb(3, 12, 77);
 border-radius: 0px;
+text-align: center;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+.card p {
+    margin-right: 15%;
+    margin-left: 15%;
+    
+}
+
+main div p {
+    color: rgb(153, 227, 244);
+  margin-right: 10%;
+  margin-left: 10%;
+
 }

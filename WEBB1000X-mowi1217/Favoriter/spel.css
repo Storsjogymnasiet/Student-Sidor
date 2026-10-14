@@ -1,10 +1,12 @@
-header h1{
-  text-align: center;
+header a{
+display: grid;
     background-color: rgb(52, 6, 75);
     color: rgb(153, 227, 244);
-
-  font-size: 300%;
+justify-items: center;
+  font-size: 350%;
   margin: 0%;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
 }
 
 body { 
@@ -15,6 +17,8 @@ nav a {
     color: rgb(153, 227, 244);
     font-size: 140%;
     shape-outside: linear-gradient();
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
 }
 
 nav {
@@ -53,21 +57,20 @@ main {
  margin-right: 22%;
   box-shadow: -2px 0px 62px -6px rgb(3, 12, 77);
 border-radius: 0px;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
  }
 .card h3 {
    text-shadow: 1cm;
    margin-left: 10%;
    margin-right: 10%;
    margin-bottom: 5%;
-   
+  
 }
 .card p {
     margin-right: 15%;
     margin-left: 15%;
     
 }
-.container { 
-    padding-inline: inherit;
-}
+
 
 
