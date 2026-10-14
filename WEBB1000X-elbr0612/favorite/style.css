@@ -4,7 +4,7 @@ header {
 }
 
 nav {
-    background-color: rgba(47, 88, 53, 0.525);
+    background-color: rgba(132, 117, 51, 0.525);
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -15,7 +15,7 @@ nav {
 }
 
 body {
-    background-color: rgba(87, 144, 90, 0.678);
+    background-color:  rgba(128, 119, 83, 0.525);
     margin: 0%; 
 }
 
@@ -37,12 +37,30 @@ img {
 .songs {
     padding-right: 5px;
     padding-left: 5px;
-}
+ }
 
 p {
     text-align: center;
     font-family:fantasy;
+    color: rgb(104, 104, 141);
 }
 footer{
     margin-bottom: 0%;
 }
+.container {
+    display: flex;
+    gap: 20px;
+}
+.bild {
+    flex: 1;
+    text-align: center;
+}
+.bild img {
+    width: 350px;
+display: block;
+}
+.bild p {
+    text-align: center;
+    margin-top: 10px;
+}
+
