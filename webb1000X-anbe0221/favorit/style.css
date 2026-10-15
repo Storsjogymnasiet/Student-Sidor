@@ -1,5 +1,5 @@
 body{ 
-    background-color: darkgreen;
+    background-color: #0F4F22;
     margin: 0;
 }
 
@@ -24,6 +24,13 @@ main img {
     height: 80%;
 }
     
-    
+    a{
+color: lime;
 
+    }
+
+
+  
+
+    
 
