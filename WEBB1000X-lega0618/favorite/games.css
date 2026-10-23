@@ -10,7 +10,7 @@ background: black;
 
 a
 {
-    color: orange;
+    color: rgb(200, 255, 0);
     font-size: 30px;
 }
 
@@ -60,4 +60,75 @@ header {
     font-family: fantasy;
     color: white;
     background-color: black;
+}
+
+
+.rainbow-text {
+
+  background: linear-gradient(
+    to right,
+    violet,
+    indigo,
+    blue,
+    green,
+    yellow,
+    orange,
+    red,
+    violet
+  );
+  
+
+  background-size: 200% auto;
+  
+ 
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  
+
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  
+
+  animation: rainbow-shift 3s linear infinite;
+  
+
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+@keyframes rainbow-shift {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+
+.chibi-character {
+    position: absolute;
+    width: 45px;
+    
+    top: 10px-;
+    
+    left: 290px;
+    
+    z-index: 20px;
+    
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.6));
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-6px) rotate(3deg);
+    }
 }

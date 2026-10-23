@@ -10,7 +10,7 @@ background: black;
 
 a
 {
-    color: orange;
+    color: rgb(200, 255, 0);
     font-size: 30px;
 }
 
@@ -51,6 +51,10 @@ img {
   object-position: center; 
 
   border-radius: 8px; 
+
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #ffffff, 0 0 25px #ffffff;
 }
 
 header {
@@ -60,4 +64,46 @@ header {
     font-family: fantasy;
     color: white;
     background-color: black;
+}
+
+.rainbow-text {
+
+  background: linear-gradient(
+    to right,
+    violet,
+    indigo,
+    blue,
+    green,
+    yellow,
+    orange,
+    red,
+    violet
+  );
+  
+
+  background-size: 200% auto;
+  
+ 
+  -webkit-background-clip: text;
+  background-clip: text;
+  
+
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  
+ 
+  animation: rainbow-shift 3s linear infinite;
+  
+
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+@keyframes rainbow-shift {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
 }
