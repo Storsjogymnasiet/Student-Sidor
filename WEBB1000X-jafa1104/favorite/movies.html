@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+
+        <a href="movies.html">
+            <h1>Film</h1>
+        </a>
+
+        <a href="index.html">
+            <h1>Spel</h1>
+        </a>
+    </header>
+
+    <main>
+        <div class="card">
+            <img src="images/eldenring.png" alt="">
+            <p>Nightmare before christmas</p>
+        </div>
+
+        <div class="card">
+            <img src="images/wall.png" alt="">
+            <p>Wall-E</p>
+        </div>
+
+        <div class="card">
+            <img src="images/tf2.png" alt="">
+            <p></p>
+        </div>
+
+        <div class="card">
+            <img src="images/warframe.png" alt="">
+            <p>Warframe</p>
+        </div>
+
+        <div class="card">
+            <img src="images/ow.png" alt="">
+            <p>Overwatch</p>
+        </div>
+
+        <div class="card">
+            <img src="images/doom.png" alt="">
+            <p>Doom Eternal</p>
+        </div>
+    </main>
+
+    <script>
+        function startSplitRainbowBackground() {
+            // Skapa ett element för bakgrunden om det inte finns
+            let bgContainer = document.getElementById('split-bg');
+            if (!bgContainer) {
+                bgContainer = document.createElement('div');
+                bgContainer.id = 'split-bg';
+                bgContainer.style.position = 'fixed';
+                bgContainer.style.top = '0';
+                bgContainer.style.left = '0';
+                bgContainer.style.width = '100vw';
+                bgContainer.style.height = '100vh';
+                bgContainer.style.display = 'flex';
+                bgContainer.style.zIndex = '-1'; // Lägg bakom allt annat innehåll
+                document.body.prepend(bgContainer);
+
+                // Skapa vänstra halvan
+                const leftHalf = document.createElement('div');
+                leftHalf.id = 'bg-left';
+                leftHalf.style.flex = '1';
+                leftHalf.style.height = '100%';
+                bgContainer.appendChild(leftHalf);
+
+                // Skapa högra halvan
+                const rightHalf = document.createElement('div');
+                rightHalf.id = 'bg-right';
+                rightHalf.style.flex = '1';
+                rightHalf.style.height = '100%';
+                bgContainer.appendChild(rightHalf);
+            }
+
+            const helper = () => '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
+
+            setInterval(() => {
+                document.getElementById('bg-left').style.backgroundColor = helper();
+                document.getElementById('bg-right').style.backgroundColor = helper();
+            }, 1000);
+        }
+
+        // Starta funktionen
+        startSplitRainbowBackground();
+    </script>
+</body>
+
+</html>
