@@ -1,0 +1,16 @@
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    
+    gap: 30px;
+}
+
+header {
+    text-align: center;
+}
+
+main img {
+    width: 100%;
+
+    height: 400px;
+}
