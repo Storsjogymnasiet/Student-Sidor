@@ -1,17 +1,50 @@
-.spiral-image {
-    width:30%;
+:root {
+    --header_bg: aqua;
+
 }
-body{
+
+.spiral-image {
+    width: 30%;
+}
+
+body {
     text-align: center;
     background-color: rgb(100, 36, 36);
+    margin: 0;
 }
-.mainframe{
+
+header {
+    background-color: var(--header_bg);
+    padding: 1px;
+}
+
+.mainframe {
     background-color: burlywood;
     margin: 0 auto;
-    width:max-content;
+    width: max-content;
     border-radius: 10px;
 }
 
-.linkys{
-    color: darkgoldenrod;
+.test_list {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: space-around;
+    background-color: chartreuse;
+    width: 50%;
+    padding: 10px;
+    margin: 10px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: blue;
+    border-radius: 12px;
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 10px;
+
 }
