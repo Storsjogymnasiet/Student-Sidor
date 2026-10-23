@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>favorite</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="body">
+    <header>
+        <h1>best ever somg of all time</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">hideo game</a>
+        <a href="movies.html">movieh</a>
+        <a href="music.html">musci</a>
+    </nav>
+
+    <main>
+
+        <article>
+            <p>MILI</p>
+            <img src="images/Mili_Logo.png" alt="LIMBUS">
+        </article>
+
+        <article>
+            <p>Avenged Sevenfold</p>
+            <img src="images/Avenged_Sevenfold.png" alt="fire">
+        </article>
+
+        <article>
+            <p>hawaii part II</p>
+            <img src="images/hawaii.jpg" alt="tally hall mentioned">
+        </article>
+
+        <article>
+            <p>YonKaGor</p>
+            <img src="images/YonKaGor.jpg" alt="fish">
+        </article>
+
+        <article>
+            <p>Lotus Juice</p>
+            <img src="images/lotus_juice.jpg" alt="PERSONA">
+        </article>
+        <article>
+            <p>Studio EIM</p>
+            <img src="images/eim.png" alt="limbus">
+        </article>
+        <article>
+        <iframe height="315" src="https://www.youtube.com/embed/8jJZA-O_B78?si=ktcT8unUrZK99Hzn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+        </article>
+    </main>
+
+        <script>
+        let body = document.getElementById("body")
+
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+       
+
+        const intervalId = setInterval(() => { body.style.backgroundColor = getRandomColor()}, 1000);
+    </script>
+</body>
+
+</html>

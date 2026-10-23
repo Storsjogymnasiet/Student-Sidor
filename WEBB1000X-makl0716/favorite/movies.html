@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>favorite</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="body">
+    <header>
+        <h1>best ever movies and seriessssss of all time</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">hideo game</a>
+        <a href="movies.html">movieh</a>
+        <a href="music.html">musci</a>
+    </nav>
+
+    <main>
+
+        <article>
+            <p>CP EDGERS 1</p>
+            <img src="images/Cyberpunk_Edgerunners_poster.jpg" alt="fuck arasaka dude">
+        </article>
+
+        <article>
+            <p>CP EDGERS 2</p>
+            <img src="images/Cyberpunk_Edgerunners_2_poster.jpg" alt="fuck kang tao dude">
+        </article>
+
+        <article>
+            <p> placeholder</p>
+            <img src="images/yuyuko.png" alt="peak humor in 2015">
+        </article>
+
+        <article>
+            <p>dude fr i have not watched anything else</p>
+            <img src="images/yuyuko.png" alt="place, japan">
+        </article>
+
+        <article>
+            <p>placeholder </p>
+            <img src="images/yuyuko.png" alt="place, hell">
+        </article>
+        <article>
+            <p>placeholder</p>
+            <img src="images/yuyuko.png" alt="place, steam community hub">
+        </article>
+    </main>
+
+        <script>
+        let body = document.getElementById("body")
+
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+       
+
+        const intervalId = setInterval(() => { body.style.backgroundColor = getRandomColor()}, 1000);
+    </script>
+</body>
+
+</html>

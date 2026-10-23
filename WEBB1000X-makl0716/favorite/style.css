@@ -5,7 +5,6 @@ body {
 
 nav {
     display: flex;
-
     align-items: center;
     justify-content: space-around;
 }
@@ -18,9 +17,12 @@ main {
     justify-items: center;
 }
 
+article {
+    width: 100%;
+}
+
 img {
-    width: 33%;
-    margin: 5px;
+    width: 150px;
     border: 20px; color: aliceblue;
     border-style: solid;
 }

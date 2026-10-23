@@ -8,15 +8,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body id="body">
     <header>
         <h1>best ever of the all time</h1>
     </header>
 
     <nav>
-        <a href="">hideo game</a>
-        <a href="">m,oviexwgejh</a>
-        <a href="">musci</a>
+        <a href="index.html">hideo game</a>
+        <a href="movies.html">m,oviexwgejh</a>
+        <a href="music.html">musci</a>
     </nav>
 
     <main>
@@ -32,10 +32,8 @@
         </article>
 
         <article>
-            <p>420BLAZEIT 2: GAME OF THE YEAR -=Dank Dreams and Goated Memes=- [#wow/11 Like and Subscribe] Poggerz
-                Edition
-            </p>
-            <img src="images/swag.png" alt="peak humor in 2015">
+            <p>Risk of rain 2</p>
+            <img src="images/riskofwhat.jpg" alt="bungus wungus">
         </article>
 
         <article>
@@ -53,6 +51,23 @@
         </article>
     </main>
 
+
+    <script>
+        let body = document.getElementById("body")
+
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+       
+
+        const intervalId = setInterval(() => { body.style.backgroundColor = getRandomColor()}, 1000);
+    </script>
 </body>
 
 </html>
