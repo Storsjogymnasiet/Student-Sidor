@@ -1,0 +1,102 @@
+
+body {
+    background-color: rgb(50, 50, 50);
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    text-align: center;
+    color: gold;
+    background-color: rgb(27, 28, 28);
+    text-shadow: 2px 2px 4px darkgoldenrod;
+    padding: 20px;
+}
+
+nav {
+    text-align: center;
+    background-color: rgb(27, 28, 28);
+    padding: 15px;
+}
+
+nav a {
+    color: gold;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+nav a:hover {
+    color: white;
+    background-color: rgb(70, 70, 70);
+}
+
+main {
+    background-color: rgb(53, 52, 53);
+    padding: 40px;
+    color: rgb(190, 11, 11);
+    text-align: center;
+}
+
+main h2 {
+    text-decoration: underline;
+    padding-top: 20px;
+}
+
+main p {
+    line-height: 1.8;
+    font-size: 18px;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+footer {
+    text-align: center;
+    color: gold;
+    background-color: rgb(27, 28, 28);
+    padding: 15px;
+}
+
+main section {
+    display: none;
+}
+
+
+main section {
+    display: none;
+}
+
+main section:target {
+    display: block;
+}
+
+main section:first-child:not(:target) {
+    display: block;
+}
+
+main:has(section:target) section:first-child:not(:target) {
+    display: none;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.card {
+    background-color: rgb(35, 35, 35);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+}
+
+.card p {
+    color: gold;
+    text-decoration: none;
+}
