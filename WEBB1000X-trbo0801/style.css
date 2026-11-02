@@ -1,3 +1,4 @@
+
 main {
     display: grid;
 
@@ -5,4 +6,36 @@ main {
 
     justify-items: center;
 
+}
+
+.card{
+    background-color: rgb(74, 0, 15);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 1px 1px 30px;
+    width: 350px;
+    height: 500px;
+}
+
+body{
+    text-align: center;
+    background-color: rgb(209, 8, 132);
+}
+
+iframe{
+    height: 450px;
+    width: 340px;
+}
+
+figcaption{
+    padding: 13px;
+    
+}
+
+a{
+    font-size: 25px;
+    font-style: oblique;
+    font-display: auto;
 }
