@@ -4,13 +4,13 @@ nav{
     align-items: center;
     justify-content: space-around;
     font-size: 25px;
-    background-color: black;
+    background-color: rgb(237, 169, 169);
     padding: 25px;
 }   
 
 body{
     margin: auto;
-    background-color: rgb(65, 12, 12);
+    background-color: rgb(161, 20, 20);
 }
 
 h2{
