@@ -39,3 +39,24 @@ a{
     font-style: oblique;
     font-display: auto;
 }
+
+a:active{
+    color: rgb(255, 1, 1);
+    text-decoration: none;
+}
+
+a:link{
+    color: rgb(168, 47, 47);
+    text-decoration: none;
+}
+
+a:visited{
+    color: rgb(151, 1, 1);
+    text-decoration: none;
+}
+
+a:hover{
+  color: rgb(255, 0, 0);
+  background-color: transparent;
+  text-decoration: underline;
+}
