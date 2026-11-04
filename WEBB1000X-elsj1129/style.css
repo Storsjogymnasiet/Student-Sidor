@@ -1,9 +1,13 @@
 :root {
     --main-bg: #F5AFAF;
     --bg: #F9DFDF;
-    --header: #986e6e;
-    --color: #9b7c7c;
+    --header: #554444;
+    --color: #795D5D;
     --box-shadow: 2px 2px 6px rgb(83, 83, 83);
+}
+
+* {
+  scrollbar-color: #986e6e #F5AFAF;
 }
 
 body {
@@ -143,6 +147,8 @@ footer {
     justify-self: end;
 
     width: 100%;
+    box-shadow: var(--box-shadow);
+
 }
 
 .about-text {
