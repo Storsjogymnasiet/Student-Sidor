@@ -3,10 +3,13 @@ nav {
 
     align-items: center;
     justify-content: space-around;
+
+    background-color: lightcoral;
 }
 
 main {
-    background-color: red;
+    background-color: green;
+
     display: flex;
     flex-direction: column;
     align-items: center;

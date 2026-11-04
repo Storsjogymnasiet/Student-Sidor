@@ -79,12 +79,23 @@ function normalizeFolderName(folderName) {
         .trim();
 }
 
+function getFolderSortKey(folderName) {
+    const name = normalizeFolderName(folderName);
+    const studentName = name.split('-').filter(Boolean).pop() || name;
+    return studentName.slice(2, 4).toLowerCase();
+}
+
+function compareFolders(a, b) {
+    const keyComparison = getFolderSortKey(a.name).localeCompare(getFolderSortKey(b.name), 'sv');
+    return keyComparison || normalizeFolderName(a.name).localeCompare(normalizeFolderName(b.name), 'sv');
+}
+
 function getGroupForFolder(folderName) {
     const targetFolder = normalizeFolderName(folderName).toLowerCase();
 
     for (const group of GROUPS) {
         const groupFoldersLower = group.folders.map(f => normalizeFolderName(f).toLowerCase());
-        
+
         if (groupFoldersLower.includes(targetFolder)) {
             return group.name;
         }
@@ -138,7 +149,7 @@ function renderGroups(groupsToRender) {
 
         group.items
             .slice()
-            .sort((a, b) => normalizeFolderName(a.name).localeCompare(normalizeFolderName(b.name), 'sv'))
+            .sort(compareFolders)
             .forEach(folder => {
                 list.appendChild(createCard(folder.name, searchInput.value.trim()));
             });
@@ -180,7 +191,7 @@ async function loadSites() {
 
                     return group.name === groupName && matchesSearch;
                 })
-                .sort((a, b) => normalizeFolderName(a.name).localeCompare(normalizeFolderName(b.name), 'sv'))
+                .sort(compareFolders)
         })).filter(group => group.items.length > 0);
 
         renderGroups(matchingGroups);
