@@ -19,6 +19,7 @@ footer{
 }
 img{
     border-radius: var(--border-radius);
+    max-height: 40rem;
 }
 .img-to-right{
     display: inline-grid;
