@@ -1,14 +1,4 @@
 @import url("../files/style.css");
-@keyframes fadeIn{
-    to{
-        opacity: 1;
-    }
-}
-.fadeIn{
-    opacity: 0;
-    animation: fadeIn 2s forwards;
-}
-
 div.section{
     width: 100%;
     height: fit-content;
@@ -19,4 +9,44 @@ div.section > div.header{
     width: 100%;
     height: fit-content;
     line-height: 0;
+}
+footer{
+    width: 100%;
+    height: fit-content;
+    text-align: center;
+    line-height: 0;
+    color: var(--color-dim);
+}
+img{
+    border-radius: var(--border-radius);
+}
+.img-to-right{
+    display: inline-grid;
+    grid-template-columns: fit-content fit-content;
+    width: 100%;
+}
+.img-to-right img{
+    grid-column: 2;
+    margin: 0 0 5rem 1rem;
+    justify-self: center;
+}
+.img-to-right p{
+    grid-column: 1;
+    margin: 0 1rem 1rem 0;
+    justify-self: left;
+}
+.img-to-left{
+    display: inline-grid;
+    grid-template-columns: fit-content fit-content;
+    width: 100%;
+}
+.img-to-left img{
+    grid-column: 1;
+    margin: 0 0 5rem 1rem;
+    justify-self: center;
+}
+.img-to-left p{
+    grid-column: 2;
+    margin: 0 1rem 1rem 0;
+    justify-self: right;
 }

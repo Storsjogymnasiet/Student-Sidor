@@ -3,6 +3,7 @@
     --color-paper: light-dark(#f0f0f0,#0f0f0f);
     --color-fg: light-dark(#000,#fff);
     --color-link: #6495ed;
+    --color-dim: light-dark(#666,#999);
 
     --font: Arial,Helvetica,sans-serif;
     --font-code: monospace;
