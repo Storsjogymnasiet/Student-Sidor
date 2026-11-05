@@ -25,7 +25,7 @@ main {
 
 }
 
-main.places {
+main.locations {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 50px;
