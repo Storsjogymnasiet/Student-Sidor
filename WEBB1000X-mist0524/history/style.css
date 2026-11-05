@@ -1,0 +1,28 @@
+body{
+    background-color:rgb(115, 118, 176);
+    padding-left: 20%;
+    padding-right: 20%;
+
+
+}
+
+
+
+h1,h2,p {
+
+    text-align: center;
+
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+img{
+
+    width: 30%;
+    height: auto;
+
+    margin-left: 35%;
+}
+    
+a{
+    color: red;
+}
