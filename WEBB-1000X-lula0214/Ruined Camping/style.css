@@ -1,6 +1,6 @@
 body {
     background-color: rgb(247, 239, 225);
-    color: yellow;
+    color: rgb(191, 190, 190);
     Margin: 0px;
 }
 
@@ -41,11 +41,11 @@ main {
 }
 
 .hero img {
-    width: 90%;
+    width: 80%;
 }
 
 .hero h2 {
-    color: cyan;
+    color: green;
     font-size: 14px;
 }
 
@@ -54,50 +54,57 @@ main {
 }
 
 .activities {
-    background-color: white;
     padding: 5px;
-    margin-top: 100px;
+    margin-top: 25px;
+    text-align: center;
 }
 
 .activities h2 {
-    color: yellow;
+    color: green;
+    margin: 25px;
+}
+
+.activities h3 {
+    margin: 0px;
 }
 
 .activity {
-    background-color: pink;
-    border: 10px dashed green;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    width: 610.667px;
     padding: 3px;
-    margin: 50px;
+    margin-top: 10px;
 }
 
 .activity h3 {
-    color: blue;
+    color: green;
 }
 
 .activity p {
-    color: red;
+    color: rgb(0, 0, 0);
 }
 
 .contact {
-    background-color: lime;
-    color: purple;
+    background-color: rgb(220, 252, 220);
+    color: rgb(35, 112, 0);
     padding: 5px;
     margin-top: 100px;
     text-align: center;
 }
 
 button {
-    background-color: yellow;
+    background-color: rgb(255, 123, 0);
     color: pink;
-    border: 10px solid black;
+    border: 2px solid rgb(255, 123, 0);
+    border-radius: 4px;
     padding: 2px;
     font-size: 8px;
 }
 
 footer {
     background-color: green;
-    color: red;
+    color: rgb(255, 255, 255);
     text-align: center;
     padding: 2px;
-    margin-top: 100px;
+    margin-top: 25px;
 }
