@@ -1,0 +1,69 @@
+body{
+    text-align: center;
+    background-color: black;
+    font-size: 20px;
+    color: white;
+}
+img{
+    width: 200px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 100px;
+}
+#jojo{
+    position: absolute;
+    left: 223px;
+}
+#Rez{
+    position: absolute;
+    right: 290px;
+    top: 529px;
+}
+#Dbz{
+    position: absolute;
+    left: 265px;
+}
+#Cm{
+    position: absolute;
+    right: 270px;
+    top: 996px;
+}
+h1{
+    font-size: 50px;
+}
+#botw{
+    position: absolute;
+    left: 243px;
+}
+#UK{
+    position: absolute;
+    right: 290px;
+    top: 510px;
+}
+#smo{
+    position: absolute;
+    left: 237px;
+}
+#rb{
+    position: absolute;
+    right: 300px;
+    top: 898px;
+}
+#spin{
+    position: absolute;
+    left: 300px;
+}
+#padi-pado{
+    position: absolute;
+    right: 235px;
+    top: 430px;
+}
+#fh{
+    position: absolute;
+    left: 280px;
+}
+#kb{
+    position: absolute;
+    right: 285px;
+    top: 798px;
+}

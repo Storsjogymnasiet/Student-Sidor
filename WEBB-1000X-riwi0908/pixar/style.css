@@ -1,4 +1,18 @@
-body {
-   color: crimson;
+body{
     text-align: center;
+}
+a{
+    color: red;
+}
+.im-an-idiot{
+    margin: 20px;
+}
+img{
+    width: 102px;
+}
+.im-an-even-bigger-idiot{
+    width: 300px;
+}
+h1{
+    color: red;
 }
