@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+      background: linear-gradient(rgb(66, 63, 99), rgb(89, 85, 135));
+    height: 100vh;
+}
+
+header {
+    color: white;
+    text-align: center;
+}
+
+header h1{
+    margin: 0;
+}
+
+header p{
+    font-size: 20px;
+    margin: auto 250px;
+}
+
+main{
+    text-align: center;
+}
+
+main h1{
+    color: white;
+}
