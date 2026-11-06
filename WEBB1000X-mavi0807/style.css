@@ -1,0 +1,29 @@
+body {
+    background-color: black;
+}
+
+header {
+    font-family: 'Ink Free';
+    color: white;
+    background-color: rgb(50, 50, 50);
+    border-radius: 10px;
+    margin-right: 1000px;
+    text-align: center;
+}
+
+header p {
+    font-size: 24px;
+}
+
+.side-by-side {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.side-by-side img {
+    width: 100%;
+}
+
+h1 {
+    color: white;
+}
