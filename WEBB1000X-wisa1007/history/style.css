@@ -1,0 +1,48 @@
+body{
+    background-color: rgb(236, 209, 209);
+    color: rgb(0, 0, 0);
+    font-family: Arial;
+}
+
+
+header{
+    background-color: brown;
+    color: rgb(252, 221, 221);
+    outline: auto;
+    outline-color: rgb(0, 0, 0);
+    outline-style: double;
+    text-align: center;
+    padding: 10px;
+    margin: 20px;
+}
+section{
+    background-color: rgb(185, 56, 56);
+    color: rgb(252, 221, 221);
+    text-align: center;
+    padding: 40px;
+    margin-top: 20px;
+    outline: auto;
+    outline-color: rgb(107, 0, 0);
+    outline-style: double;
+}
+
+section p {
+    text-align: left;
+}
+
+section img {
+    width: 100%;
+}
+
+slot{
+    background-color: rgb(185, 56, 56);
+    color: rgb(21, 21, 21);
+    text-align: center;
+    padding: 0.5px;
+    margin-left: 400px;
+    margin-right: 400px;
+    margin-top: 20px;
+    outline: auto;
+    outline-color: rgb(107, 0, 0);
+    outline-style: double;
+}

@@ -1,0 +1,36 @@
+nav {
+    background-color: rgb(255, 255, 255);
+    color: red;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+article {
+    text-align: center;
+}
+
+body {
+    background-color: black;
+    color: aliceblue;
+}
+
+main {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+
+    justify-items: center;
+
+    padding-top: 20px;
+}
+
+
+article {
+    background-color: rgb(255, 1, 1);
+    color: white;
+    padding: 50px;
+    outline-style: groove;
+    outline: white;
+}

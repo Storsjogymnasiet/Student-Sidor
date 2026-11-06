@@ -1,0 +1,14 @@
+nav{
+    background-color: rgb(255, 255, 255);
+    color: red;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+}
+article{
+    text-align: center;
+}
+body{
+    background-color: black;
+}
