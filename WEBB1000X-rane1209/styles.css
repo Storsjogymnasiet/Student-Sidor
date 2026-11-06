@@ -1,15 +1,30 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 :root {
     --header_bg: aqua;
+    --list_bg: chartreuse;
+    --main_bg: blue;
+    --body_bg: rgb(100, 36, 36);
+    --tlh_bg: rgb(176, 155, 17);
+    --main_width: 80%;
+}
 
+html {
+    scroll-behavior: smooth;
 }
 
 .spiral-image {
     width: 30%;
 }
 
+
 body {
     text-align: center;
-    background-color: rgb(100, 36, 36);
+    background-color: var(--body_bg);
     margin: 0;
 }
 
@@ -18,11 +33,31 @@ header {
     padding: 1px;
 }
 
-.mainframe {
-    background-color: burlywood;
-    margin: 0 auto;
-    width: max-content;
-    border-radius: 10px;
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: azure;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--main_bg);
+    border-radius: 12px;
+    width: var(--main_width);
+    margin-left: calc((100% - (var(--main_width)))/2);
+    margin-right: calc((100% - (var(--main_width)))/2);
+    padding: 10px;
+
+}
+
+.test_list_header {
+    background-color: var(--tlh_bg);
+    width: 50%;
+    font-size: 30px;
+    border-radius: 20px;
 }
 
 .test_list {
@@ -30,21 +65,50 @@ header {
     flex-direction: column;
     text-align: left;
     justify-content: space-around;
-    background-color: chartreuse;
-    width: 50%;
+    background-color: var(--list_bg);
+    width: 80%;
     padding: 10px;
     margin: 10px;
+    border-radius: 12px;
 }
 
-main {
+.card-iframe {
+    text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    background-color: blue;
-    border-radius: 12px;
-    width: 60%;
-    margin-left: 20%;
-    margin-right: 20%;
-    padding: 10px;
+}
 
+iframe {
+    height: 400px;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    :root {
+        --main_bg: red;
+        --main_width: 100%;
+    }
+}
+
+about-me {
+    display: grid;
+    background-color: coral;
+    width: var(--main_width);
+    margin-left: calc((100% - (var(--main_width)))/2);
+    margin-right: calc((100% - (var(--main_width)))/2);
+    padding: 12px;
+    margin-top: 60px;
+    border-radius: 12px;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+footer {
+    background-color: blueviolet;
+    width: 100%;
+    padding: 20px;
+    font-size: 30px;
+    margin-top: 60px;
 }
