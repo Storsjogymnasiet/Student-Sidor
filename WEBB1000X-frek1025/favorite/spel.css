@@ -1,0 +1,60 @@
+nav {
+    background-color: #333333;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 32px;
+}
+
+nav a {
+    color: rgb(196, 196, 196);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 32px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: rgb(216, 216, 216);
+    text-decoration: underline;
+}
+
+.current {
+    text-decoration: underline;
+    color: rgb(216, 216, 216);
+}
+
+header {
+    padding: 10px;
+    color: rgb(196, 196, 196);
+    text-align: center;
+}
+
+body {
+    background-color: #1b1b1b;
+}
+
+main {
+    display: grid;
+    
+    grid-template-columns: 1fr 1fr 1fr;
+
+    justify-items: center;
+
+    text-align: center;
+
+    gap: 30px;
+}
+
+main img {
+    padding: 15px;
+    padding-bottom: 0;
+    background-color: rgb(43, 43, 43);
+    border-radius: 8px;
+}
+
+.card {
+    box-shadow: black 1px 1px 30px;
+    color: rgb(196, 196, 196);
+    background-color: rgb(43, 43, 43);
+}
