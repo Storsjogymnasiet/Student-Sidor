@@ -1,3 +1,7 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body {
     background-color:rgb(234, 226, 213);
     color: rgb(240, 240, 238);
@@ -5,6 +9,8 @@ body {
     text-align: center;
 
     margin: auto;
+
+    width: 100%;
 }
 
 header {
@@ -32,7 +38,7 @@ nav a {
 }
 
 main {
-    width: 640px;
+    width: 60%;
     margin: 10px auto;
     border-radius: 10px;
     
@@ -40,18 +46,17 @@ main {
 
 .hero {
     background-color: rgb(243, 241, 241);
-    width: 650px;
+    width: 100%;
     border-radius: 10px;
     padding: 15px;
     
 }
 
 .hero img {
-    width: 500px;
-    border: 25px solid b;
+    width:80%;
+    border: 25px solid black;
     text-align: center;
     border-radius: 5px;
-
 }
 
 .hero h2 {
@@ -66,9 +71,7 @@ main {
 
 .activities {
     background-color: rgb(234, 226, 213);
-    padding: 15px;
     margin-top: 100px;
-
 }
 
 .activities h2 {
@@ -98,7 +101,7 @@ main {
     color: rgb(35, 104, 40);
     padding: 20px;
     margin-top: 100px;
-    width: 605px;
+    width: 100%;
     text-align: center;
     border-radius: 7px;
 }
@@ -122,8 +125,8 @@ footer {
 }
 
 @media only screen and (max-width: 768px) {
-    body {
-        margin-left: 0;
-        margin-right: 0;
+    main {
+        width: 96%;
+        margin: 0 2%;
     }
 }
