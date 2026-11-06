@@ -1,12 +1,18 @@
-head {
-    width: 100%;
-    
+h1 {
 
+    color: rgb(167, 11, 11);
+    text-align: center;
 }
 
-body {
 
+
+main {
+    text-align: center;
+}
+
+header {
+    text-align: center;
+}
+a {
     color: red;
-
-
 }
