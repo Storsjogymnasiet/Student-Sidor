@@ -1,0 +1,36 @@
+main {
+       width: 70%;
+       text-align: center;
+       margin: 0 15%;
+
+}
+
+header img{
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+}
+h1 {
+    text-align: center;
+    color: brown;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.grid img {
+    height: 300px;
+    width: 100%;
+}
+
+
+a {
+    color: red;
+}
+
+footer {
+    text-align: center;
+}
+
