@@ -54,7 +54,7 @@ main {
 
 .hero img {
     width:80%;
-    border: 25px solid black;
+    border: 5px solid black;
     text-align: center;
     border-radius: 5px;
 }
