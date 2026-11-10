@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #101827;
+    color: #e8eef8;
+}
+
+header {
+    background-color: #1c2940;
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+.header-title {
+    font-size: 32px;
+    margin: 0;
+    text-align: center;
+}
+
+main {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.intro-title {
+    color: white;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.section-title {
+    color: #f1f5f5;
+    margin-top: 35px;
+    margin-bottom: 20px;
+}
+
+.intro-text,
+.intro-description {
+    color: #ffffff;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.ruta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1c2940;
+    padding: 20px;
+    margin-bottom: 15px;
+    border: 1px solid #2c3d58;
+    border-radius: 12px;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+    text-align: left;
+}
+
+.text-title {
+    margin: 0;
+    font-size: 19px;
+    color: white;
+}
+
+.text-description {
+    margin: 0;
+    font-size: 14px;
+    color: #fcfdfe;
+}
+
+.ruta-link {
+    text-decoration: none;
+    background-color: #fcfefe;
+    color: #101827;
+    font-weight: bold;
+    padding: 10px 16px;
+    border-radius: 7px;
+}
+
+.info-ruta {
+    background-color: #1c2940;
+    padding: 20px;
+    margin-top: 30px;
+    border: 1px solid #2c3d58;
+    border-radius: 12px;
+    text-align: left;
+}
+
+.info-title {
+    color: white;
+    margin-top: 0;
+}
+
+.info-text {
+    color: #f6f7f8;
+    line-height: 1.6;
+}
