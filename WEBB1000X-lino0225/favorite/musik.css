@@ -1,0 +1,70 @@
+body {
+    background-color: rgb(0, 43, 74);
+    margin: 0;
+    font-family:'Courier New', Courier, monospace;
+}
+header {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(212, 195, 82);
+    font-size: 300%;
+}
+Header h1 {
+ 
+    margin: 0;
+
+}
+header a {
+       color: rgb(26, 86, 111);
+}
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    background-color: rgb(26, 86, 111);
+    font-size: 200%;
+}
+nav a {
+    color: rgb(212, 195, 82);
+}
+.nu a {
+    color:rgb(255, 248, 205);
+    background-color: rgb(2, 62, 86);
+    border-color: rgb(255, 248, 205);
+    border-radius: 5px;
+    border-style: dotted;
+}
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+
+    margin-top: 4%;
+}
+
+.card {
+    color: rgb(212, 195, 82);
+    text-align: center;
+
+    background-color: rgb(26, 86, 111);
+
+    margin: 10% 15%;
+
+}
+
+.card img {
+    width: 90%;
+    margin-top: 5%
+}
+.card p {
+    font-size: 200%;
+    font-weight: bold;
+}
+main iframe {
+    margin: 10%;
+}
+main img {
+    margin: 10%;
+    border-radius: 15px;
+}

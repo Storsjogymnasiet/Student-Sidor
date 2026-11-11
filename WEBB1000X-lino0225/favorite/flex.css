@@ -22,6 +22,15 @@ nav {
     background-color: rgb(26, 86, 111);
     font-size: 200%;
 }
+
 nav a {
     color: rgb(212, 195, 82);
+}
+main {
+    display: grid;
+    justify-content: center;
+    margin-top: 5%;
+}
+header a {
+       color: rgb(26, 86, 111);
 }
