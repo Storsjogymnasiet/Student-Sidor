@@ -1,0 +1,72 @@
+body{
+    text-align: center;
+    background-color: white;
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+.pixar {
+    background-color: white;
+
+    display:block;
+    margin-top: 25px;
+    padding-bottom: 12px;
+    border-bottom: 1.5px solid black;
+
+}
+
+.h2s {
+    padding-top: 27px;
+}
+
+.p1s {
+    padding-bottom: 33px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(6, max-content);
+    justify-content: center;
+    
+    width: 40%;
+    gap: 5px;
+
+    margin: 0 auto;
+}
+
+.grid img {
+    width: auto;
+    max-width: 100%;
+
+    height: auto;
+    justify-self: center;
+    object-fit: cover;
+    align-self: end;
+
+    padding-bottom: 30px;
+
+    display: block; 
+}
+
+.grid a {
+    margin:0;
+    text-align: center;
+    padding-bottom: 36px;
+}
+
+.lastpart {
+    border-top: 1.5px solid black;
+    padding-top: 5px;
+}
+
+.lastpart img{
+    margin: 0 auto;
+    padding-top: 12px;
+}
+
+a {
+    color: red;
+}

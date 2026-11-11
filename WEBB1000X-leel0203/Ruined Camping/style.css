@@ -1,103 +1,147 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #2f5d3a;
+}
+
 body {
-    background-color: purple;
-    color: yellow;
-    font-family: "Comic Sans MS", cursive;
-    margin: 100px;
+    background-color: beige;
+    color: white;
+    margin: 0px auto;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
-    background-color: black;
-    color: pink;
-    text-align: left;
+    background-color: #2f5d3a;
+    color: white;
     padding: 5px;
+    text-align: center;
 }
 
 header h1 {
-    font-size: 20px;
+    font-size: 25px;
+    margin-top: 15px;
+    margin-bottom: 0px;
+}
+
+header p {
+    font-size: 10px;
+    margin: 0px;
+    margin-bottom: 15px;
 }
 
 nav {
-    background-color: orange;
-    text-align: right;
-    padding: 30px;
+    background-color: #24492d;
+    text-align: center;
+    padding-bottom: 5px;
 }
 
 nav a {
-    color: lime;
+    color: white;
     font-size: 10px;
-    margin: 30px;
+    margin: 5px;
+    text-decoration: none;
 }
 
 main {
-    width: 300px;
-    margin: 50px auto;
+    width: 600px;
+    margin: 20px auto;
 }
 
 .hero {
-    background-color: red;
+    width: 100%;
+    background-color: white;
     padding: 2px;
-    text-align: left;
+    border-radius: 5px;
 }
 
 .hero img {
-    width: 200px;
-    border: 15px solid blue;
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+    border-radius: 5px;
+    margin-top: 5%;
 }
 
 .hero h2 {
-    color: cyan;
-    font-size: 14px;
+    color: darkgreen;
+    font-size: 20px;
+    text-align: center;
+    margin: 0px auto;
+    margin-bottom: 5%;
 }
 
 .hero p {
-    font-size: 8px;
+    font-size: 12px;
+    color: black;
+    margin: 0px auto;
+    text-align: center;
+    margin-bottom: 5%;
+    margin-top: -2%;
 }
 
 .activities {
-    background-color: black;
-    padding: 5px;
-    margin-top: 100px;
+    margin-top: 10px;
+    text-align: center;
 }
 
 .activities h2 {
-    color: yellow;
+    color: darkgreen;
+    font-size: 20px;
+    margin-top: 1%;
+    margin-bottom: 0px;
 }
 
 .activity {
-    background-color: pink;
-    border: 10px solid green;
-    padding: 3px;
-    margin: 50px;
+    background-color: white;
+    width: 100%;
+    border: 1px solid rgb(223, 223, 208);
+    border-radius: 5px;
+    padding: 5px;
+
+    margin-top: 10px;
+
+    margin-bottom: 10px;
+
 }
 
 .activity h3 {
-    color: blue;
+    color: darkgreen;
 }
 
 .activity p {
-    color: red;
+    color: black;
 }
 
 .contact {
-    background-color: lime;
-    color: purple;
+    background-color: lightgreen;
+    color: darkgreen;
     padding: 5px;
-    margin-top: 100px;
-    text-align: right;
+    margin-top: 5px;
+    text-align: center;
+    border-radius: 5px;
 }
 
 button {
-    background-color: yellow;
-    color: pink;
-    border: 10px solid black;
+    background-color: orange;
+    color: white;
+    border: 10px solid orange;
+    border-radius: 5px;
     padding: 2px;
     font-size: 8px;
 }
 
+.contact p{
+    color: black;
+}
+
 footer {
-    background-color: white;
-    color: red;
-    text-align: left;
+    background-color: #2f5d3a;
+    color: white;
+    text-align: center;
     padding: 2px;
-    margin-top: 100px;
+    margin-top: 0px;
+    font-size: 10px;
 }
