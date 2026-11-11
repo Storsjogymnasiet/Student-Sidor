@@ -1,0 +1,26 @@
+img {
+    margin: 0 auto;
+    display: block;
+}
+nav {
+   text-decoration: solid;
+}
+
+main {
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 12px;
+
+    background-color: white;
+
+}
+
+body {
+    background-color: darksalmon;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
