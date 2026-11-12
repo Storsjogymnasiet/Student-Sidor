@@ -1,0 +1,39 @@
+
+
+body{
+    background-color: #1c7537;
+}
+h1{
+    color: #FFF200;
+    text-align: center;
+}
+h2{
+    color: #FFF200;
+    text-align: center;
+}
+section{
+    background-color: black;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 5%;
+    padding: 16px;
+}
+
+section img {
+    margin: 0 0 0 auto;
+    display: block;
+}
+.list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    gap: 16px;
+}
+a{
+    color: #FFF200;
+    font-size: 30px;
+}
+img{
+    width: 200px;  
+}
