@@ -59,3 +59,8 @@ img {
     text-align: left;
     padding-left: 0;
 }
+
+footer {
+   margin-top: 50px;
+   color: rgb(39, 0, 139);
+}

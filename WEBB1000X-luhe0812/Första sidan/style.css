@@ -6,6 +6,11 @@ body{
 }
 
 
-p{
+p {
+    color: hotpink;
+}
+
+footer {
+    padding-top: 190px;
     color: hotpink;
 }
