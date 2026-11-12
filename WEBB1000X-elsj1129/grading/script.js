@@ -33,7 +33,7 @@ const GROUPS = [
             "WEBB1000X-elno0123",
             "WEBB-1000X-hulu0129",
             "WEBB-1000X-lula0214",
-            "WEBB100X-mide0720",
+            "WEBB1000X-mide0720",
             "webb1000x-Mibe0410",
             "WEBB1000X-mila0325",
             "WEBB1000X-miny0319",

@@ -39,8 +39,9 @@ h3,h4 {
 }
 
 a {
-    color: #986e6e;
+    color: var(--color);
     text-decoration: none;
+    font-weight: bolder;
 }
 
 footer {
@@ -126,6 +127,10 @@ footer {
 .list-item * {
     padding: 0px;
     margin: 0px;
+}
+
+.list-item p {
+    margin-top: 0.5rem;
 }
 
 .list-item-right {
