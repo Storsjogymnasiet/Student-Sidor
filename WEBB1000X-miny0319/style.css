@@ -1,0 +1,41 @@
+body{
+    background-color: rgb(45, 45, 45);
+    color: white;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main{
+    text-align: center;
+    padding: 50px;
+    
+}
+
+a{
+    color: rgb(248, 249, 249);
+    padding: 10px;
+    
+}
+
+section{
+    
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+
+    width: 50%;
+    margin: 0 auto;
+
+    gap: 12px;
+}
+
+.list-item {
+    background-color: rgb(0, 166, 255);
+    border-radius: 12px;
+}
+
+.list-item:hover{
+    filter: brightness(1.2);
+}
