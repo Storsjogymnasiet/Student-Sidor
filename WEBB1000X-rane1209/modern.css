@@ -1,0 +1,113 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --header_bg: rgb(26, 88, 188);
+    --nav_bg: rgb(239, 239, 129);
+    --body_bg: brown;
+    --list_header_bg: rgb(153, 255, 255);
+    --list_bg: rgb(255, 191, 191);
+    --about_me_bg: rgb(246, 99, 99);
+    --footer_bg: gold;
+
+
+    --main_width: 80%;
+    --list_width: 80%;
+    --list_header_width: 50%;
+    --footer_width:100%;
+
+    --iframe_height: 400px;
+
+    --list_header_font_size: 30px;
+
+    --most_border_radiuses: 12px;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    text-align: center;
+    margin: 0;
+    background-color: var(--body_bg);
+}
+
+header{
+    background-color: var(--header_bg);
+    padding: 1px;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--nav_bg);
+    border: 2px solid black;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: var(--most_border_radiuses);
+    width: --main_width;
+    margin-left: calc((100% - (var(--main_width)))/2);
+    margin-right: calc((100% - (var(--main_width)))/2);
+    padding: 10px;
+}
+
+.list_header{
+    background-color: var(--list_header_bg);
+    width: var(--list_header_width);
+    font-size: var(--list_header_font_size);
+    border-radius: 20px
+}
+
+.list{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--list_bg);
+    width: var(--list_width);
+    padding: 10px;
+    margin: 10px;
+    border-radius: var(--most_border_radiuses);
+}
+
+.card-iframe{
+    display:flex;
+    flex-direction: column;
+}
+
+iframe{
+    height: var(--iframe_height);
+    border-radius: 5px;
+}
+
+about-me {
+    display: grid;
+    background-color: var(--about_me_bg);
+    width: var(--main_width);
+    margin-left: calc((100% - (var(--main_width)))/2);
+    margin-right: calc((100% - (var(--main_width)))/2);
+    margin-top: 60px;
+    padding: 12px;
+    border-radius: var(--most_border_radiuses);
+}
+
+footer{
+    background-color: var(--footer_bg);
+    width: 100%;
+    padding: 20px;
+    font-size: 30px;
+    margin-top: 60px;
+}
+
+@media screen and (max-width: 768px){
+    :root{
+        --list_width: 100%;
+    }
+}

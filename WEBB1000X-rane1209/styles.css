@@ -83,13 +83,6 @@ iframe {
     border-radius: 5px;
 }
 
-@media screen and (max-width: 768px) {
-    :root {
-        --main_bg: red;
-        --main_width: 100%;
-    }
-}
-
 about-me {
     display: grid;
     background-color: coral;
