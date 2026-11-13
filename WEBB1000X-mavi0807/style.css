@@ -4,10 +4,17 @@ body {
 
 header {
     font-family: 'Ink Free';
+    
     color: white;
+    
     background-color: rgb(50, 50, 50);
+    
     border-radius: 10px;
-    margin-right: 1000px;
+    
+    margin-left: 400px;
+    
+    margin-right: 400px;
+    
     text-align: center;
 }
 
@@ -15,15 +22,47 @@ header p {
     font-size: 24px;
 }
 
-.side-by-side {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-.side-by-side img {
-    width: 100%;
-}
-
 h1 {
     color: white;
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+
+    justify-items: center;
+
+    text-align: center;
+    
+    grid-template-columns: 1fr 1fr;
+
+    gap: 30px;
+}
+
+.korv{
+    box-shadow: black 1px 1px 30px;
+    
+    background-color: rgb(37, 37, 37);
+    
+    color: white;
+    
+    padding: 15px;
+
+    border-radius: 6px;
+}
+
+.biskvi {
+    color: white;
+    
+    text-align: center;
+    
+    background-color: rgb(50, 50, 50);
+    
+    border-radius: 10px;
+
+    justify-content: center;
+
+    margin-left: 450px;
+
+    margin-right: 450px;
 }
