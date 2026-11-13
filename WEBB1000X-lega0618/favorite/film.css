@@ -1,15 +1,14 @@
 nav {
 
-display: flex;
+    display: flex;
 
-align-items: center;
-justify-content: space-around;
-background: black;
+    align-items: center;
+    justify-content: space-around;
+    background: black;
 
 }
 
-a
-{
+a {
     color: rgb(200, 255, 0);
     font-size: 30px;
 }
@@ -19,7 +18,7 @@ main {
 
     grid-template-columns: 1fr 1fr 1fr;
 
-    justify-items: center; 
+    justify-items: center;
     text-align: center;
     column-gap: 30px;
     background: rgb(6, 6, 6);
@@ -28,7 +27,7 @@ main {
 
 body {
 
-margin: 0;
+    margin: 0;
 }
 
 p {
@@ -42,15 +41,15 @@ img {
 }
 
 .card img {
- 
-  width: 250px; 
-  height: 350px; 
 
- 
-  object-fit: cover; 
-  object-position: center; 
+    width: 250px;
+    height: 350px;
 
-  border-radius: 8px; 
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 8px;
 
     border: 2px solid #ffffff;
     border-radius: 10px;
@@ -68,42 +67,41 @@ header {
 
 .rainbow-text {
 
-  background: linear-gradient(
-    to right,
-    violet,
-    indigo,
-    blue,
-    green,
-    yellow,
-    orange,
-    red,
-    violet
-  );
-  
+    background: linear-gradient(to right,
+            violet,
+            indigo,
+            blue,
+            green,
+            yellow,
+            orange,
+            red,
+            violet);
 
-  background-size: 200% auto;
-  
- 
-  -webkit-background-clip: text;
-  background-clip: text;
-  
 
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-  
- 
-  animation: rainbow-shift 3s linear infinite;
-  
+    background-size: 200% auto;
 
-  font-weight: bold;
-  font-size: 1.2rem;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+
+
+    animation: rainbow-shift 3s linear infinite;
+
+
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 
 @keyframes rainbow-shift {
-  0% {
-    background-position: 0% center;
-  }
-  100% {
-    background-position: 200% center;
-  }
+    0% {
+        background-position: 0% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
 }
