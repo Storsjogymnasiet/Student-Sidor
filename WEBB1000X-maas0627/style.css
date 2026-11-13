@@ -1,0 +1,47 @@
+header{
+    color: rgb(200, 0, 255);
+font-size: x-large;
+text-align: center;
+}
+
+.websites{
+
+}
+
+.grid {
+display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+}
+
+body{
+    
+    text-align: center;
+    color: rgb(200, 0, 255);
+
+    background-color: black;
+}
+
+hr{
+    color: #8604c7;
+}
+
+iframe{
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+section{
+    
+}
+
+a {
+    color: red;
+}
+
+.text-area {
+    margin: 0 20%;
+    text-align: left;
+
+    margin-top: 32px;
+}
