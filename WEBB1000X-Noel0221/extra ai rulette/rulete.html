@@ -1,322 +1,1078 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Säker Roulette</title>
+    <title>NEXUS AI CASINO & ARENA</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #1a1a1a;
-            color: #ffffff;
+            font-family: 'Rajdhani', sans-serif;
+            background: radial-gradient(circle at center, #0b0f19 0%, #020408 100%);
+            color: #f1f5f9;
+            min-height: 100vh;
+            user-select: none;
+            overflow-x: hidden;
+        }
+
+        .font-orbitron { font-family: 'Orbitron', sans-serif; }
+        .font-cinzel { font-family: 'Cinzel', serif; }
+
+        /* Glassmorphism Styles */
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
+        }
+
+        .cyan-glow {
+            box-shadow: 0 0 15px rgba(6, 182, 212, 0.4);
+        }
+
+        .fuchsia-glow {
+            box-shadow: 0 0 15px rgba(217, 70, 239, 0.4);
+        }
+
+        .text-gradient-cyan {
+            background: linear-gradient(135deg, #a5f3fc 0%, #06b6d4 50%, #0369a1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-fuchsia {
+            background: linear-gradient(135deg, #f0abfc 0%, #d946ef 50%, #86198f 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Chips styling */
+        .chip-btn {
+            border: 2px dashed rgba(255, 255, 255, 0.6);
+            transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .chip-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+        }
+
+        .chip-active {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 0 15px rgba(6, 182, 212, 0.8);
+            border-style: solid;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 5px; height: 5px; }
+        ::-webkit-scrollbar-track { background: rgba(15, 23, 42, 0.8); }
+        ::-webkit-scrollbar-thumb { background: rgba(6, 182, 212, 0.4); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(6, 182, 212, 0.8); }
+
+        /* Roulette Grid */
+        .roulette-grid {
+            display: grid;
+            grid-template-columns: 40px repeat(12, 1fr) 50px;
+            grid-template-rows: repeat(3, 44px) 38px 38px;
+            gap: 2px;
+            background-color: #020617;
+            padding: 4px;
+            border-radius: 8px;
+            border: 2px solid #06b6d4;
+        }
+
+        .r-cell {
+            position: relative;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
-        }
-
-        .game-container {
-            background-color: #2a2a2a;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-            text-align: center;
-            max-width: 450px;
-            width: 100%;
-        }
-
-        .score-board {
-            font-size: 24px;
-            margin: 15px 0;
-            font-weight: bold;
-            background: #333;
-            padding: 10px;
-            border-radius: 8px;
-            color: #ffd700;
-        }
-
-        /* --- Hjul-grafik --- */
-        .wheel-wrapper {
-            position: relative;
-            width: 240px;
-            height: 240px;
-            margin: 20px auto;
-        }
-
-        .pointer {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 0;
-            border-left: 15px solid transparent;
-            border-right: 15px solid transparent;
-            border-top: 25px solid #ffd700;
-            z-index: 10;
-        }
-
-        .wheel {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            border: 6px solid #333;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-            background: conic-gradient(
-                #d32f2f 0% 35%,       /* Röd: 35% */
-                #111111 35% 70%,     /* Svart: 35% */
-                #b71c1c 70% 82.5%,   /* Special Röd: 12.5% */
-                #000000 82.5% 95%,   /* Special Svart: 12.5% */
-                #2e7d32 95% 100%     /* Grön: 5% */
-            );
-            transform: rotate(0deg);
-            transition: transform 4s cubic-bezier(0.1, 0.8, 0.1, 1);
-        }
-
-        .wheel-center {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 40px;
-            height: 40px;
-            background: #222;
-            border-radius: 50%;
-            border: 3px solid #ffd700;
-        }
-
-        .result-display {
-            font-size: 18px;
-            font-weight: bold;
-            margin: 15px 0;
-            height: 25px;
-            color: #fff;
-        }
-
-        .error-display {
-            color: #ff4d4d;
-            font-weight: bold;
-            height: 20px;
-            margin-bottom: 10px;
-            font-size: 14px;
-        }
-
-        /* --- Spelplan --- */
-        .betting-board {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-        }
-
-        .green-bet {
-            grid-column: span 2;
-        }
-
-        .bet-box {
-            background: #333;
-            padding: 10px;
-            border-radius: 8px;
-            border: 1px solid #555;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .bet-box label {
-            font-weight: bold;
-            margin-bottom: 5px;
-            font-size: 13px;
-        }
-
-        .bet-box input {
-            width: 70px;
-            padding: 5px;
+            font-weight: 700;
             border-radius: 4px;
-            border: none;
-            text-align: center;
-            font-size: 15px;
-        }
-
-        .lbl-red { color: #ff4d4d; }
-        .lbl-black { color: #88b5ff; } 
-        .lbl-s-red { color: #ff1a1a; font-style: italic; }
-        .lbl-s-black { color: #4d88ff; font-style: italic; }
-        .lbl-green { color: #2ecc71; }
-
-        .spin-btn {
-            background-color: #4caf50;
-            color: white;
-            border: none;
-            padding: 12px;
-            font-size: 18px;
-            font-weight: bold;
-            border-radius: 8px;
             cursor: pointer;
-            margin-top: 15px;
-            width: 100%;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            transition: all 0.15s ease;
+            font-size: 0.85rem;
+            user-select: none;
         }
 
-        .spin-btn:disabled {
-            background-color: #555;
-            cursor: not-allowed;
+        .r-cell:hover { filter: brightness(1.3); z-index: 10; }
+        .r-cell-red { background-color: #991b1b; color: white; }
+        .r-cell-black { background-color: #18181b; color: white; border: 1px solid #3f3f46; }
+        .r-cell-green { background-color: #059669; color: white; }
+        .r-cell-out { background-color: #1e293b; color: #38bdf8; border: 1px solid rgba(6, 182, 212, 0.3); }
+
+        .chip-stack {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #a5f3fc 0%, #0891b2 100%);
+            color: #020617;
+            font-weight: 900;
+            font-size: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.8), inset 0 0 0 2px #ffffff;
+            pointer-events: none;
+            z-index: 20;
         }
 
-        .log {
-            margin-top: 15px;
-            max-height: 90px;
-            overflow-y: auto;
-            background: #111;
-            padding: 8px;
-            border-radius: 5px;
-            font-family: monospace;
-            font-size: 12px;
-            text-align: left;
+        /* Pulse animation for wins */
+        .win-glow {
+            animation: winPulse 1.2s infinite alternate;
+        }
+
+        @keyframes winPulse {
+            0% { box-shadow: 0 0 5px #06b6d4; border-color: #a5f3fc; }
+            100% { box-shadow: 0 0 20px #d946ef, inset 0 0 10px #d946ef; border-color: #ffffff; }
+        }
+
+        .tab-btn.active {
+            background-color: rgba(6, 182, 212, 0.15);
+            color: #22d3ee;
+            border-color: rgba(6, 182, 212, 0.5);
+            box-shadow: 0 0 12px rgba(6, 182, 212, 0.2);
         }
     </style>
 </head>
-<body>
+<body class="flex flex-col min-h-screen justify-between">
 
-<div class="game-container">
-    <h2 style="margin:0; color:#4caf50;">Custom Roulette</h2>
-    
-    <div class="score-board">
-        Poäng: <span id="points-display">100</span>
-    </div>
+    <!-- Top Header Bar -->
+    <header class="glass-panel border-b border-cyan-500/20 px-4 py-3 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-4">
+            
+            <!-- Brand -->
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('lobby')">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 via-indigo-500 to-fuchsia-500 p-0.5 shadow-lg shadow-cyan-500/30">
+                    <div class="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
+                        <i class="fa-solid fa-brain text-cyan-400 text-lg animate-pulse"></i>
+                    </div>
+                </div>
+                <div>
+                    <h1 class="font-orbitron text-lg font-black tracking-wider text-gradient-cyan">NEXUS AI CASINO</h1>
+                    <p class="text-[10px] text-cyan-400/70 tracking-widest uppercase font-mono">Cybernetic Neural Platform</p>
+                </div>
+            </div>
 
-    <div class="wheel-wrapper">
-        <div class="pointer"></div>
-        <div id="roulette-wheel" class="wheel"></div>
-        <div class="wheel-center"></div>
-    </div>
+            <!-- Global Player Wallet & Stats -->
+            <div class="flex items-center gap-3">
+                <div class="bg-slate-950/80 border border-slate-800 px-3 py-1.5 rounded-xl flex items-center space-x-2">
+                    <i class="fa-solid fa-award text-fuchsia-400"></i>
+                    <div>
+                        <div class="text-[9px] text-slate-400 font-bold uppercase">Level <span id="player-level">1</span></div>
+                        <div class="w-16 bg-slate-800 h-1.5 rounded-full overflow-hidden mt-0.5">
+                            <div id="xp-bar" class="bg-fuchsia-500 h-full" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
 
-    <div id="result-text" class="result-display">Välj insatser och klicka nedan</div>
-    <div id="error-text" class="error-display"></div>
+                <div class="bg-slate-950/80 border border-cyan-500/30 px-4 py-1.5 rounded-xl flex items-center space-x-2.5">
+                    <i class="fa-solid fa-wallet text-cyan-400"></i>
+                    <div>
+                        <div class="text-[9px] text-slate-400 uppercase font-bold">Balance</div>
+                        <div id="player-balance" class="text-sm font-extrabold text-cyan-300 font-mono">$1,000.00</div>
+                    </div>
+                </div>
 
-    <div class="betting-board">
-        <div class="bet-box">
-            <label class="lbl-red">Röd (2x)</label>
-            <input type="number" id="bet-red" min="0" value="0">
+                <button onclick="claimFaucet()" class="px-3 py-2 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-slate-950 font-bold text-xs rounded-xl shadow-md transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-gift"></i>
+                    <span class="hidden sm:inline">Free $250</span>
+                </button>
+
+                <button id="audio-btn" onclick="toggleAudio()" class="p-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-cyan-400 border border-cyan-500/30 transition">
+                    <i class="fa-solid fa-volume-high text-sm"></i>
+                </button>
+            </div>
         </div>
-        <div class="bet-box">
-            <label class="lbl-black">Svart (2x)</label>
-            <input type="number" id="bet-black" min="0" value="0">
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="bg-slate-950/60 border-b border-slate-800 px-4 py-2 overflow-x-auto">
+        <div class="max-w-7xl mx-auto flex space-x-2 min-w-max">
+            <button onclick="switchTab('lobby')" id="tab-lobby" class="tab-btn active px-3.5 py-2 rounded-xl text-xs font-bold border border-slate-800 transition flex items-center space-x-2">
+                <i class="fa-solid fa-tower-cell"></i><span>Lobby & AI Chat</span>
+            </button>
+            <button onclick="switchTab('roulette')" id="tab-roulette" class="tab-btn px-3.5 py-2 rounded-xl text-xs font-bold border border-slate-800 transition flex items-center space-x-2">
+                <i class="fa-solid fa-circle-notch"></i><span>Cyber Roulette</span>
+            </button>
+            <button onclick="switchTab('crash')" id="tab-crash" class="tab-btn px-3.5 py-2 rounded-xl text-xs font-bold border border-slate-800 transition flex items-center space-x-2">
+                <i class="fa-solid fa-rocket"></i><span>Crash Rocket</span>
+            </button>
+            <button onclick="switchTab('mines')" id="tab-mines" class="tab-btn px-3.5 py-2 rounded-xl text-xs font-bold border border-slate-800 transition flex items-center space-x-2">
+                <i class="fa-solid fa-bomb"></i><span>Mines</span>
+            </button>
+            <button onclick="switchTab('towers')" id="tab-towers" class="tab-btn px-3.5 py-2 rounded-xl text-xs font-bold border border-slate-800 transition flex items-center space-x-2">
+                <i class="fa-solid fa-layer-group"></i><span>Towers</span>
+            </button>
+            <button onclick="switchTab('cases')" id="tab-cases" class="tab-btn px-3.5 py-2 rounded-xl text-xs font-bold border border-slate-800 transition flex items-center space-x-2">
+                <i class="fa-solid fa-box-open"></i><span>Case Unbox</span>
+            </button>
+            <button onclick="switchTab('battles')" id="tab-battles" class="tab-btn px-3.5 py-2 rounded-xl text-xs font-bold border border-slate-800 transition flex items-center space-x-2">
+                <i class="fa-solid fa-handshake-simple-slash"></i><span>Case Battles</span>
+            </button>
+            <button onclick="switchTab('slots')" id="tab-slots" class="tab-btn px-3.5 py-2 rounded-xl text-xs font-bold border border-slate-800 transition flex items-center space-x-2">
+                <i class="fa-solid fa-cubes"></i><span>5x3 Slots</span>
+            </button>
+            <button onclick="switchTab('blackjack')" id="tab-blackjack" class="tab-btn px-3.5 py-2 rounded-xl text-xs font-bold border border-slate-800 transition flex items-center space-x-2">
+                <i class="fa-solid fa-spade"></i><span>Blackjack 21</span>
+            </button>
         </div>
-        <div class="bet-box">
-            <label class="lbl-s-red">Special Röd (4x)</label>
-            <input type="number" id="bet-special_red" min="0" value="0">
+    </nav>
+
+    <!-- Main View Workspace -->
+    <main class="max-w-7xl w-full mx-auto p-4 flex-grow flex flex-col justify-start">
+
+        <!-- ================= LOBBY & AI DEALER CHAT ================= -->
+        <div id="view-lobby" class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <div class="lg:col-span-5 glass-panel p-5 rounded-2xl flex flex-col justify-between space-y-4">
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <h2 class="font-orbitron text-lg font-bold text-cyan-400 flex items-center gap-2">
+                            <i class="fa-solid fa-robot"></i> AI Dealer & Opponent Chat
+                        </h2>
+                        <select id="ai-mode" class="bg-slate-900 text-xs text-cyan-300 border border-cyan-500/30 rounded-lg px-2 py-1 outline-none">
+                            <option value="friendly">Friendly AI</option>
+                            <option value="aggressive">High Roller AI</option>
+                            <option value="strategist">Tactical Strategist</option>
+                        </select>
+                    </div>
+
+                    <div id="chat-box" class="bg-slate-950/70 border border-slate-800 rounded-xl p-3 h-72 overflow-y-auto space-y-2 text-xs font-sans">
+                        <div class="bg-cyan-950/40 border border-cyan-500/20 p-2.5 rounded-lg text-cyan-200">
+                            <strong>NEXUS AI Dealer:</strong> Welcome to the Cyber Casino Arena. Select any game above or talk to me for live odds & strategies!
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex gap-2">
+                    <input type="text" id="chat-input" placeholder="Ask AI dealer anything..." class="flex-grow bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-100 outline-none focus:border-cyan-500" onkeydown="if(event.key==='Enter') sendChatMessage()">
+                    <button onclick="sendChatMessage()" class="px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 font-bold text-xs rounded-xl shadow transition">Send</button>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 space-y-4">
+                <div class="glass-panel p-5 rounded-2xl border border-slate-800 flex justify-between items-center">
+                    <div>
+                        <h3 class="font-orbitron text-base font-bold text-slate-200">P2P Virtual Lobby & Direct IP Host</h3>
+                        <p class="text-xs text-slate-400 mt-1">Host room codes or simulate peer multiplayer connections.</p>
+                    </div>
+                    <button onclick="hostRoom()" class="px-4 py-2.5 bg-gradient-to-r from-fuchsia-500 to-purple-600 text-slate-950 font-bold text-xs rounded-xl shadow transition">Host Room</button>
+                </div>
+
+                <div id="room-status" class="hidden glass-panel p-4 rounded-2xl border border-cyan-500/30 space-y-3">
+                    <div class="flex justify-between items-center text-xs">
+                        <span class="text-slate-400">Room Code: <strong id="room-code-display" class="text-cyan-300 font-mono text-sm">--</strong></span>
+                        <span class="text-emerald-400 font-bold flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Active P2P Session</span>
+                    </div>
+                    <div id="player-list" class="space-y-1.5 text-xs">
+                        <div class="bg-slate-950 p-2 rounded border border-slate-800 flex justify-between">
+                            <span>⚡ You (Host)</span><span class="text-emerald-400">READY</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                    <div onclick="switchTab('roulette')" class="glass-panel p-4 rounded-xl border border-slate-800 hover:border-cyan-500/40 cursor-pointer transition transform hover:-translate-y-1">
+                        <i class="fa-solid fa-circle-notch text-cyan-400 text-2xl mb-2"></i>
+                        <div class="font-bold text-sm text-slate-200">Roulette</div>
+                        <div class="text-[10px] text-slate-400">European Physics Wheel</div>
+                    </div>
+                    <div onclick="switchTab('crash')" class="glass-panel p-4 rounded-xl border border-slate-800 hover:border-orange-500/40 cursor-pointer transition transform hover:-translate-y-1">
+                        <i class="fa-solid fa-rocket text-orange-400 text-2xl mb-2"></i>
+                        <div class="font-bold text-sm text-slate-200">Crash</div>
+                        <div class="text-[10px] text-slate-400">Multiplier Particle Rocket</div>
+                    </div>
+                    <div onclick="switchTab('mines')" class="glass-panel p-4 rounded-xl border border-slate-800 hover:border-emerald-500/40 cursor-pointer transition transform hover:-translate-y-1">
+                        <i class="fa-solid fa-bomb text-emerald-400 text-2xl mb-2"></i>
+                        <div class="font-bold text-sm text-slate-200">Mines</div>
+                        <div class="text-[10px] text-slate-400">5x5 Grid Mine Sweeper</div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="bet-box">
-            <label class="lbl-s-black">Special Svart (4x)</label>
-            <input type="number" id="bet-special_black" min="0" value="0">
+
+        <!-- ================= CYBER ROULETTE ================= -->
+        <div id="view-roulette" class="hidden grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <div class="lg:col-span-5 glass-panel p-5 rounded-2xl flex flex-col items-center justify-between">
+                <div id="r-result-banner" class="w-full text-center py-2 bg-slate-950 border border-cyan-500/30 rounded-xl mb-3">
+                    <span id="r-main-text" class="font-orbitron text-lg font-bold text-cyan-300">Place Your Bets</span>
+                </div>
+                <div class="relative w-full aspect-square max-w-[320px] flex items-center justify-center my-auto">
+                    <canvas id="roulette-canvas" width="380" height="380" class="w-full h-full"></canvas>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 glass-panel p-5 rounded-2xl space-y-4">
+                <div class="flex items-center justify-between bg-slate-950 p-2.5 rounded-xl border border-slate-800 gap-2 overflow-x-auto">
+                    <span class="text-xs font-bold text-slate-400">Chips:</span>
+                    <div class="flex gap-2">
+                        <button onclick="selectChip(1)" class="chip-btn w-9 h-9 rounded-full bg-blue-600 text-white font-bold text-xs chip-active" data-val="1">$1</button>
+                        <button onclick="selectChip(5)" class="chip-btn w-9 h-9 rounded-full bg-emerald-600 text-white font-bold text-xs" data-val="5">$5</button>
+                        <button onclick="selectChip(25)" class="chip-btn w-9 h-9 rounded-full bg-purple-600 text-white font-bold text-xs" data-val="25">$25</button>
+                        <button onclick="selectChip(100)" class="chip-btn w-9 h-9 rounded-full bg-amber-500 text-slate-950 font-bold text-xs" data-val="100">$100</button>
+                    </div>
+                    <button onclick="clearRouletteBets()" class="px-3 py-1 bg-slate-800 text-rose-400 border border-rose-500/30 rounded-lg text-xs font-bold">Clear</button>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <div id="roulette-board" class="roulette-grid min-w-[560px]">
+                        <div class="r-cell r-cell-green row-span-3" onclick="placeRouletteBet('0')">0</div>
+                        <!-- Row 1 -->
+                        <div class="r-cell r-cell-red" onclick="placeRouletteBet('3')">3</div>
+                        <div class="r-cell r-cell-black" onclick="placeRouletteBet('6')">6</div>
+                        <div class="r-cell r-cell-red" onclick="placeRouletteBet('9')">9</div>
+                        <div class="r-cell r-cell-red" onclick="placeRouletteBet('12')">12</div>
+                        <div class="r-cell r-cell-black" onclick="placeRouletteBet('15')">15</div>
+                        <div class="r-cell r-cell-red" onclick="placeRouletteBet('18')">18</div>
+                        <div class="r-cell r-cell-red" onclick="placeRouletteBet('21')">21</div>
+                        <div class="r-cell r-cell-black" onclick="placeRouletteBet('24')">24</div>
+                        <div class="r-cell r-cell-red" onclick="placeRouletteBet('27')">27</div>
+                        <div class="r-cell r-cell-red" onclick="placeRouletteBet('30')">30</div>
+                        <div class="r-cell r-cell-black" onclick="placeRouletteBet('33')">33</div>
+                        <div class="r-cell r-cell-red" onclick="placeRouletteBet('36')">36</div>
+                        <div class="r-cell r-cell-out" onclick="placeRouletteBet('col3')">2:1</div>
+                        <!-- Row 2 -->
+                        <div class="r-cell r-cell-black" onclick="placeRouletteBet('2')">2</div>
+                        <div class="r-cell r-cell-red" onclick="placeRouletteBet('5')">5</div>
+                        <div class="r-cell r-cell-black" onclick="placeRouletteBet('8')">8</div>
+                        <div class="r-cell r-cell-black" onclick="placeRouletteBet('11')">11</div>
+                        <div class="r-cell r-cell-red" onclick="placeRouletteBet('14')">14</div>
+                        <div class="r-cell r-cell-black" onclick="placeRouletteBet('17')">17</div>
+                        <div class="r-cell r-cell-black" onclick="placeRouletteBet('20')">20</div>
+                        <div class="r-cell r-cell-red" onclick="placeRouletteBet('23')">23</div>
+                        <div class="r-cell r-cell-black" onclick="placeRouletteBet('26')">26</div>
+                        <div class="r-cell r-cell-black" onclick="placeRouletteBet('29')">29</div>
+                        <div class="r-cell r-cell-red" onclick="placeRouletteBet('32')">32</div>
+                        <div class="r-cell r-cell-black" onclick="placeRouletteBet('35')">35</div>
+                        <div class="r-cell r-cell-out" onclick="placeRouletteBet('col2')">2:1</div>
+                        <!-- Row 3 -->
+                        <div class="r-cell r-cell-red" onclick="placeRouletteBet('1')">1</div>
+                        <div class="r-cell r-cell-black" onclick="placeRouletteBet('4')">4</div>
+                        <div class="r-cell r-cell-red" onclick="placeRouletteBet('7')">7</div>
+                        <div class="r-cell r-cell-black" onclick="placeRouletteBet('10')">10</div>
+                        <div class="r-cell r-cell-black" onclick="placeRouletteBet('13')">13</div>
+                        <div class="r-cell r-cell-red" onclick="placeRouletteBet('16')">16</div>
+                        <div class="r-cell r-cell-red" onclick="placeRouletteBet('19')">19</div>
+                        <div class="r-cell r-cell-black" onclick="placeRouletteBet('22')">22</div>
+                        <div class="r-cell r-cell-red" onclick="placeRouletteBet('25')">25</div>
+                        <div class="r-cell r-cell-black" onclick="placeRouletteBet('28')">28</div>
+                        <div class="r-cell r-cell-black" onclick="placeRouletteBet('31')">31</div>
+                        <div class="r-cell r-cell-red" onclick="placeRouletteBet('34')">34</div>
+                        <div class="r-cell r-cell-out" onclick="placeRouletteBet('col1')">2:1</div>
+                        <!-- Row 4 -->
+                        <div class="r-cell r-cell-out col-span-4" onclick="placeRouletteBet('doz1')">1st 12</div>
+                        <div class="r-cell r-cell-out col-span-4" onclick="placeRouletteBet('doz2')">2nd 12</div>
+                        <div class="r-cell r-cell-out col-span-4" onclick="placeRouletteBet('doz3')">3rd 12</div>
+                        <div></div>
+                        <!-- Row 5 -->
+                        <div class="r-cell r-cell-out col-span-2" onclick="placeRouletteBet('low')">1-18</div>
+                        <div class="r-cell r-cell-out col-span-2" onclick="placeRouletteBet('even')">EVEN</div>
+                        <div class="r-cell r-cell-red col-span-2" onclick="placeRouletteBet('red')">RED</div>
+                        <div class="r-cell r-cell-black col-span-2" onclick="placeRouletteBet('black')">BLACK</div>
+                        <div class="r-cell r-cell-out col-span-2" onclick="placeRouletteBet('odd')">ODD</div>
+                        <div class="r-cell r-cell-out col-span-2" onclick="placeRouletteBet('high')">19-36</div>
+                        <div></div>
+                    </div>
+                </div>
+
+                <button id="spin-roulette-btn" onclick="spinRoulette()" class="w-full py-3.5 bg-gradient-to-r from-cyan-500 to-blue-600 font-orbitron font-black text-lg text-slate-950 rounded-xl shadow-lg transition">SPIN WHEEL</button>
+            </div>
         </div>
-        <div class="bet-box green-bet">
-            <label class="lbl-green">Grön (7x)</label>
-            <input type="number" id="bet-green" min="0" value="0">
+
+        <!-- ================= CRASH ROCKET ================= -->
+        <div id="view-crash" class="hidden grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <div class="lg:col-span-4 glass-panel p-5 rounded-2xl space-y-4">
+                <h3 class="font-orbitron text-lg font-bold text-orange-400 flex items-center gap-2">
+                    <i class="fa-solid fa-rocket"></i> Crash Rocket
+                </h3>
+                <div>
+                    <label class="text-xs text-slate-400 font-bold block mb-1">Bet Amount ($)</label>
+                    <input type="number" id="crash-bet" value="10" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-slate-100 font-mono outline-none focus:border-orange-500">
+                </div>
+                <div>
+                    <label class="text-xs text-slate-400 font-bold block mb-1">Auto Cashout</label>
+                    <input type="number" step="0.1" id="crash-auto" value="2.0" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-slate-100 font-mono outline-none focus:border-orange-500">
+                </div>
+                <button id="crash-action-btn" onclick="handleCrashAction()" class="w-full py-4 bg-gradient-to-r from-orange-500 to-amber-600 font-orbitron font-black text-lg text-slate-950 rounded-xl shadow-lg transition">LAUNCH ROCKET</button>
+            </div>
+
+            <div class="lg:col-span-8 glass-panel p-4 rounded-2xl flex flex-col items-center justify-center relative min-h-[340px]">
+                <canvas id="crash-canvas" width="500" height="300" class="w-full h-full max-h-[300px]"></canvas>
+                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center pointer-events-none">
+                    <div id="crash-multiplier" class="font-mono text-5xl font-black text-cyan-400">1.00x</div>
+                    <div id="crash-status" class="text-xs font-bold text-slate-400 mt-2 uppercase tracking-widest">Ready</div>
+                </div>
+            </div>
         </div>
-    </div>
 
-    <!-- Hårdkodad onclick för att säkerställa att funktionen körs direkt -->
-    <button id="spin-button" class="spin-btn" onclick="playRoulette()">SNURRA</button>
+        <!-- ================= MINES ================= -->
+        <div id="view-mines" class="hidden grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <div class="lg:col-span-4 glass-panel p-5 rounded-2xl space-y-4">
+                <h3 class="font-orbitron text-lg font-bold text-emerald-400 flex items-center gap-2">
+                    <i class="fa-solid fa-bomb"></i> Cyber Mines
+                </h3>
+                <div>
+                    <label class="text-xs text-slate-400 font-bold block mb-1">Bet Amount ($)</label>
+                    <input type="number" id="mines-bet" value="10" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-slate-100 font-mono outline-none focus:border-emerald-500">
+                </div>
+                <div>
+                    <label class="text-xs text-slate-400 font-bold block mb-1">Mines Count</label>
+                    <select id="mines-count" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-slate-100 font-mono outline-none focus:border-emerald-500">
+                        <option value="1">1 Mine</option>
+                        <option value="3" selected>3 Mines</option>
+                        <option value="5">5 Mines</option>
+                        <option value="10">10 Mines</option>
+                    </select>
+                </div>
+                <button id="mines-start-btn" onclick="startMinesGame()" class="w-full py-4 bg-gradient-to-r from-emerald-500 to-teal-600 font-orbitron font-black text-lg text-slate-950 rounded-xl shadow-lg transition">START GAME</button>
+            </div>
 
-    <div class="log" id="game-log"></div>
-</div>
+            <div class="lg:col-span-8 glass-panel p-6 rounded-2xl flex flex-col items-center justify-center">
+                <div id="mines-grid" class="grid grid-cols-5 gap-3 max-w-md w-full"></div>
+            </div>
+        </div>
 
-<script>
-    let points = 100;
-    let currentRotation = 0;
+        <!-- ================= TOWERS ================= -->
+        <div id="view-towers" class="hidden grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <div class="lg:col-span-4 glass-panel p-5 rounded-2xl space-y-4">
+                <h3 class="font-orbitron text-lg font-bold text-cyan-400 flex items-center gap-2">
+                    <i class="fa-solid fa-layer-group"></i> Cyber Towers
+                </h3>
+                <div>
+                    <label class="text-xs text-slate-400 font-bold block mb-1">Bet Amount ($)</label>
+                    <input type="number" id="towers-bet" value="10" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-slate-100 font-mono outline-none focus:border-cyan-500">
+                </div>
+                <button id="towers-action-btn" onclick="startTowersGame()" class="w-full py-4 bg-gradient-to-r from-cyan-500 to-blue-600 font-orbitron font-black text-lg text-slate-950 rounded-xl shadow-lg transition">START CLIMB</button>
+            </div>
 
-    function playRoulette() {
-        const spinButton = document.getElementById('spin-button');
-        const wheel = document.getElementById('roulette-wheel');
-        const resultText = document.getElementById('result-text');
-        const errorText = document.getElementById('error-text');
-        const log = document.getElementById('game-log');
-        
-        // Töm gamla felmeddelanden
-        errorText.innerText = "";
+            <div class="lg:col-span-8 glass-panel p-6 rounded-2xl flex flex-col items-center justify-center">
+                <div id="towers-container" class="flex flex-col-reverse gap-2 max-w-xs w-full"></div>
+            </div>
+        </div>
 
-        // Hämta värden säkert
-        const bets = {
-            red: Math.max(0, parseInt(document.getElementById('bet-red').value) || 0),
-            black: Math.max(0, parseInt(document.getElementById('bet-black').value) || 0),
-            special_red: Math.max(0, parseInt(document.getElementById('bet-special_red').value) || 0),
-            special_black: Math.max(0, parseInt(document.getElementById('bet-special_black').value) || 0),
-            green: Math.max(0, parseInt(document.getElementById('bet-green').value) || 0)
-        };
+        <!-- ================= CASE UNBOXING ================= -->
+        <div id="view-cases" class="hidden glass-panel p-6 rounded-2xl flex flex-col items-center">
+            <h3 class="font-orbitron text-xl font-bold text-fuchsia-400 flex items-center gap-2 mb-1">
+                <i class="fa-solid fa-box-open"></i> Cyberpunk Weapon Case
+            </h3>
+            <p class="text-xs text-slate-400 mb-6">Unbox rare weapons & instant cash drops ($20 per case)</p>
 
-        const totalBet = bets.red + bets.black + bets.special_red + bets.special_black + bets.green;
+            <div class="relative w-full max-w-2xl overflow-hidden rounded-2xl bg-slate-950 border-2 border-fuchsia-500/30 p-2 mb-6">
+                <div class="absolute top-0 bottom-0 left-1/2 w-1 bg-fuchsia-500 z-20 shadow-lg shadow-fuchsia-500"></div>
+                <div id="case-carousel" class="flex space-x-3 transition-transform duration-300" style="transform: translateX(0px);"></div>
+            </div>
 
-        // Validering utan stängbara fönster
-        if (totalBet <= 0) {
-            errorText.innerText = "Fel: Du måste satsa minst 1 poäng!";
-            return;
-        }
-        if (totalBet > points) {
-            errorText.innerText = "Fel: Du har inte tillräckligt med poäng!";
-            return;
-        }
+            <button id="open-case-btn" onclick="openCase()" class="px-8 py-4 bg-gradient-to-r from-fuchsia-500 to-purple-600 font-orbitron font-black text-lg text-slate-950 rounded-xl shadow-lg transition">OPEN CASE ($20)</button>
+            <div id="case-won-text" class="mt-4 text-center font-bold text-fuchsia-300 min-h-[24px]"></div>
+        </div>
 
-        // Starta snurret
-        spinButton.disabled = true;
-        points -= totalBet;
-        document.getElementById('points-display').innerText = points;
-        resultText.innerText = "Hjulet snurrar...";
+        <!-- ================= CASE BATTLES ================= -->
+        <div id="view-battles" class="hidden glass-panel p-6 rounded-2xl flex flex-col items-center">
+            <h3 class="font-orbitron text-xl font-bold text-rose-400 flex items-center gap-2 mb-1">
+                <i class="fa-solid fa-handshake-simple-slash"></i> Cyber Case Battles (PvP Bot)
+            </h3>
+            <p class="text-xs text-slate-400 mb-6">Entry Fee: $50 &bull; Unbox 3 cases against CyberBot_X. Winner takes all drops!</p>
+            <button id="battle-start-btn" onclick="startCaseBattle()" class="px-8 py-4 bg-gradient-to-r from-rose-500 to-red-600 font-orbitron font-black text-lg text-slate-950 rounded-xl shadow-lg transition">START BATTLE ($50)</button>
 
-        // Sannolikhetsfördelning (35% Röd, 35% Svart, 25% Special, 5% Grön)
-        const rand = Math.floor(Math.random() * 100);
-        let winningType = '';
-        let winningName = '';
-        let multiplier = 0;
-        let targetAngle = 0; 
+            <div id="battle-arena" class="hidden w-full max-w-2xl grid grid-cols-2 gap-4 mt-6">
+                <div class="bg-slate-950 p-4 rounded-xl border border-cyan-500/30">
+                    <div class="font-bold text-xs text-cyan-400 mb-2">You (Player)</div>
+                    <div id="player-drops" class="space-y-1.5 text-xs"></div>
+                    <div id="player-battle-total" class="mt-3 font-mono font-bold text-right text-cyan-300">Total: $0</div>
+                </div>
+                <div class="bg-slate-950 p-4 rounded-xl border border-rose-500/30">
+                    <div class="font-bold text-xs text-rose-400 mb-2">CyberBot_X</div>
+                    <div id="bot-drops" class="space-y-1.5 text-xs"></div>
+                    <div id="bot-battle-total" class="mt-3 font-mono font-bold text-right text-rose-300">Total: $0</div>
+                </div>
+            </div>
+            <div id="battle-result-text" class="mt-4 font-orbitron text-xl font-black"></div>
+        </div>
 
-        if (rand < 35) { 
-            winningType = 'red';
-            winningName = 'Röd';
-            multiplier = 2;
-            targetAngle = 297; 
-        } else if (rand < 70) { 
-            winningType = 'black';
-            winningName = 'Svart';
-            multiplier = 2;
-            targetAngle = 171; 
-        } else if (rand < 82.5) { 
-            winningType = 'special_red';
-            winningName = 'Special Röd';
-            multiplier = 4;
-            targetAngle = 85;  
-        } else if (rand < 95) { 
-            winningType = 'special_black';
-            winningName = 'Special Svart';
-            multiplier = 4;
-            targetAngle = 40;  
-        } else { 
-            winningType = 'green';
-            winningName = 'Grön';
-            multiplier = 7;
-            targetAngle = 4;   
-        }
+        <!-- ================= 5x3 SLOTS ================= -->
+        <div id="view-slots" class="hidden grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <div class="lg:col-span-4 glass-panel p-5 rounded-2xl space-y-4">
+                <h3 class="font-orbitron text-lg font-bold text-violet-400 flex items-center gap-2">
+                    <i class="fa-solid fa-cubes"></i> 5x3 Cyber Slots
+                </h3>
+                <div>
+                    <label class="text-xs text-slate-400 font-bold block mb-1">Bet Amount ($)</label>
+                    <input type="number" id="slots-bet" value="10" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-slate-100 font-mono outline-none focus:border-violet-500">
+                </div>
+                <button id="slots-spin-btn" onclick="spinSlots()" class="w-full py-4 bg-gradient-to-r from-violet-500 to-indigo-600 font-orbitron font-black text-lg text-slate-950 rounded-xl shadow-lg transition">SPIN REELS</button>
+            </div>
 
-        // Snurra minst 5 varv + positionera till rätt färg under pilen
-        const extraRotations = 1800 + (360 - targetAngle);
-        currentRotation += extraRotations;
-        wheel.style.transform = `rotate(${currentRotation}deg)`;
+            <div class="lg:col-span-8 glass-panel p-6 rounded-2xl flex flex-col items-center justify-center">
+                <div id="slots-reel-grid" class="grid grid-cols-5 gap-3 max-w-lg w-full bg-slate-950 p-4 rounded-2xl border-2 border-violet-500/30"></div>
+            </div>
+        </div>
 
-        // Vänta på att animationen (4 sekunder) blir klar
-        setTimeout(() => {
-            let totalWin = 0;
-            if (bets[winningType] > 0) {
-                totalWin = bets[winningType] * multiplier;
+        <!-- ================= BLACKJACK 21 ================= -->
+        <div id="view-blackjack" class="hidden grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <div class="lg:col-span-4 glass-panel p-5 rounded-2xl space-y-4">
+                <h3 class="font-orbitron text-lg font-bold text-yellow-400 flex items-center gap-2">
+                    <i class="fa-solid fa-spade"></i> Blackjack 21
+                </h3>
+                <div>
+                    <label class="text-xs text-slate-400 font-bold block mb-1">Bet Amount ($)</label>
+                    <input type="number" id="bj-bet" value="10" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-slate-100 font-mono outline-none focus:border-yellow-500">
+                </div>
+                <div id="bj-controls">
+                    <button onclick="startBlackjack()" class="w-full py-4 bg-gradient-to-r from-yellow-500 to-amber-600 font-orbitron font-black text-lg text-slate-950 rounded-xl shadow-lg transition">DEAL HAND</button>
+                </div>
+            </div>
+
+            <div class="lg:col-span-8 glass-panel p-6 rounded-2xl flex flex-col justify-between min-h-[340px]">
+                <div>
+                    <div class="text-xs text-slate-400 uppercase font-mono mb-2">Dealer Hand (<span id="dealer-score">0</span>)</div>
+                    <div id="dealer-cards" class="flex gap-3"></div>
+                </div>
+                <div id="bj-msg" class="text-center font-orbitron text-lg font-black text-yellow-400 min-h-[28px]"></div>
+                <div>
+                    <div class="text-xs text-slate-400 uppercase font-mono mb-2">Player Hand (<span id="player-score">0</span>)</div>
+                    <div id="player-cards" class="flex gap-3"></div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer Stats & History Strip -->
+    <footer class="glass-panel border-t border-cyan-500/20 px-4 py-2.5 text-xs">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-3">
+            <div class="text-slate-400 font-mono">NEXUS AI CASINO &bull; PROVABLY FAIR SYSTEM</div>
+            <div class="flex items-center space-x-2 overflow-x-auto">
+                <span class="text-slate-400 font-bold uppercase text-[10px]">Recent Activity:</span>
+                <div id="live-history" class="flex gap-1.5"></div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GLOBAL GAME LOGIC SCRIPT -->
+    <script>
+        // --- WEB AUDIO SYNTHESIZER SOUND ENGINE ---
+        class WebAudioEngine {
+            constructor() { this.ctx = null; this.muted = false; }
+            init() { if (!this.ctx) this.ctx = new (window.AudioContext || window.webkitAudioContext)(); }
+            playClick() {
+                if (this.muted || !this.ctx) return;
+                const osc = this.ctx.createOscillator(), gain = this.ctx.createGain();
+                osc.type = 'sine'; osc.frequency.setValueAtTime(600, this.ctx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(150, this.ctx.currentTime + 0.04);
+                gain.gain.setValueAtTime(0.12, this.ctx.currentTime); gain.gain.linearRampToValueAtTime(0.01, this.ctx.currentTime + 0.04);
+                osc.connect(gain); gain.connect(this.ctx.destination); osc.start(); osc.stop(this.ctx.currentTime + 0.04);
             }
+            playChip() {
+                if (this.muted || !this.ctx) return;
+                const osc = this.ctx.createOscillator(), gain = this.ctx.createGain();
+                osc.type = 'triangle'; osc.frequency.setValueAtTime(1100, this.ctx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(300, this.ctx.currentTime + 0.06);
+                gain.gain.setValueAtTime(0.2, this.ctx.currentTime); gain.gain.linearRampToValueAtTime(0.01, this.ctx.currentTime + 0.06);
+                osc.connect(gain); gain.connect(this.ctx.destination); osc.start(); osc.stop(this.ctx.currentTime + 0.06);
+            }
+            playWin() {
+                if (this.muted || !this.ctx) return;
+                [523.25, 659.25, 783.99, 1046.50].forEach((freq, idx) => {
+                    const osc = this.ctx.createOscillator(), gain = this.ctx.createGain();
+                    osc.type = 'triangle'; osc.frequency.setValueAtTime(freq, this.ctx.currentTime + idx * 0.07);
+                    gain.gain.setValueAtTime(0.18, this.ctx.currentTime + idx * 0.07);
+                    gain.gain.linearRampToValueAtTime(0.001, this.ctx.currentTime + idx * 0.07 + 0.25);
+                    osc.connect(gain); gain.connect(this.ctx.destination); osc.start(this.ctx.currentTime + idx * 0.07); osc.stop(this.ctx.currentTime + idx * 0.07 + 0.25);
+                });
+            }
+            playLoss() {
+                if (this.muted || !this.ctx) return;
+                const osc = this.ctx.createOscillator(), gain = this.ctx.createGain();
+                osc.type = 'sawtooth'; osc.frequency.setValueAtTime(220, this.ctx.currentTime);
+                osc.frequency.linearRampToValueAtTime(70, this.ctx.currentTime + 0.3);
+                gain.gain.setValueAtTime(0.15, this.ctx.currentTime); gain.gain.linearRampToValueAtTime(0.01, this.ctx.currentTime + 0.3);
+                osc.connect(gain); gain.connect(this.ctx.destination); osc.start(); osc.stop(this.ctx.currentTime + 0.3);
+            }
+        }
 
-            points += totalWin;
-            document.getElementById('points-display').innerText = points;
-            resultText.innerText = `Resultat: ${winningName}!`;
+        const audio = new WebAudioEngine();
 
-            // Logga historik
-            const netChange = totalWin - totalBet;
-            const logItem = document.createElement('div');
-            if (netChange > 0) {
+        // APP STATE
+        let balance = parseFloat(localStorage.getItem('nexus_balance')) || 1000;
+        let xp = parseInt(localStorage.getItem('nexus_xp')) || 0;
+
+        function updateUI() {
+            document.getElementById('player-balance').innerText = `$${balance.toLocaleString(undefined, {minimumFractionDigits: 2})}`;
+            const level = Math.floor(xp / 500) + 1;
+            document.getElementById('player-level').innerText = level;
+            document.getElementById('xp-bar').style.width = `${(xp % 500) / 5}%`;
+            localStorage.setItem('nexus_balance', balance.toString());
+            localStorage.setItem('nexus_xp', xp.toString());
+        }
+
+        function addXP(amount) { xp += amount; updateUI(); }
+        function claimFaucet() { audio.init(); audio.playWin(); balance += 250; updateUI(); }
+        function toggleAudio() {
+            audio.init(); audio.muted = !audio.muted;
+            document.getElementById('audio-btn').innerHTML = audio.muted ? `<i class="fa-solid fa-volume-xmark text-rose-400"></i>` : `<i class="fa-solid fa-volume-high text-cyan-400"></i>`;
+        }
+
+        function pushHistory(game, bet, payout, win) {
+            const container = document.getElementById('live-history');
+            const badge = document.createElement('div');
+            badge.className = `px-2 py-0.5 rounded text-[10px] font-mono border ${win ? 'bg-emerald-950/60 border-emerald-500/40 text-emerald-400' : 'bg-rose-950/60 border-rose-500/40 text-rose-400'}`;
+            badge.innerText = `${game}: ${win ? '+' : '-'}$${win ? payout.toFixed(1) : bet}`;
+            container.prepend(badge);
+            if (container.children.length > 6) container.lastChild.remove();
+        }
+
+        function switchTab(tabId) {
+            audio.init(); audio.playClick();
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`tab-${tabId}`).classList.add('active');
+            ['lobby','roulette','crash','mines','towers','cases','battles','slots','blackjack'].forEach(id => {
+                document.getElementById(`view-${id}`).classList.add('hidden');
+            });
+            document.getElementById(`view-${tabId}`).classList.remove('hidden');
+        }
+
+        // --- LOBBY & MOCK AI CHAT ---
+        function sendChatMessage() {
+            const input = document.getElementById('chat-input');
+            const text = input.value.trim();
+            if (!text) return;
+            const chatBox = document.getElementById('chat-box');
+            chatBox.innerHTML += `<div class="bg-slate-900 border border-slate-800 p-2 rounded-lg text-slate-200"><strong>You:</strong> ${text}</div>`;
+            input.value = '';
+
+            const mode = document.getElementById('ai-mode').value;
+            setTimeout(() => {
+                let reply = "All games use provably fair neural RNG.";
+                if (mode === 'friendly') reply = "Best of luck! Remember to manage your balance wisely!";
+                else if (mode === 'aggressive') reply = "Big risks bring big rewards! Try launching Crash Rocket to 10x!";
+                else reply = "Roulette Even-Money bets yield optimal variance control.";
+                chatBox.innerHTML += `<div class="bg-cyan-950/40 border border-cyan-500/20 p-2 rounded-lg text-cyan-200"><strong>AI Dealer:</strong> ${reply}</div>`;
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }, 600);
+        }
+
+        function hostRoom() {
+            const code = 'NX-' + Math.floor(1000 + Math.random() * 9000);
+            document.getElementById('room-code-display').innerText = code;
+            document.getElementById('room-status').classList.remove('hidden');
+        }
+
+        // --- CYBER ROULETTE ENGINE ---
+        const WHEEL_NUMBERS = [0, 32, 15, 19, 4, 21, 2, 25, 17, 34, 6, 27, 13, 36, 11, 30, 8, 23, 10, 5, 24, 16, 33, 1, 20, 14, 31, 9, 22, 18, 29, 7, 28, 12, 35, 3, 26];
+        const RED_NUMBERS = [1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36];
+        let rouletteBets = {};
+        let selectedChipVal = 1;
+        let rWheelAngle = 0;
+
+        function selectChip(val) {
+            audio.init(); audio.playClick();
+            selectedChipVal = val;
+            document.querySelectorAll('.chip-btn').forEach(btn => btn.classList.remove('chip-active'));
+            document.querySelector(`.chip-btn[data-val="${val}"]`).classList.add('chip-active');
+        }
+
+        function placeRouletteBet(key) {
+            audio.init(); audio.playChip();
+            if (!rouletteBets[key]) rouletteBets[key] = 0;
+            rouletteBets[key] += selectedChipVal;
+            updateRouletteBoardUI();
+        }
+
+        function clearRouletteBets() {
+            rouletteBets = {};
+            updateRouletteBoardUI();
+        }
+
+        function updateRouletteBoardUI() {
+            document.querySelectorAll('.chip-stack').forEach(el => el.remove());
+            for (let key in rouletteBets) {
+                const cell = document.querySelector(`[onclick="placeRouletteBet('${key}')"]`);
+                if (cell && rouletteBets[key] > 0) {
+                    const stack = document.createElement('div');
+                    stack.className = 'chip-stack';
+                    stack.innerText = rouletteBets[key];
+                    cell.appendChild(stack);
+                }
+            }
+        }
+
+        function renderRouletteWheel(angle) {
+            const canvas = document.getElementById('roulette-canvas');
+            const ctx = canvas.getContext('2d');
+            const cx = canvas.width / 2, cy = canvas.height / 2, r = 160;
+            ctx.clearRect(0,0,canvas.width,canvas.height);
+
+            const seg = (Math.PI * 2) / WHEEL_NUMBERS.length;
+            for(let i=0; i<WHEEL_NUMBERS.length; i++) {
+                const num = WHEEL_NUMBERS[i];
+                const a = angle + i * seg;
+                ctx.beginPath(); ctx.arc(cx, cy, r, a, a + seg); ctx.lineTo(cx, cy);
+                ctx.fillStyle = num === 0 ? '#059669' : (RED_NUMBERS.includes(num) ? '#b91c1c' : '#18181b');
+                ctx.fill(); ctx.strokeStyle = 'rgba(6,182,212,0.3)'; ctx.stroke();
+                ctx.save(); ctx.translate(cx, cy); ctx.rotate(a + seg/2); ctx.textAlign = 'right'; ctx.fillStyle='#fff'; ctx.font='bold 10px Rajdhani'; ctx.fillText(num.toString(), r-10, 4); ctx.restore();
+            }
+        }
+
+        function spinRoulette() {
+            let totalBet = 0;
+            for(let k in rouletteBets) totalBet += rouletteBets[k];
+            if (totalBet <= 0 || totalBet > balance) return;
+
+            balance -= totalBet; updateUI();
+            document.getElementById('spin-roulette-btn').disabled = true;
+
+            const winIdx = Math.floor(Math.random() * WHEEL_NUMBERS.length);
+            const winNum = WHEEL_NUMBERS[winIdx];
+            const targetAngle = Math.PI * 2 * 5 + winIdx * ((Math.PI * 2) / WHEEL_NUMBERS.length);
+
+            const start = performance.now();
+            function anim(now) {
+                const progress = Math.min((now - start) / 3500, 1);
+                const ease = 1 - Math.pow(1 - progress, 3);
+                rWheelAngle = targetAngle * ease;
+                renderRouletteWheel(rWheelAngle);
+                if (progress < 1) requestAnimationFrame(anim);
+                else {
+                    document.getElementById('spin-roulette-btn').disabled = false;
+                    let color = winNum === 0 ? 'green' : (RED_NUMBERS.includes(winNum) ? 'red' : 'black');
+                    let payout = 0;
+
+                    for(let k in rouletteBets) {
+                        const amt = rouletteBets[k];
+                        if (!isNaN(k) && parseInt(k) === winNum) payout += amt * 36;
+                        else if (k === 'red' && color === 'red') payout += amt * 2;
+                        else if (k === 'black' && color === 'black') payout += amt * 2;
+                    }
+
+                    if (payout > 0) {
+                        balance += payout; addXP(payout); audio.playWin();
+                        document.getElementById('r-main-text').innerText = `WIN $${payout}! (${winNum} ${color.toUpperCase()})`;
+                        pushHistory('Roulette', totalBet, payout, true);
+                    } else {
+                        audio.playLoss();
+                        document.getElementById('r-main-text').innerText = `Result: ${winNum} ${color.toUpperCase()}`;
+                        pushHistory('Roulette', totalBet, 0, false);
+                    }
+                    updateUI();
+                }
+            }
+            requestAnimationFrame(anim);
+        }
+
+        // --- CRASH ROCKET ---
+        let crashState = 'idle', crashMult = 1.0, crashTimer = null;
+        function handleCrashAction() {
+            const bet = parseFloat(document.getElementById('crash-bet').value) || 10;
+            if (crashState === 'idle') {
+                if (bet > balance) return;
+                balance -= bet; updateUI(); crashState = 'running'; crashMult = 1.0;
+                document.getElementById('crash-action-btn').innerText = 'CASHOUT';
+                const crashPoint = (Math.random() < 0.08 ? 1.0 : (100 / (100 - Math.random() * 98))).toFixed(2);
+                
+                const start = performance.now();
+                function loop(now) {
+                    const elapsed = (now - start) / 1000;
+                    crashMult = parseFloat((Math.pow(1.08, elapsed * 3)).toFixed(2));
+                    document.getElementById('crash-multiplier').innerText = `${crashMult.toFixed(2)}x`;
+
+                    if (crashMult >= crashPoint) {
+                        crashState = 'crashed'; audio.playLoss();
+                        document.getElementById('crash-status').innerText = 'CRASHED!';
+                        document.getElementById('crash-action-btn').innerText = 'LAUNCH ROCKET';
+                        pushHistory('Crash', bet, 0, false);
+                        setTimeout(() => crashState = 'idle', 1500);
+                    } else if (crashState === 'running') requestAnimationFrame(loop);
+                }
+                requestAnimationFrame(loop);
+            } else if (crashState === 'running') {
+                crashState = 'cashed';
+                const win = bet * crashMult;
+                balance += win; addXP(win); audio.playWin();
+                document.getElementById('crash-status').innerText = `CASHED OUT $${win.toFixed(2)}`;
+                document.getElementById('crash-action-btn').innerText = 'LAUNCH ROCKET';
+                pushHistory('Crash', bet, win, true);
+                updateUI();
+                setTimeout(() => crashState = 'idle', 1500);
+            }
+        }
+
+        // --- MINES ---
+        let minesGrid = [], minesActive = false, gemsFound = 0, currentMinesBet = 10;
+        function startMinesGame() {
+            currentMinesBet = parseFloat(document.getElementById('mines-bet').value) || 10;
+            const count = parseInt(document.getElementById('mines-count').value);
+            if (currentMinesBet > balance) return;
+
+            balance -= currentMinesBet; updateUI();
+            minesActive = true; gemsFound = 0;
+            const mines = new Set();
+            while(mines.size < count) mines.add(Math.floor(Math.random() * 25));
+
+            minesGrid = Array(25).fill(null).map((_, i) => ({ isMine: mines.has(i), revealed: false }));
+            renderMinesGrid();
+        }
+
+        function renderMinesGrid() {
+            const container = document.getElementById('mines-grid');
+            container.innerHTML = '';
+            minesGrid.forEach((tile, i) => {
+                const btn = document.createElement('button');
+                btn.className = `aspect-square rounded-xl font-bold text-xl flex items-center justify-center border ${tile.revealed ? (tile.isMine ? 'bg-rose-600 border-rose-500' : 'bg-emerald-600/30 border-emerald-500') : 'bg-slate-900 border-slate-800 hover:border-emerald-500/40'}`;
+                btn.innerText = tile.revealed ? (tile.isMine ? '💣' : '💎') : '';
+                btn.onclick = () => revealMineTile(i);
+                container.appendChild(btn);
+            });
+        }
+
+        function revealMineTile(idx) {
+            if (!minesActive || minesGrid[idx].revealed) return;
+            minesGrid[idx].revealed = true;
+
+            if (minesGrid[idx].isMine) {
+                minesActive = false; audio.playLoss();
+                minesGrid.forEach(t => t.revealed = true);
+                pushHistory('Mines', currentMinesBet, 0, false);
+            } else {
+                audio.playClick(); gemsFound++;
+                const mult = (1 + gemsFound * 0.35).toFixed(2);
+                if (gemsFound === 1) {
+                    document.getElementById('mines-start-btn').innerText = `CASHOUT ($${(currentMinesBet * mult).toFixed(2)})`;
+                    document.getElementById('mines-start-btn').onclick = cashoutMines;
+                }
+            }
+            renderMinesGrid();
+        }
+
+        function cashoutMines() {
+            if (!minesActive) return;
+            minesActive = false;
+            const win = currentMinesBet * (1 + gemsFound * 0.35);
+            balance += win; addXP(win); audio.playWin();
+            pushHistory('Mines', currentMinesBet, win, true);
+            document.getElementById('mines-start-btn').innerText = 'START GAME';
+            document.getElementById('mines-start-btn').onclick = startMinesGame;
+            updateUI();
+        }
+
+        // --- TOWERS ---
+        let towerFloor = 0, towersActive = false, currentTowersBet = 10;
+        const TOWER_MULTS = [1.3, 1.8, 2.5, 3.8, 5.5, 8.5];
+        function startTowersGame() {
+            currentTowersBet = parseFloat(document.getElementById('towers-bet').value) || 10;
+            if (currentTowersBet > balance) return;
+            balance -= currentTowersBet; updateUI();
+            towersActive = true; towerFloor = 0;
+            renderTowers();
+        }
+
+        function renderTowers() {
+            const container = document.getElementById('towers-container');
+            container.innerHTML = '';
+            for(let row=0; row<6; row++) {
+                const flex = document.createElement('div');
+                flex.className = 'flex items-center gap-2';
+                flex.innerHTML = `<span class="text-[10px] font-mono text-cyan-400 w-8">${TOWER_MULTS[row]}x</span>`;
+                const grid = document.createElement('div');
+                grid.className = 'grid grid-cols-3 gap-2 flex-grow';
+                for(let c=0; c<3; c++) {
+                    const btn = document.createElement('button');
+                    btn.className = `py-2 rounded-lg font-bold text-xs border ${towersActive && towerFloor === row ? 'bg-slate-800 border-cyan-500/40' : 'bg-slate-950 border-slate-800 text-slate-600'}`;
+                    btn.innerText = '🛡️';
+                    btn.onclick = () => selectTowerTile(row, c);
+                    grid.appendChild(btn);
+                }
+                flex.appendChild(grid);
+                container.appendChild(flex);
+            }
+        }
+
+        function selectTowerTile(row, col) {
+            if (!towersActive || row !== towerFloor) return;
+            const trap = Math.floor(Math.random() * 3);
+            if (col === trap) {
+                towersActive = false; audio.playLoss();
+                pushHistory('Towers', currentTowersBet, 0, false);
+                renderTowers();
+            } else {
+                audio.playClick(); towerFloor++;
+                if (towerFloor === 6) {
+                    const win = currentTowersBet * TOWER_MULTS[5];
+                    balance += win; addXP(win); audio.playWin();
+                    towersActive = false;
+                    pushHistory('Towers', currentTowersBet, win, true);
+                    updateUI();
+                }
+                renderTowers();
+            }
+        }
+
+        // --- CASE UNBOXING ---
+        const LOOT = [
+            { name: 'Cyber Dagger', price: 2, color: '#9ca3af', icon: '🗡️' },
+            { name: 'Neon Rifle', price: 15, color: '#60a5fa', icon: '🔫' },
+            { name: 'Plasma Glove', price: 80, color: '#c084fc', icon: '🥊' },
+            { name: 'Dragon Blade', price: 500, color: '#f59e0b', icon: '⚔️' }
+        ];
+
+        function openCase() {
+            if (balance < 20) return;
+            balance -= 20; updateUI();
+            audio.init(); audio.playChip();
+
+            const carousel = document.getElementById('case-carousel');
+            carousel.innerHTML = '';
+            for(let i=0; i<30; i++) {
+                const item = LOOT[Math.floor(Math.random() * LOOT.length)];
+                carousel.innerHTML += `<div class="w-20 h-24 bg-slate-900 border border-slate-800 rounded-xl flex-shrink-0 flex flex-col items-center justify-center p-1"><span class="text-2xl">${item.icon}</span><span class="text-[9px] font-bold text-slate-200 mt-1">${item.name}</span></div>`;
+            }
+            const won = LOOT[Math.floor(Math.random() * LOOT.length)];
+            carousel.style.transform = 'translateX(-1200px)';
+
+            setTimeout(() => {
+                balance += won.price; addXP(won.price);
+                if (won.price >= 20) audio.playWin(); else audio.playLoss();
+                document.getElementById('case-won-text').innerText = `You Unboxed: ${won.name} ($${won.price})`;
+                pushHistory('Case Unbox', 20, won.price, won.price >= 20);
+                updateUI();
+            }, 500);
+        }
+
+        // --- CASE BATTLES ---
+        function startCaseBattle() {
+            if (balance < 50) return;
+            balance -= 50; updateUI();
+            document.getElementById('battle-arena').classList.remove('hidden');
+
+            const pDrops = [LOOT[Math.floor(Math.random()*4)], LOOT[Math.floor(Math.random()*4)]];
+            const bDrops = [LOOT[Math.floor(Math.random()*4)], LOOT[Math.floor(Math.random()*4)]];
+
+            const pTotal = pDrops.reduce((a,b)=>a+b.price,0);
+            const bTotal = bDrops.reduce((a,b)=>a+b.price,0);
+
+            document.getElementById('player-drops').innerHTML = pDrops.map(d=>`<div>${d.icon} ${d.name} ($${d.price})</div>`).join('');
+            document.getElementById('bot-drops').innerHTML = bDrops.map(d=>`<div>${d.icon} ${d.name} ($${d.price})</div>`).join('');
+            document.getElementById('player-battle-total').innerText = `Total: $${pTotal}`;
+            document.getElementById('bot-battle-total').innerText = `Total: $${bTotal}`;
+
+            if (pTotal >= bTotal) {
+                const win = pTotal + bTotal; balance += win; addXP(win); audio.playWin();
+                document.getElementById('battle-result-text').className = 'text-emerald-400 mt-4';
+                document.getElementById('battle-result-text').innerText = `VICTORY! WON $${win}`;
+                pushHistory('Case Battle', 50, win, true);
+            } else {
+                audio.playLoss();
+                document.getElementById('battle-result-text').className = 'text-rose-500 mt-4';
+                document.getElementById('battle-result-text').innerText = `DEFEAT! BOT TOOK ALL`;
+                pushHistory('Case Battle', 50, 0, false);
+            }
+            updateUI();
+        }
+
+        // --- SLOTS ---
+        const SYMBOLS = ['⚡', '💎', '7️⃣', '🔥', '👑'];
+        function initSlots() {
+            const grid = document.getElementById('slots-reel-grid');
+            grid.innerHTML = '';
+            for(let i=0; i<5; i++) {
+                const col = document.createElement('div');
+                col.className = 'flex flex-col gap-2';
+                for(let r=0; r<3; r++) col.innerHTML += `<div class="h-16 bg-slate-900 border border-slate-800 rounded-xl flex items-center justify-center text-2xl">${SYMBOLS[Math.floor(Math.random()*5)]}</div>`;
+                grid.appendChild(col);
+            }
+        }
+
+        function spinSlots() {
+            const bet = parseFloat(document.getElementById('slots-bet').value) || 10;
+            if (bet > balance) return;
+            balance -= bet; updateUI(); audio.init(); audio.playChip();
+            initSlots();
+
+            setTimeout(() => {
+                const win = Math.random() < 0.35 ? bet * 3 : 0;
+                if (win > 0) { balance += win; addXP(win); audio.playWin(); pushHistory('Slots', bet, win, true); }
+                else { audio.playLoss(); pushHistory('Slots', bet, 0, false); }
+                updateUI();
+            }, 400);
+        }
+
+        // --- BLACKJACK 21 ---
+        let pHand = [], dHand = [];
+        function startBlackjack() {
+            const bet = parseFloat(document.getElementById('bj-bet').value) || 10;
+            if (bet > balance) return;
+            balance -= bet; updateUI(); audio.init(); audio.playChip();
+
+            pHand = [drawBJCard(), drawBJCard()];
+            dHand = [drawBJCard(), drawBJCard()];
+
+            renderBJ();
+            document.getElementById('bj-controls').innerHTML = `
+                <div class="grid grid-cols-2 gap-2">
+                    <button onclick="hitBJ()" class="py-3 bg-emerald-500 text-slate-950 font-bold rounded-xl">HIT</button>
+                    <button onclick="standBJ()" class="py-3 bg-rose-500 text-slate-950 font-bold rounded-xl">STAND</button>
+                </div>
+            `;
+            document.getElementById('bj-msg').innerText = '';
+        }
+
+        function drawBJCard() {
+            const vals = [2,3,4,5,6,7,8,9,10,10,10,10,11];
+            return vals[Math.floor(Math.random() * vals.length)];
+        }
+
+        function scoreBJ(hand) { return hand.reduce((a,b)=>a+b,0); }
+
+        function renderBJ() {
+            document.getElementById('player-cards').innerHTML = pHand.map(c => `<div class="w-12 h-16 bg-slate-950 border border-cyan-500/40 rounded-lg flex items-center justify-center font-bold text-cyan-300">${c}</div>`).join('');
+            document.getElementById('dealer-cards').innerHTML = dHand.map(c => `<div class="w-12 h-16 bg-slate-950 border border-slate-700 rounded-lg flex items-center justify-center font-bold text-slate-200">${c}</div>`).join('');
+            document.getElementById('player-score').innerText = scoreBJ(pHand);
+            document.getElementById('dealer-score').innerText = scoreBJ(dHand);
+        }
+
+        function hitBJ() {
+            pHand.push(drawBJCard());
+            renderBJ();
+            if (scoreBJ(pHand) > 21) {
+                audio.playLoss();
+                document.getElementById('bj-msg').innerText = 'BUST!';
+                resetBJControls();
+            }
+        }
+
+        function standBJ() {
+            while(scoreBJ(dHand) < 17) dHand.push(drawBJCard());
+            renderBJ();
+            const p = scoreBJ(pHand), d = scoreBJ(dHand);
+            const bet = parseFloat(document.getElementById('bj-bet').value) || 10;
+
+            if (d > 21 || p > d) {
+                const win = bet * 2; balance += win; addXP(win); audio.playWin();
+                document.getElementById('bj-msg').innerText = `YOU WIN $${win}!`;
+                pushHistory('Blackjack', bet, win, true);
+            } else {
+                audio.playLoss();
+                document.getElementById('bj-msg').innerText = 'DEALER WINS!';
+                pushHistory('Blackjack', bet, 0, false);
+            }
+            updateUI();
+            resetBJControls();
+        }
+
+        function resetBJControls() {
+            document.getElementById('bj-controls').innerHTML = `<button onclick="startBlackjack()" class="w-full py-4 bg-gradient-to-r from-yellow-500 to-amber-600 font-orbitron font-black text-lg text-slate-950 rounded-xl shadow-lg transition">DEAL HAND</button>`;
+        }
+
+        // Initialize App
+        window.onload = () => {
+            updateUI();
+            renderRouletteWheel(0);
+            initSlots();
+            renderTowers();
+        };
+    </script>
+</body>
+</html>
