@@ -1,0 +1,34 @@
+body{
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    
+};
+
+h1{
+    color: red;
+
+}
+
+p{
+color: black;
+}
+
+a{
+    color: red;
+}
+
+img{
+    height: 160px;
+
+}
+
+
+.image-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+
+    justify-items: center;
+
+    width: 70%;
+    margin: 0 auto;
+}

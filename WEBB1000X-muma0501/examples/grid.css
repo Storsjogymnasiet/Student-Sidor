@@ -1,0 +1,12 @@
+main{
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+}
+
+
+.card{
+    box-shadow: 1px  1px 15px;
+    
+}

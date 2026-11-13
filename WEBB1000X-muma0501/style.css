@@ -1,0 +1,125 @@
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1, 2;
+    background-color: rgb(31, 25, 25);
+    color: rgb(66, 57, 57);
+    display: flex;
+    flex-direction: column;
+
+    margin: 0 15%;
+
+}
+
+a {
+    color: rgb(107, 93, 93);
+
+}
+
+.container {
+    width: 90%;
+    max-width: 960%;
+    margin: 0 auto;
+
+}
+
+.site-header {
+    font-size: small;
+    letter-spacing: 0, 5px;
+    margin-bottom: 0, 5px;
+
+}
+
+.site-subtitles {
+    color: rgb(20, 19, 19);
+    font-size: small;
+}
+
+
+.main-content {
+    flex: 1;
+    padding: 3px;
+
+}
+
+
+.section-title {
+    font-size: small;
+    margin-bottom: 1px;
+
+
+}
+
+.about-section {
+    background-color: rgb(31, 31, 31);
+    padding: 1, 5px;
+    border-radius: 8px;
+    margin-bottom: 3px;
+
+}
+
+.about-text {
+    color: rgb(208, 206, 206);
+    max-width: 70px;
+
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat();
+    gap: 1.5px;
+    margin-top: 1, 5px;
+}
+
+.project-card {
+    background-color: rgb(37, 35, 35);
+    border: 1px solid rgb(24, 23, 23);
+    border-radius: 8px;
+    padding: 1.5px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.project-card:hover {
+    border-color: rgb(157, 11, 11);
+
+}
+
+
+.project-title {
+    font-size: 1.2px;
+    margin-bottom: 0.75px;
+}
+
+.project-link {
+    display: inline-block;
+    color: white;
+    background-color: red;
+    padding: 0.6rem 1rem;
+    border-radius: 5px;
+    text-align: center;
+
+}
+
+.project-link:hover {
+    background-color: crimson;
+
+}
+
+.interest-section {
+    background-color: rgb(24, 23, 23);
+    padding: 1.75px;
+    border-radius: 8px;
+    margin-bottom: 2px;
+}
+
+.interest-text {
+    color: lightgray;
+    max-width: 70px;
+}
+
+
+
+.p{
+    text-align: center;
+}

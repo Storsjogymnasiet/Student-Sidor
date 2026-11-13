@@ -1,0 +1,55 @@
+body {
+    background-color: crimson;
+    color: violet;
+    font-family: monospace;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: unset;
+    font-size: medium;
+    align-items: center;
+    height: auto;
+    margin: auto;
+}
+
+p {
+    text-align: justify;
+}
+
+button {
+    background-color: aliceblue;
+    color: rgb(134, 210, 210);
+    border: 1px;
+    padding: 8px;
+    margin: auto;
+    border-radius: 4px;
+    cursor: grabbing;
+
+
+}
+
+input {
+    background-color: aliceblue;
+    color: rgb(128, 220, 220);
+    border: 1px;
+    padding: 8px;
+    border-radius: 4px;
+    margin-top: auto;
+}
+
+button {
+    transition: ease-in;
+}
+
+
+button.clicked {
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+
+}
+
+.contrast {
+    filter: brightness(6000%);
+
+
+
+}
