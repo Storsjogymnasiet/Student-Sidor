@@ -19,12 +19,45 @@ margin-bottom: 1%;
 
 
 h1 {
-    color: rgb(250, 249, 252);
+    color: rgb(255, 255, 255);
 
 }
 
 h2 {
-    color: rgb(64, 0, 255);
+    color: rgb(0, 89, 255);
+}
+
+hr {
+    border: none;   
+    height: 4px;        
+    background-color: rgb(255, 255, 255);
+    margin-top: 8%;
+}
+
+
+.mig {
+    margin-top: 1%;
+    color: rgb(255, 255, 255);
+}
+
+
+.katten {
+    size: 35%;
+    border-radius: 12px;
+}
+
+
+.jag {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: left;
+
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    margin: 2% 20%;
+    padding: 15px;
+    text-align: left;
 }
 
 a {
