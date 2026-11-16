@@ -2,7 +2,7 @@
 .box1{
 
     text-align: left;
-    background-color: blue;
+    background-color: burlywood;
     padding: 30px;
     border-radius: 12px;
     margin-bottom: 30px;
@@ -25,13 +25,13 @@ main{
 }
 
 body{
-    background-color: lime;
+    background-color: brown;
 }
 
 .list{
     
     text-align: left;
-    background-color: blue;
+    background-color: burlywood;
     padding: 30px;
     border-radius: 12px;
    margin-right: 10%;
@@ -63,13 +63,13 @@ body{
     text-decoration: none;
     font-size: 1.5em;
 
-    color: rebeccapurple;
+    color: red;
 
 }
 
 .box3{
 
-    background-color: blue;
+    background-color: burlywood;
     padding: 100px;
     border-radius: 12px;
    
