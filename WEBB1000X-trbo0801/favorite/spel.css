@@ -39,5 +39,21 @@ main {
 @media only screen and (max-width: 768px) {
     body {
         width: 100%;
+        margin: 0, 2%;
+    }
+
+    main {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    body {
+        width: 100%;
+        margin: 0, 2%;
+    }
+
+    main {
+        grid-template-columns: 1fr;
     }
 }
