@@ -34,7 +34,7 @@ body{
     background-color: blue;
     padding: 30px;
     border-radius: 12px;
-   margin-right: 20%;
+   margin-right: 10%;
 
    overflow-y: scroll;
 
@@ -68,16 +68,20 @@ body{
 }
 
 .box3{
-    ext-align: left;
+
     background-color: blue;
     padding: 100px;
     border-radius: 12px;
-    margin-bottom: 30px;
+   
 
 
     
 }
 
+.box3 h1{
+
+    text-align: left;
+}
 .content{
 
     display: flex;
