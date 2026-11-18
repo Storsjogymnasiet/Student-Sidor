@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js" defer></script>
+</head>
+<body>
+    <header>
+<h1>Sensors</h1>
+    <button id="reloadButton">Reload</button>
+    </header>
+    
+    <main>
+        <section class="card">
+            <h2>Lux</h2>
+            <p id="lux"></p>
+        </section>
+        <section class="card">
+            <h2>Temperature</h2>
+            <p id="temperature"></p>
+        </section>
+        <section class="card">
+            <h2>Air Quality</h2>
+            <div class="grid grid-3">
+                <p>AQI</p>
+                <p>TVOC</p>
+                <p>CO2</p>
+                <p id="aqi"></p>
+                <p id="tvoc"></p>
+                <p id="co2"></p>
+            </div>
+        </section>
+        <section class="card">
+            <h2>Door</h2>
+            <p id="door"></p>
+        </section>
+    </main>
+</body>
+</html>
