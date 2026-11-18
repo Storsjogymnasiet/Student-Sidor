@@ -1,0 +1,50 @@
+body {
+    background-color: rgb(4, 8, 33);
+}
+
+h1 {
+    color: rgb(244, 242, 240);
+    display: flex;
+    justify-content: center;
+    font-size: 300%;
+    background-color: rgb(39, 47, 90);
+
+}
+
+h3 {
+    color: rgb(244, 242, 240);
+    background-color: rgb(35, 29, 84);
+    padding: 2%;
+    display: flex;
+    justify-self: center;
+  
+}
+
+.recipe-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+ 
+}
+
+.card img {
+    width: 80%;
+    height: 70%;
+    display: grid;
+    margin-left: 10%;
+    background-color: rgb(35, 29, 84);
+   justify-content: space-between;
+    
+}
+
+.card h3 {
+    display: flex;
+   justify-self: center;
+   color: rgb(244, 242, 240);
+}
+
+.card p {
+    display: flex;
+    justify-self: center;
+    color: rgb(244, 242, 240);
+}
+

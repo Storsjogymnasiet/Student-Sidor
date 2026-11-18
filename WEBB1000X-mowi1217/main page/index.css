@@ -1,0 +1,58 @@
+body {
+    background-color: rgb(41, 17, 44);
+    
+}
+
+header h1 { 
+   color: rgb(200, 127, 222);
+   text-align: center
+   ;
+background-color: rgb(0, 1, 18);
+margin-left: 0%;
+margin-right: 0%;
+margin-bottom: 0%;
+margin-top: 2%;
+font-size: 300%;
+}
+
+
+div p{
+    background-color: rgb(0, 1, 18);
+    margin-left: 5%;
+    margin-right: 70%;
+  padding: 2%;
+  padding-bottom: 3%;
+    color: rgb(200, 127, 222);
+   margin-top: 2px;
+   grid-template-columns: 20%;
+    
+}
+
+div h2 {
+     background-color: rgb(0, 1, 18);
+    margin-left: 5%;
+    margin-right: 70%;
+text-align: center;
+padding-top: 1%;
+    color: rgb(200, 127, 222);
+    margin-bottom: 0%;
+    margin-top: 5%;
+    grid-template-columns: 20%;
+}
+div a {
+    color: rgb(200, 127, 222);
+    margin-left: 30%;
+background-color: rgb(0, 1, 18);
+grid-template-columns: 80%;
+margin-top: 2px;
+font-size: 111%;
+}
+.link {
+    margin-top: -130px;
+}
+
+div {
+    display: grid;
+    -ms-flex-align: center;
+}
+
