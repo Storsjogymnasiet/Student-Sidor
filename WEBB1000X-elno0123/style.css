@@ -1,0 +1,23 @@
+body{
+    background-color: darkgray;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+
+    width: 100px;
+    text-align: center;
+    gap: 10px;
+    margin: 0 auto;
+}
+
+.list a {
+    background-color: rgb(119, 0, 255);
+
+}
+
+.sidebyside{
+    display: grid;
+    grid-template-columns: 8fr 2fr;
+}
