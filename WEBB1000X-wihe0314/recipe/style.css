@@ -1,0 +1,13 @@
+.recipe-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+body{
+    background-color: red;
+    color: darkgreen;
+    
+    
+}
+main{
+ border-image-width: 300px;
+}
