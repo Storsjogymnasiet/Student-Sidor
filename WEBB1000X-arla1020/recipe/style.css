@@ -1,0 +1,29 @@
+
+body{
+    background-color: rgb(40, 40, 40);
+}
+
+
+
+h1{
+    text-align: center;
+    color: red;
+    text-decoration:underline
+}
+
+nav h3{
+    text-align: center;
+}
+
+nav button{
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+    color: red;
+}
+
+p{
+    color: darkred;
+}

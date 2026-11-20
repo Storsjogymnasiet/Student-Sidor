@@ -1,0 +1,36 @@
+body{
+    background-color: rgb(40, 40, 40);
+}
+
+h2{
+    color: red;
+}
+
+h3{
+    color: darkred;
+}
+
+.card{
+    background-color: black;
+}
+
+.card2{
+    background-color: black;
+}
+
+.card3{
+    background-color: black;
+}
+
+.card4{
+    background-color: black;
+}
+
+p{
+    color: whitesmoke;
+}
+
+.recipe-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}

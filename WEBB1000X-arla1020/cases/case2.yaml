@@ -1,0 +1,12 @@
+användare:
+  - namn: elev
+    lösenord: Sommar2026
+
+program:
+  - Firefox
+  - VS Code
+  - Wireshark
+
+dator:
+  namn: klass-pc01
+  status: uppdaterar
