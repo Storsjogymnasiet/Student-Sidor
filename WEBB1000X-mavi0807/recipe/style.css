@@ -1,0 +1,30 @@
+body {
+    background-color: rgb(55, 55, 55);
+}
+
+header {
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    background-color: rgb(39, 39, 39);
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+main {
+    display: flex;
+}
+
+div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: white;
+    background-color: rgb(39, 39, 39);
+    margin-top: 25px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    border-radius: 5px;
+}
