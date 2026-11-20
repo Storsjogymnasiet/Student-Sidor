@@ -1,0 +1,47 @@
+header{
+    text-align: center;
+    padding: 1%;
+    box-shadow: 1px 1px 30px;
+    box-sizing: border-box;
+    background-color: rgb(73, 0, 0);
+    color: rgb(255, 200, 0);
+
+}
+body{
+    margin: auto;
+    background-color: rgb(249, 36, 36);
+}
+
+div{
+    margin: 10%;
+}
+main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    text-align: center;
+}
+.Recept{
+
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    text-align: center;
+}   
+
+h2{
+    background-color: rgb(73, 0, 0);
+    border-radius: 10px;
+    margin: auto;
+    padding: 2%;
+    color: rgb(255, 200, 0);
+
+}
+
+.picsl{
+    margin: 10px;
+    justify-items: center;
+    width: 70%;
+    height: 75%;
+    box-shadow: 1px 1px 30px;
+}
