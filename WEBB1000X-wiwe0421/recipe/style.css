@@ -1,0 +1,65 @@
+body {
+background-color: darkseagreen;
+
+
+
+}
+
+
+
+header{
+
+background-color: mediumseagreen;
+text-align: center;
+width: 98%;
+padding: 1%;
+border-radius: 10px;
+
+
+}
+
+
+header h1 {
+color: white;
+text-align: center;
+
+
+}
+
+.recipe-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    justify-items: center;
+    margin: 0 auto;
+
+    width: 100%;
+    border-radius: 10px;
+    padding-top: 10px;
+    gap: 80px;
+    font-size: 14px;
+}
+
+.card {
+    box-shadow: black 3px 3px 3px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    background-color: mediumseagreen;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+
+}
+
+.card h2 {
+    text-align: center;
+}
+
+.card h2, p {
+    padding: 0 16px;
+}
