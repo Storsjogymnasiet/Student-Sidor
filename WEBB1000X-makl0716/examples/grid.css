@@ -1,7 +1,27 @@
-main {
-    display: grid;
+.grid-container { /* name of div in the html file */
+    display: grid; /* makes the grid */
+    grid-template-columns: 200px, 200px, 400px; /* right? */
+    grid-template-rows: 1fr, 1fr, 1fr; /* down? */
+    gap: 1em; /* em changes with font size? */
+    justify-items: center; /* horizontal alignment? */
+    align-items: center; /* vertical alignment? */
+    justify-content: center; /* centers the entire grid horizontally */
+    align-content: center; /* same as above but vertical */
+/*    grid-auto-rows: 300px;  nice auto alternative to grid template rows */
 
-    grid-template-columns: 1fr 1fr 1fr;
+/* use grid-template-areas for the nice looking thingamajigs if you named each item in the html seperatly example:
+"box-1 box-2 box-2 box-3"
+"box-1 box-4 box-5 box-5" */
 
-    justify-items: center;
+
+}
+.item {
+    width: 100px; /* self explanatory */
+    height: 100px;
+    padding: 2em; 
+    background-color: var(--primary-color); /* they had this in the tutorial, probably something abt dark mode */
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 2rem; /* root font size which means text here will be twice as large i guess*/
 }

@@ -11,8 +11,8 @@ h2{
 img{
     margin: 5px;
 }
-links{
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 
-    justify-items: center;
+grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
