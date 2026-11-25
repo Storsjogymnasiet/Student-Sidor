@@ -1,0 +1,81 @@
+body {
+    background-color: rgb(19, 18, 18);
+}
+
+body h1 {
+    color: beige;
+    display: flex;
+    justify-self: center;
+   
+}
+
+.beskriving p {
+    color: rgb(100, 204, 159);
+    background-color: rgb(25, 51, 31);
+   justify-items: center;
+  
+}
+
+
+.beskriving h4 {
+    color: beige;
+    font-size: 150%;
+   
+}
+.beskriving {
+       background-color: rgb(36, 36, 36);
+       padding: 5%;
+}
+body { 
+    display: grid;
+    grid-template-columns: 40% 60%;
+    padding: 5%;
+    margin-top: 5%;
+  
+}
+
+img {
+    padding: 10px;
+}
+
+.Botten {
+    color: beige;
+
+}
+.Botten p {
+    background-color: rgb(36, 36, 36);
+}
+
+.Botten h3 {
+    background-color: rgb(36, 36, 36);
+}
+.Botten h4 {
+    background-color: rgb(36, 36, 36);
+}
+
+.Botten h1 {
+    background-color: rgb(36, 36, 36);
+}
+
+.Fyllning {
+    color: beige;
+}
+.Fyllning p {
+    background-color: rgb(36, 36, 36);
+}
+.Fyllning h3 { 
+    background-color: rgb(36, 36, 36);
+}
+.maräng {
+    color: beige;
+    
+}
+.maräng p {
+    background-color: rgb(36, 36, 36);
+}
+
+.maräng h3 {
+    background-color: rgb(36, 36, 36);
+}
+
+
