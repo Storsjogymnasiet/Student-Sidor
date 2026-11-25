@@ -1,0 +1,43 @@
+header {
+    text-align: center;
+}
+
+body {
+    display: flex;
+
+    flex-direction: column;
+    align-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    height: 1000px;
+}
+
+main {
+    display: grid;
+
+    gap: 50px;
+    grid-template-columns: repeat(3, 3fr);
+    width: 1000px;
+    height: 500px;
+}
+
+.bilder {
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px black;
+}
+
+p {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    width: 300px;
+    height: 80px;
+}
+
+.fuskbygge {
+    color: white;
+}

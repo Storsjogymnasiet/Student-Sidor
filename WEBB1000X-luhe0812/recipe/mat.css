@@ -1,0 +1,26 @@
+header {
+text-align: center;
+}
+
+body {
+    background-color: burlywood;
+}
+
+.recept-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr; 
+  gap: 30px;                      
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+  background-color: beige;
+  border-radius: 20px;
+}
+
+.bild img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
