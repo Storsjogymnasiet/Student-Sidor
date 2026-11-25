@@ -1,0 +1,19 @@
+
+
+
+
+.recipes {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.card {
+
+}
+
+.card img {
+    width: 100%;
+}
+main {
+    text-align: center;
+}
