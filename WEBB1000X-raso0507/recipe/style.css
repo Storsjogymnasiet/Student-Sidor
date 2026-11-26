@@ -1,0 +1,48 @@
+body {
+    background-color: rgb(218, 218, 201);
+    color: rgb(15, 15, 15);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0px;
+}
+
+header {
+    background-color: rgb(138, 132, 112);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 15px;
+}
+
+header h1 {
+    font-size: 40px;
+}
+
+.recipe-grid
+{
+    display: grid;
+    grid-template-columns:  1fr 1fr 1fr;
+}
+
+.card
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card img {
+    width: 70%;
+}
+
+
+main div {
+   background-color: rgb(125, 114, 96); 
+   margin: 60px;
+   padding-top: 50px;
+   padding-bottom: 20px;
+   border-radius: 30px;
+}
+
+a {
+    font-family: cursive;
+    color: rgb(0, 0, 0);
+}
+
