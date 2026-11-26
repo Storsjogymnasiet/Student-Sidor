@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="sv">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="index.css" />
+        <link rel="shortcut icon" type="image/png" href="../files/icon.png" />
+        <title>Recept</title>
+        <script type="text/javascript" src="index.js" defer></script>
+        <script type="text/javascript" src="../files/animated_details.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <h1>Recept</h1>
+        </header>
+        <main>
+            <input id="search" type="search" placeholder=" Filter (⌘+K) " oninput="filterByName(event)">
+            <section id="maträtter">
+                <article data-href="index">
+                    <img alt="Pannkaka" src="files/pannkaka.png">
+                    <h2>Pannkaka</h2>
+                </article>
+                <article data-href="index">
+                    <img alt="Korvstroganoff med ris" src="files/korvstroganoff.png">
+                    <h2>Korvstroganoff & ris</h2>
+                </article>
+                <article data-href="index">
+                    <img alt="Chokladbollar" src="files/chokladbollar.png">
+                    <h2>Chokladbollar</h2>
+                </article>
+                <article data-href="index">
+                    <img alt="Lussekatter" src="files/lussekatter.png">
+                    <h2>Lussekatter</h2>
+                </article>
+                <article data-href="index">
+                    <img alt="Mac and Cheese" src="files/mac_and_cheese.png">
+                    <h2>Mac n Cheese</h2>
+                </article>
+                <article data-href="index">
+                    <img alt="Oxfilé" src="files/oxe.png">
+                    <h2>Oxfilé</h2>
+                </article>
+                <p id="nothing-here">Inget här! Prova söka efter något annat.</p>
+            </section>
+        </main>
+        <footer>© 2026 Miliam Decker</footer>
+        <div id="popup">
+            <p id="popup-close">&ensp;×</p>
+            <iframe id="popup-iframe" allowtransparency="true">Error, iFrame failed to load.</iframe>
+        </div>
+    </body>
+</html>

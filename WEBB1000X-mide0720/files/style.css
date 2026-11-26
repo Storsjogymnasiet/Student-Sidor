@@ -129,3 +129,49 @@ onhover.visible{
     padding: 0;
     margin: 1rem 0 0 0;
 }
+animated-details{
+  display: block;
+  border: 1px solid var(--color-dim);
+  border-radius: 4px;
+  margin-bottom: 10px;
+  font-family: sans-serif;
+  overflow: hidden;
+}
+.summary-trigger{
+  padding: 10px;
+  background-color: var(--color-bg);
+  cursor: pointer;
+  user-select: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+.summary-trigger::before{
+  content: '▶';
+  display: inline-block;
+  margin-right: 8px;
+  transition: transform 0.2s ease;
+}
+:host([open]) .summary-trigger::before{
+  transform: rotate(90deg);
+}
+.content-wrapper{
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease-out;
+}
+:host([open]) .content-wrapper{
+  grid-template-rows: 1fr;
+}
+.content-box{
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+:host([open]) .content-box{
+  opacity: 1;
+  transition: opacity 0.3s ease 0.1s;
+}
+.inner-padding{
+  padding: 10px;
+}

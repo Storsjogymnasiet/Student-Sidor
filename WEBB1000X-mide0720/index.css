@@ -1,0 +1,42 @@
+html, body {
+    position: relative;
+    min-height: 100vh;
+    width: 90%;
+    margin: 0 auto;
+}
+
+main {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    padding: 0 3rem;
+}
+
+#cat-container {
+    font-family: monospace;
+    white-space: pre;
+    font-size: 6rem;
+    line-height: 1.2;
+    width: 46ch;
+    margin: 0 auto;
+    padding-top: 100px;
+    color: light-dark(#DDD, #444);
+    position: relative;
+    z-index: 2;
+}
+
+.cat-segment {
+    display: block;
+}
+
+#cat-sentinel {
+    height: 1px;
+}
+
+::-webkit-scrollbar, ::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb {
+    width: 0px;
+    height: 0px;
+    background: transparent;
+}
