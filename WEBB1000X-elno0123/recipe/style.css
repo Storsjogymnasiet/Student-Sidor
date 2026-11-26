@@ -1,10 +1,13 @@
 h1 {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    align-content: center;
+    text-align: center;
+    color: white;
 }
 
 .card {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #5fb49c;
     padding: 20px;
     margin: 0%;
@@ -13,12 +16,29 @@ h1 {
 
 .recipe-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+
+    width: 60%;
+    margin: 0 auto;
 }
-img{
+
+img {
     width: 300px;
 }
-body{
 
+body {
+    margin: 0;
     background-color: #305252;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+
 }
