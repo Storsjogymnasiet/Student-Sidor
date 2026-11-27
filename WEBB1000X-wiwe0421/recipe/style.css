@@ -1,5 +1,5 @@
 body {
-background-color: darkseagreen;
+background-color: rgb(60, 45, 45);
 
 
 
@@ -9,12 +9,12 @@ background-color: darkseagreen;
 
 header{
 
-background-color: mediumseagreen;
+background-color: rgb(70, 55, 55);
 text-align: center;
 width: 98%;
 padding: 1%;
 border-radius: 10px;
-
+box-shadow: black 3px 3px 3px;
 
 }
 
@@ -46,8 +46,9 @@ text-align: center;
     text-decoration: none;
     color: black;
     text-align: center;
-    background-color: mediumseagreen;
+    background-color: rgb(70, 55, 55);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
 }
 
 .card img {

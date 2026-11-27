@@ -1,0 +1,83 @@
+body {
+background-color: rgb(60, 45, 45);
+
+
+
+}
+
+
+
+header{
+
+background-color: rgb(70, 55, 55);
+text-align: center;
+width: 98%;
+padding: 1%;
+border-radius: 10px;
+box-shadow: black 3px 3px 3px;
+
+
+}
+
+
+header h1 {
+color: white;
+text-align: center;
+
+
+}
+
+.recipe-grid {
+    display: grid;
+
+    justify-items: center;
+    margin-left: 64%;
+
+    width: 35%;
+    border-radius: 10px;
+    padding-top: 10px;
+    gap: 64px;
+    font-size: 14px;
+}
+
+.card {
+    box-shadow: black 3px 3px 3px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: black;
+    background-color: mediumseagreen;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.card h2 {
+    text-align: center;
+}
+
+.card h2, p {
+    padding: 0 16px;
+}
+
+
+.recipe-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+}
+
+.recipe-layout img{
+    width: 95%;
+    margin-left: 15px;
+    border-radius: 10px;
+    box-shadow: black 3px 3px 3px;
+    margin-top: 10px;
+}
+
+section {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+}
