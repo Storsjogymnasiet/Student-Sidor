@@ -1,0 +1,95 @@
+body {
+    background-color: rgb(59, 5, 5);
+}
+
+header { background-color: rgb(96, 13, 13);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 1%;
+    width: 98%;
+
+
+}
+
+header h1 { font-size: 55px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+
+.recipes {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+
+    justify-items: center; 
+    text-align: center;
+
+    gap: 32px;
+
+    margin: 5vh 15vw;
+
+    
+}
+
+
+.recipe img {
+    border-radius:6px 6px 0 0;
+}
+
+.recipe {
+    border-radius: 6px;
+    
+    border: 5px;
+
+    background-color:  rgb(90, 12, 12);
+    text-decoration: none;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.recipe img {
+    width: 100%;
+}
+
+
+.rainbow-text {
+
+    background: linear-gradient(to right,
+            violet,
+            indigo,
+            blue,
+            green,
+            yellow,
+            orange,
+            red,
+            violet);
+
+
+    background-size: 200% auto;
+
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+
+
+    animation: rainbow-shift 3s linear infinite;
+
+
+    font-weight: bold;
+    font-size: 60px;
+}
+
+@keyframes rainbow-shift {
+    0% {
+        background-position: 0% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
+}
