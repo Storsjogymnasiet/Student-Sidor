@@ -1,0 +1,74 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin:0;
+}
+
+header {
+    font-size: 2rem;
+}
+
+.topnav {
+    background-color: #7b0000;
+    overflow: hidden;
+    padding-top: 0%;
+}
+
+.topnav p {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 100%;
+}
+
+.choklad {
+    background-color: #7b0000;
+    overflow: hidden;
+    padding-top: 0%;
+}
+
+.choklad p {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 100%;
+}
+
+
+.column {
+    float: left;
+    width: 25%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.side-by-side {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(163, 11, 11);
+}
+
+.container div {
+    background-color: #f1f1f1;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+}
+
+.ingridients {
+    font-size: 20px;
+    margin-left: 5%;
+}

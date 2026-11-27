@@ -1,0 +1,18 @@
+<h1>
+        <div class="topnav">
+            <p>Bästa Recepten i sverige</p>
+            
+        </div>
+
+        <div class="row">
+            <div class="column"><a href="recipes/chokladbollar.html">Chokladbollar</a></div>
+            <img src="images/chokladbollar-500x500.jpg" alt="">
+            <a href="recipes/chokladbollar.html">Chokladbollar Recept</a>
+            <div class="column"><a href="recipes/kladdkaka.html">Kladdkaka</a></div>
+            <img src="images/kladdkaka-med-kladdig-mitt-pa-tartfat-500x500.jpg" alt="">
+            <div class="column"><a href="recipes/korvstrognafonf.html">Korvstroganoff</a></div>
+            <img src="images/korv-stroganoff-1-500x500.jpg" alt="">
+            <div class="column"><a href="recipes/lussekatter.html">lussekatter</a></div>
+            <img src="images/lussebullar-med-russin-pa-fat-500x500.jpg" alt="">
+        </div>
+    </h1>
