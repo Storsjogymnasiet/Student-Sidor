@@ -13,18 +13,23 @@ header {
 }
 
 main {
-    display: flex;
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    margin-top: 10px;
 }
 
-div {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+a {
     color: white;
-    background-color: rgb(39, 39, 39);
-    margin-top: 25px;
-    padding-right: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
+    text-decoration-line: none;
+}
+
+
+.korv {
+    background-color: rgb(37, 37, 37);
+    color: white;
+    padding: 15px;
     border-radius: 5px;
 }
