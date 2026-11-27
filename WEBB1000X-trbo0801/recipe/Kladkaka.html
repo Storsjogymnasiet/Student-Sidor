@@ -1,26 +1,78 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>kladkak</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <header>
-    <h1>Kladdkaka</h1>
+    <a href="index.html">Kladdkaka</a>
 </header>
 
 <body>
-    <main>
-        <div class="">
-        <h1>Kladiga kladkakan</h1>
-        <p>Kladkakan som får din mun att bli kladdig</p>
+    <main class="pps">
+        <div class="introdu">
+            <h1>Kladdiga kladkakan</h1>
+            <div>
+                <p>Favorite</p>
+                <div id="stars">
+                    <svg id="star1" onclick="checkStar(1)" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="feather feather-star">
+                        <polygon
+                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                        </polygon>
+                    </svg>
+
+                    <svg id="star2" onclick="checkStar(2)" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="feather feather-star">
+                        <polygon
+                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                        </polygon>
+                    </svg>
+
+                    <svg id="star3" onclick="checkStar(3)" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="feather feather-star">
+                        <polygon
+                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                        </polygon>
+                    </svg>
+
+                    <svg id="star4" onclick="checkStar(4)" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="feather feather-star">
+                        <polygon
+                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                        </polygon>
+                    </svg>
+
+                    <svg id="star5" onclick="checkStar(5)" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="feather feather-star">
+                        <polygon
+                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                        </polygon>
+                    </svg>
+                </div>
+            </div>
+            <p>Kladkakan som får din mun att bli kladdig.</p>
+            <p>Den är kladdig och chockladrik med en liten hit av chocklad och kakao.</p>
+            <section>
+                <h1>Birgit, 98 År</h1>
+                <p>Det var för lite chocklad smak. Reckomenderar inte!</p>
+            </section>
+
         </div>
-        <div>
-            <img src="images/kladdkaka.webp" alt="Kladdkaka" width="350px">
+        <div class="piko">
+            <img src="images/kladdkaka.webp" alt="Kladdkaka" width="450px">
         </div>
-        <div>
-            <h1>Recept</h1>
+        <div class="rece">
+            <h1>Ingridienser</h1>
             <table>
                 <tr>
                     <th>smör</th>
@@ -48,15 +100,18 @@
                 </tr>
             </table>
         </div>
-        <div>
+        <div class="how">
             <h1>Hur man gör</h1>
             <p>1. Sätt ugnen på 175° eller 160° varmluft.</p>
             <p>2. Smält smöret i en kastrull. Lyft av kastrullen från plattan.</p>
             <p>3. Rör ner socker och ägg, blanda väl. Rör ner övriga ingredienser så att allt blir väl blandat.</p>
             <p>4. Häll smeten i en smord och bröad form med löstagbar kant, ca 24 cm i diameter.</p>
-            <p>5. Grädda mitt i ugnen ca 15 min. Kakan är klar när kanterna är fasta samt torra och ytan har fått en tunn skorpa, men mitten är fortfarande dallrig och kladdig.</p>
-            <p>6. Låt kakan kallna innan du pudrar över florsocker. Servera med vispad grädde, glass, frukt, bär eller något annat du tycker om.</p>
+            <p>5. Grädda mitt i ugnen ca 15 min. Kakan är klar när kanterna är fasta samt torra och ytan har fått en
+                tunn skorpa, men mitten är fortfarande dallrig och kladdig.</p>
+            <p>6. Låt kakan kallna innan du pudrar över florsocker. Servera med vispad grädde, glass, frukt, bär eller
+                något annat du tycker om.</p>
         </div>
     </main>
 </body>
+
 </html>
