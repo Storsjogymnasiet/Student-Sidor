@@ -23,6 +23,9 @@ body {
     background-color: var(--body_bg);
     margin: 0px;
     padding: 0px;
+    color: var(--text);
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 header {
@@ -34,6 +37,10 @@ main {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
+}
+
+h1, h2 {
+    color: var(--text-h);
 }
 
 .recipe-main-grid {
@@ -55,25 +62,24 @@ main {
 }
 
 .recipe-layout {
-    background-color: var(--recipe-layout_bg);
     display: grid;
     grid-template-columns: var(--grid-columns-recipe-layout);
-    padding: 10px;
+    padding: 1px;
     margin-top: 10px;
 }
 
 .recipe-layout-part {
     background-color: var(--recipe-layout-part_bg);
     margin: 5px;
-    padding: 5px;
+    padding: 32px;
     text-align: left;
 }
 
-.recipe-layout-part-indididigrienser {
-    background-color: var(--recipe-layout-part-indididigrienser);
-    margin: 5px;
-    padding: 5px;
-    text-align: center;
+.recipe-layout-part * {
+    background-color: var(--recipe-layout-part_bg-accent);
+    padding: 4px 8px;
+    border-radius: 6px;
+
 }
 
 .recipe-layout-image {
@@ -109,12 +115,24 @@ h2 {
 
 @media (prefers-color-scheme: dark) {
     :root {
+        --body_bg: #202940;
+        --header_bg: #4B4038;
+        --recipe-main-grid_bg: rgba(105, 95, 99, 0.185);
+        --recipe-card_bg: rgba(19, 18, 18, 0.333);
+        --recipe-layout-part_bg: #1a2133;
+        --recipe-layout-part_bg-accent: #151b29;
+        --text: #d4b8a4;
+        --text-h: #e9c5b0;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root{
         --body_bg: rgb(54, 14, 29);
         --header_bg: red;
         --recipe-main-grid_bg: rgba(105, 95, 99, 0.185);
         --recipe-card_bg: rgba(19, 18, 18, 0.333);
-        --recipe-layout_bg: rgb(0, 0, 0);
-        --recipe-layout-part_bg: rgba(176, 189, 202, 0.847);
-        --recipe-layout-part-indididigrienser: rgba(191, 204, 218, 0.831);
+        --recipe-layout-part_bg: rgba(46, 49, 52, 0.155);
+        --recipe-layout-part-indididigrienser: rgba(46, 49, 52, 0.155);
     }
 }
