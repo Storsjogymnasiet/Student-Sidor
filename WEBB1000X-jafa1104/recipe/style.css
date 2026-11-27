@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+}
+
+.recipe-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    justify-items: center;
+}
+
+.food-box {
+    width: 100%;
+    text-align: center;
+    background-image: url(https://img.huffingtonpost.com/asset/618c7c452100002f826fef95.jpeg?ops=scalefit_500_noupscale);
+}
+
+.food-box img {
+    width: 80%;
+}
+
+.recipe-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-image: url(https://img.huffingtonpost.com/asset/618c7c452100002f826fef95.jpeg?ops=scalefit_500_noupscale);
+    justify-items: center;
+}
+
+.recipe-layout img {
+    width: 100%;
+}
